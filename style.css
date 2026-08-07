@@ -1,60 +1,222 @@
+/* =================================
+   TAMPILAN UTAMA APLIKASI
+================================= */
+
 body {
+
     font-family: Arial, sans-serif;
+
     background: #e3f2fd;
+
     text-align: center;
+
     margin: 0;
+
+    padding: 0;
+
 }
 
 
-/* Bagian judul */
+/* =================================
+   HEADER
+================================= */
+
 header {
+
     background: #1976d2;
+
     color: white;
+
     padding: 25px;
+
 }
 
 
-/* Tombol menu */
+header h1 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+}
+
+
+header h3 {
+
+    margin-top: 10px;
+
+}
+
+
+
+/* =================================
+   MENU TOMBOL
+================================= */
+
 .menu {
-    margin: 20px;
+
+    margin: 25px;
+
 }
+
 
 
 button {
+
     background: #ffca28;
+
     border: none;
+
     padding: 15px 25px;
+
     margin: 8px;
+
     border-radius: 15px;
+
     font-size: 18px;
+
     cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
 }
+
 
 
 button:hover {
-    background: #ffa000;
+
+    background:#ffa000;
+
+    transform: scale(1.05);
+
 }
 
 
-/* Kotak materi */
+
+/* =================================
+   KOTAK INFORMASI MATERI
+================================= */
+
 #informasi {
 
-    background: white;
-    width: 70%;
-    margin: 20px auto;
-    padding: 20px;
+    background:white;
 
-    border-radius: 15px;
+    width:70%;
 
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin:20px auto;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.15);
 
 }
 
 
-/* Tempat objek 3D */
+
+#informasi h2 {
+
+    color:#1976d2;
+
+}
+
+
+
+#informasi ul {
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+
+
+#informasi li {
+
+    font-size:20px;
+
+    margin:10px;
+
+}
+
+
+
+/* =================================
+   AREA OBJEK 3D
+================================= */
+
 #canvas3D {
 
-    width: 100%;
-    height: 400px;
+    width:600px;
+
+    height:400px;
+
+    margin:30px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,0.2);
+
+    overflow:hidden;
+
+}
+
+
+
+/* =================================
+   TAMPILAN UNTUK HP
+================================= */
+
+@media screen and (max-width:700px){
+
+
+header h1 {
+
+    font-size:24px;
+
+}
+
+
+
+.menu button {
+
+    width:90%;
+
+    font-size:18px;
+
+}
+
+
+
+#informasi {
+
+    width:85%;
+
+}
+
+
+
+#canvas3D {
+
+    width:95%;
+
+    height:350px;
+
+}
+
+
 
 }
