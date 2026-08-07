@@ -74,9 +74,13 @@ new THREE.OrbitControls(
 
 controls.enableDamping = true;
 
+controls.dampingFactor = 0.08;
+
 controls.enableZoom = true;
 
 controls.enablePan = false;
+
+controls.rotateSpeed = 1.0;
 
 
 
@@ -758,16 +762,13 @@ if(controls){
 
 }
 
-if(cube){
+// if(cube){
 
+//     cube.rotation.x +=0.002;
 
-cube.rotation.x +=0.01;
+//     cube.rotation.y +=0.002;
 
-
-cube.rotation.y +=0.01;
-
-
-}
+// }
 
 
 
