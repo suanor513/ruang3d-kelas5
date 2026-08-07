@@ -121,3 +121,52 @@ camera
 
 
 }
+
+function tampilBalok(){
+
+scene.clear();
+
+let geometry = new THREE.BoxGeometry(
+    2.5,
+    1.5,
+    1
+);
+
+let material = new THREE.MeshBasicMaterial({
+    color: 0xff9800
+});
+
+cube = new THREE.Mesh(
+    geometry,
+    material
+);
+
+scene.add(cube);
+
+}
+
+
+
+function tampilPrisma(){
+
+scene.clear();
+
+let geometry = new THREE.CylinderGeometry(
+    1,
+    1,
+    2,
+    3
+);
+
+let material = new THREE.MeshBasicMaterial({
+    color: 0x9c27b0
+});
+
+cube = new THREE.Mesh(
+    geometry,
+    material
+);
+
+scene.add(cube);
+
+}
