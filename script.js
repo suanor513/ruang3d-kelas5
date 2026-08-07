@@ -431,22 +431,28 @@ new THREE.CylinderGeometry(
 
 
 
-let material =
-new THREE.MeshBasicMaterial({
+// ======================================
+// WARNA SETIAP SISI PRISMA
+// ======================================
 
-    color:0x9c27b0
+let materials = [
 
-});
+new THREE.MeshBasicMaterial({ color:0xff5252 }), // Segitiga depan
 
+new THREE.MeshBasicMaterial({ color:0xff5252 }), // Segitiga belakang
 
+new THREE.MeshBasicMaterial({ color:0x2196f3 }), // Persegi panjang 1
+
+new THREE.MeshBasicMaterial({ color:0x4caf50 }), // Persegi panjang 2
+
+new THREE.MeshBasicMaterial({ color:0xffeb3b })  // Persegi panjang 3
+
+];
 
 cube =
 new THREE.Mesh(
-
     geometry,
-
-    material
-
+    materials
 );
 
 
