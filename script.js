@@ -6,68 +6,96 @@ let cube;
 
 function tampilKubus(){
 
-    scene = new THREE.Scene();
+scene = new THREE.Scene();
+
+scene.background = new THREE.Color(0xe3f2fd);
 
 
-    camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / 400,
-        0.1,
-        1000
-    );
+camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth / 400,
+0.1,
+1000
+);
 
 
-    renderer = new THREE.WebGLRenderer({
-        antialias:true
-    });
+renderer = new THREE.WebGLRenderer({
+antialias:true
+});
 
 
-    renderer.setSize(
-        window.innerWidth,
-        400
-    );
+renderer.setSize(
+600,
+400
+);
 
 
-    document
-    .getElementById("canvas3D")
-    .innerHTML="";
+document
+.getElementById("canvas3D")
+.innerHTML="";
 
 
-    document
-    .getElementById("canvas3D")
-    .appendChild(renderer.domElement);
-
-
-
-    // Membuat bentuk kubus
-    let geometry =
-    new THREE.BoxGeometry();
+document
+.getElementById("canvas3D")
+.appendChild(renderer.domElement);
 
 
 
-    let material =
-    new THREE.MeshBasicMaterial({
-
-        color:0x2196f3
-
-    });
-
-
-    cube =
-    new THREE.Mesh(
-        geometry,
-        material
-    );
-
-
-    scene.add(cube);
+let geometry =
+new THREE.BoxGeometry();
 
 
 
-    camera.position.z=3;
+let materials=[
+
+new THREE.MeshBasicMaterial({color:0x42a5f5}),
+new THREE.MeshBasicMaterial({color:0x66bb6a}),
+new THREE.MeshBasicMaterial({color:0xffca28}),
+new THREE.MeshBasicMaterial({color:0xef5350}),
+new THREE.MeshBasicMaterial({color:0xab47bc}),
+new THREE.MeshBasicMaterial({color:0xff7043})
+
+];
 
 
-    animasi();
+
+cube =
+new THREE.Mesh(
+geometry,
+materials
+);
+
+
+
+scene.add(cube);
+
+
+
+let garis =
+new THREE.EdgesGeometry(geometry);
+
+
+let garisMaterial =
+new THREE.LineBasicMaterial({
+color:0x000000
+});
+
+
+let outline =
+new THREE.LineSegments(
+garis,
+garisMaterial
+);
+
+
+cube.add(outline);
+
+
+
+camera.position.z=3;
+
+
+animasi();
 
 }
 
@@ -75,20 +103,21 @@ function tampilKubus(){
 
 function animasi(){
 
-    requestAnimationFrame(animasi);
+requestAnimationFrame(animasi);
 
 
-    if(cube){
+if(cube){
 
-        cube.rotation.x +=0.01;
-        cube.rotation.y +=0.01;
+cube.rotation.x +=0.01;
+cube.rotation.y +=0.01;
 
-    }
+}
 
 
-    renderer.render(
-        scene,
-        camera
-    );
+renderer.render(
+scene,
+camera
+);
+
 
 }
