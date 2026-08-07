@@ -23,30 +23,35 @@ function buatCanvas(){
 
 
 
-    camera =
-    new THREE.PerspectiveCamera(
-        75,
-        600 / 400,
-        0.1,
-        1000
-    );
-
-
-    renderer =
-    new THREE.WebGLRenderer({
-        antialias:true
-    });
-
-
-
-    renderer.setSize(
-        600,
-        400
-    );
-
-
     let tempat =
-    document.getElementById("canvas3D");
+document.getElementById("canvas3D");
+
+let lebar =
+tempat.clientWidth;
+
+let tinggi =
+tempat.clientHeight;
+
+
+camera =
+new THREE.PerspectiveCamera(
+    75,
+    lebar / tinggi,
+    0.1,
+    1000
+);
+
+
+renderer =
+new THREE.WebGLRenderer({
+    antialias:true
+});
+
+
+renderer.setSize(
+    lebar,
+    tinggi
+);
 
 
     tempat.innerHTML="";
@@ -789,7 +794,34 @@ camera
 
 }
 
+// ======================================
+// RESPONSIVE SAAT UKURAN LAYAR BERUBAH
+// ======================================
 
+window.addEventListener("resize", function(){
+
+    if(!renderer || !camera) return;
+
+    let tempat =
+    document.getElementById("canvas3D");
+
+    let lebar =
+    tempat.clientWidth;
+
+    let tinggi =
+    tempat.clientHeight;
+
+    camera.aspect =
+    lebar / tinggi;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(
+        lebar,
+        tinggi
+    );
+
+});
 
 
 
@@ -797,9 +829,7 @@ camera
 // MULAI APLIKASI
 // ======================================
 
-buatCanvas();
 
-tampilKubus();
 
 window.onload = function(){
 
