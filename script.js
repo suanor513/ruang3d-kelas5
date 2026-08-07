@@ -360,10 +360,15 @@ scene.clear();
 
 let geometry =
 new THREE.CylinderGeometry(
-1,
-1,
-2,
-3
+
+    1,
+
+    1,
+
+    2,
+
+    3
+
 );
 
 
@@ -371,7 +376,7 @@ new THREE.CylinderGeometry(
 let material =
 new THREE.MeshBasicMaterial({
 
-color:0x9c27b0
+    color:0x9c27b0
 
 });
 
@@ -379,8 +384,11 @@ color:0x9c27b0
 
 cube =
 new THREE.Mesh(
-geometry,
-material
+
+    geometry,
+
+    material
+
 );
 
 
@@ -390,24 +398,70 @@ scene.add(cube);
 
 
 tambahGaris(
-geometry
+    geometry
 );
 
 
 
-// titik sudut prisma
+// Titik sudut prisma sesuai posisi geometry
 
-tambahTitikSudut([
+let tinggi = 1;
 
-[-0.8,-1,-0.6],
-[0.8,-1,-0.6],
-[0,1,-0.6],
+let radius = 1;
 
-[-0.8,-1,0.6],
-[0.8,-1,0.6],
-[0,1,0.6]
 
-]);
+
+let titikPrisma = [
+
+    [
+        radius * Math.cos(Math.PI/2),
+        tinggi,
+        radius * Math.sin(Math.PI/2)
+    ],
+
+
+    [
+        radius * Math.cos(Math.PI/2 + (2*Math.PI/3)),
+        tinggi,
+        radius * Math.sin(Math.PI/2 + (2*Math.PI/3))
+    ],
+
+
+    [
+        radius * Math.cos(Math.PI/2 + (4*Math.PI/3)),
+        tinggi,
+        radius * Math.sin(Math.PI/2 + (4*Math.PI/3))
+    ],
+
+
+
+    [
+        radius * Math.cos(Math.PI/2),
+        -tinggi,
+        radius * Math.sin(Math.PI/2)
+    ],
+
+
+    [
+        radius * Math.cos(Math.PI/2 + (2*Math.PI/3)),
+        -tinggi,
+        radius * Math.sin(Math.PI/2 + (2*Math.PI/3))
+    ],
+
+
+    [
+        radius * Math.cos(Math.PI/2 + (4*Math.PI/3)),
+        -tinggi,
+        radius * Math.sin(Math.PI/2 + (4*Math.PI/3))
+    ]
+
+];
+
+
+
+tambahTitikSudut(
+    titikPrisma
+);
 
 
 
