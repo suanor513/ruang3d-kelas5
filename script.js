@@ -242,18 +242,26 @@ new THREE.BoxGeometry(
 );
 
 
-let material =
-new THREE.MeshBasicMaterial({
+let materials = [
 
-color:0x2196f3
+new THREE.MeshBasicMaterial({color:0x2196f3}), // kanan (biru)
 
-});
+new THREE.MeshBasicMaterial({color:0x4caf50}), // kiri (hijau)
 
+new THREE.MeshBasicMaterial({color:0xffeb3b}), // atas (kuning)
+
+new THREE.MeshBasicMaterial({color:0xf44336}), // bawah (merah)
+
+new THREE.MeshBasicMaterial({color:0x9c27b0}), // depan (ungu)
+
+new THREE.MeshBasicMaterial({color:0xff9800})  // belakang (oranye)
+
+];
 
 cube =
 new THREE.Mesh(
 geometry,
-material
+materials
 );
 
 
