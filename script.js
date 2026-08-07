@@ -87,7 +87,17 @@ controls.enablePan = false;
 
 controls.rotateSpeed = 1.0;
 
+controls.enableRotate = true;
 
+controls.enableKeys = false;
+
+controls.minDistance = 2;
+
+controls.maxDistance = 8;
+
+controls.target.set(0,0,0);
+
+controls.update();
 
 animasi();
 
