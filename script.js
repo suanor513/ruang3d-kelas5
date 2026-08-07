@@ -1,6 +1,6 @@
-// =================================
+// ======================================
 // VARIABEL UTAMA
-// =================================
+// ======================================
 
 let scene;
 let camera;
@@ -8,20 +8,18 @@ let renderer;
 let cube;
 
 
-// =================================
-// MEMBUAT CANVAS 3D
-// =================================
+// ======================================
+// MEMBUAT AREA 3D
+// ======================================
 
 function buatCanvas(){
 
     scene = new THREE.Scene();
 
-    scene.background =
-    new THREE.Color(0xe3f2fd);
+    scene.background = new THREE.Color(0xe3f2fd);
 
 
-    camera =
-    new THREE.PerspectiveCamera(
+    camera = new THREE.PerspectiveCamera(
         75,
         600 / 400,
         0.1,
@@ -29,8 +27,7 @@ function buatCanvas(){
     );
 
 
-    renderer =
-    new THREE.WebGLRenderer({
+    renderer = new THREE.WebGLRenderer({
         antialias:true
     });
 
@@ -41,11 +38,10 @@ function buatCanvas(){
     );
 
 
-    let tempat =
-    document.getElementById("canvas3D");
+    let tempat = document.getElementById("canvas3D");
 
 
-    tempat.innerHTML="";
+    tempat.innerHTML = "";
 
 
     tempat.appendChild(
@@ -53,7 +49,7 @@ function buatCanvas(){
     );
 
 
-    camera.position.z=4;
+    camera.position.z = 4;
 
 
     animasi();
@@ -62,26 +58,40 @@ function buatCanvas(){
 
 
 
-// =================================
+// ======================================
 // MENGUBAH MATERI
-// =================================
+// ======================================
 
 function ubahMateri(judul, isi){
 
-    document.getElementById("judulMateri").innerHTML =
-    judul;
+    let judulBox =
+    document.getElementById("judulMateri");
 
 
-    document.getElementById("isiMateri").innerHTML =
-    isi;
+    let isiBox =
+    document.getElementById("isiMateri");
+
+
+    if(judulBox){
+
+        judulBox.innerHTML = judul;
+
+    }
+
+
+    if(isiBox){
+
+        isiBox.innerHTML = isi;
+
+    }
 
 }
 
 
 
-// =================================
+// ======================================
 // KUBUS
-// =================================
+// ======================================
 
 function tampilKubus(){
 
@@ -112,26 +122,25 @@ function tampilKubus(){
     scene.add(cube);
 
 
-
     ubahMateri(
-    "Kubus",
-    `
-    <ul>
-    <li>⬜ Sisi : 6</li>
-    <li>📏 Rusuk : 12</li>
-    <li>🔵 Titik sudut : 8</li>
-    <li>📐 Volume = s × s × s</li>
-    </ul>
-    `
+        "Kubus",
+        `
+        <ul>
+        <li>⬜ Jumlah sisi : 6</li>
+        <li>📏 Jumlah rusuk : 12</li>
+        <li>🔵 Jumlah titik sudut : 8</li>
+        <li>📐 Volume = s × s × s</li>
+        </ul>
+        `
     );
 
 }
 
 
 
-// =================================
+// ======================================
 // BALOK
-// =================================
+// ======================================
 
 function tampilBalok(){
 
@@ -162,26 +171,25 @@ function tampilBalok(){
     scene.add(cube);
 
 
-
     ubahMateri(
-    "Balok",
-    `
-    <ul>
-    <li>⬜ Sisi : 6</li>
-    <li>📏 Rusuk : 12</li>
-    <li>🔵 Titik sudut : 8</li>
-    <li>📐 Volume = p × l × t</li>
-    </ul>
-    `
+        "Balok",
+        `
+        <ul>
+        <li>⬜ Jumlah sisi : 6</li>
+        <li>📏 Jumlah rusuk : 12</li>
+        <li>🔵 Jumlah titik sudut : 8</li>
+        <li>📐 Volume = p × l × t</li>
+        </ul>
+        `
     );
 
 }
 
 
 
-// =================================
+// ======================================
 // PRISMA SEGITIGA
-// =================================
+// ======================================
 
 function tampilPrisma(){
 
@@ -213,60 +221,58 @@ function tampilPrisma(){
     scene.add(cube);
 
 
-
     ubahMateri(
-    "Prisma Segitiga",
-    `
-    <ul>
-    <li>🔺 Memiliki alas dan tutup yang sama</li>
-    <li>📏 Memiliki sisi tegak</li>
-    <li>📐 Volume = luas alas × tinggi</li>
-    </ul>
-    `
+        "Prisma Segitiga",
+        `
+        <ul>
+        <li>🔺 Memiliki 2 sisi alas yang sama</li>
+        <li>📏 Memiliki sisi tegak</li>
+        <li>🔵 Memiliki titik sudut</li>
+        <li>📐 Volume = luas alas × tinggi</li>
+        </ul>
+        `
     );
 
 }
 
 
 
-// =================================
+// ======================================
 // KUIS
-// =================================
+// ======================================
 
 function tampilKuis(){
 
     alert(
-    "Kuis Bangun Ruang akan segera dibuat"
+        "Kuis Bangun Ruang akan segera dibuat"
     );
 
 }
 
 
 
-// =================================
+// ======================================
 // ANIMASI
-// =================================
+// ======================================
 
 function animasi(){
 
-    requestAnimationFrame(
-        animasi
-    );
+    requestAnimationFrame(animasi);
 
 
     if(cube){
 
-        cube.rotation.x +=0.01;
+        cube.rotation.x += 0.01;
 
-        cube.rotation.y +=0.01;
+        cube.rotation.y += 0.01;
 
     }
 
 
     if(
-    renderer &&
-    scene &&
-    camera
+        renderer &&
+        scene &&
+        camera
     ){
 
         renderer.render(
@@ -280,9 +286,9 @@ function animasi(){
 
 
 
-// =================================
+// ======================================
 // MULAI APLIKASI
-// =================================
+// ======================================
 
 buatCanvas();
 
