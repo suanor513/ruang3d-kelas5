@@ -170,3 +170,25 @@ cube = new THREE.Mesh(
 scene.add(cube);
 
 }
+function tampilKubus(){
+
+scene.clear();
+
+let geometry = new THREE.BoxGeometry(
+    2,
+    2,
+    2
+);
+
+let material = new THREE.MeshBasicMaterial({
+    color: 0x2196f3
+});
+
+cube = new THREE.Mesh(
+    geometry,
+    material
+);
+
+scene.add(cube);
+
+}
