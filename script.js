@@ -32,7 +32,6 @@ function buatCanvas(){
     );
 
 
-
     renderer =
     new THREE.WebGLRenderer({
         antialias:true
@@ -44,7 +43,6 @@ function buatCanvas(){
         600,
         400
     );
-
 
 
     let tempat =
@@ -59,8 +57,7 @@ function buatCanvas(){
     );
 
 
-
-    camera.position.z = 4;
+    camera.position.z=4;
 
 
     animasi();
@@ -70,7 +67,7 @@ function buatCanvas(){
 
 
 // ======================================
-// MENGUBAH MATERI
+// MATERI
 // ======================================
 
 function ubahMateri(judul, isi){
@@ -87,15 +84,14 @@ function ubahMateri(judul, isi){
 
     if(judulBox){
 
-        judulBox.innerHTML = judul;
+        judulBox.innerHTML=judul;
 
     }
 
 
-
     if(isiBox){
 
-        isiBox.innerHTML = isi;
+        isiBox.innerHTML=isi;
 
     }
 
@@ -116,7 +112,6 @@ function tambahGaris(geometry){
     );
 
 
-
     let material =
     new THREE.LineBasicMaterial({
 
@@ -128,16 +123,13 @@ function tambahGaris(geometry){
 
     let outline =
     new THREE.LineSegments(
-
         garis,
-
         material
-
     );
 
 
-
     cube.add(outline);
+
 
 }
 
@@ -147,7 +139,7 @@ function tambahGaris(geometry){
 // TITIK SUDUT
 // ======================================
 
-function tambahTitikSudut(dataTitik){
+function tambahTitikSudut(data){
 
 
     let material =
@@ -159,7 +151,7 @@ function tambahTitikSudut(dataTitik){
 
 
 
-    dataTitik.forEach(function(posisi){
+    data.forEach(function(p){
 
 
         let titik =
@@ -178,11 +170,9 @@ function tambahTitikSudut(dataTitik){
 
 
         titik.position.set(
-
-            posisi[0],
-            posisi[1],
-            posisi[2]
-
+            p[0],
+            p[1],
+            p[2]
         );
 
 
@@ -204,84 +194,71 @@ function tambahTitikSudut(dataTitik){
 function tampilKubus(){
 
 
-    scene.clear();
+scene.clear();
+
+
+let geometry =
+new THREE.BoxGeometry(
+2,2,2
+);
+
+
+let material =
+new THREE.MeshBasicMaterial({
+
+color:0x2196f3
+
+});
+
+
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
+
+
+scene.add(cube);
 
 
 
-    let geometry =
-    new THREE.BoxGeometry(
-        2,
-        2,
-        2
-    );
+tambahGaris(
+geometry
+);
 
 
 
-    let material =
-    new THREE.MeshBasicMaterial({
+tambahTitikSudut([
 
-        color:0x2196f3
+[-1,-1,-1],
+[1,-1,-1],
 
-    });
+[-1,1,-1],
+[1,1,-1],
 
+[-1,-1,1],
+[1,-1,1],
 
+[-1,1,1],
+[1,1,1]
 
-    cube =
-    new THREE.Mesh(
-
-        geometry,
-
-        material
-
-    );
+]);
 
 
 
-    scene.add(cube);
+ubahMateri(
+"Kubus",
 
+`
+<ul>
+<li>⬜ Sisi : 6</li>
+<li>📏 Rusuk : 12</li>
+<li>🔴 Titik sudut : 8</li>
+<li>📐 Volume = s × s × s</li>
+</ul>
+`
 
-
-    tambahGaris(
-        geometry
-    );
-
-
-
-    tambahTitikSudut([
-
-
-        [-1,-1,-1],
-        [1,-1,-1],
-
-        [-1,1,-1],
-        [1,1,-1],
-
-
-        [-1,-1,1],
-        [1,-1,1],
-
-        [-1,1,1],
-        [1,1,1]
-
-
-    ]);
-
-
-
-    ubahMateri(
-
-        "Kubus",
-
-        `
-        <ul>
-        <li>⬜ Sisi : 6</li>
-        <li>📏 Rusuk : 12</li>
-        <li>🔴 Titik sudut : 8</li>
-        <li>📐 Volume = s × s × s</li>
-        </ul>
-        `
-
-    );
+);
 
 
 }
@@ -295,90 +272,77 @@ function tampilKubus(){
 function tampilBalok(){
 
 
-    scene.clear();
+scene.clear();
 
 
 
-    let geometry =
-    new THREE.BoxGeometry(
-
-        3,
-
-        1.5,
-
-        1
-
-    );
+let geometry =
+new THREE.BoxGeometry(
+3,
+1.5,
+1
+);
 
 
 
-    let material =
-    new THREE.MeshBasicMaterial({
+let material =
+new THREE.MeshBasicMaterial({
 
-        color:0xff9800
+color:0xff9800
 
-    });
-
-
-
-    cube =
-    new THREE.Mesh(
-
-        geometry,
-
-        material
-
-    );
+});
 
 
 
-    scene.add(cube);
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
 
 
 
-    tambahGaris(
-        geometry
-    );
+scene.add(cube);
 
 
 
-    tambahTitikSudut([
-
-
-        [-1.5,-0.75,-0.5],
-        [1.5,-0.75,-0.5],
-
-
-        [-1.5,0.75,-0.5],
-        [1.5,0.75,-0.5],
-
-
-        [-1.5,-0.75,0.5],
-        [1.5,-0.75,0.5],
-
-
-        [-1.5,0.75,0.5],
-        [1.5,0.75,0.5]
-
-
-    ]);
+tambahGaris(
+geometry
+);
 
 
 
-    ubahMateri(
+tambahTitikSudut([
 
-        "Balok",
+[-1.5,-0.75,-0.5],
+[1.5,-0.75,-0.5],
 
-        `
-        <ul>
-        <li>⬜ Sisi : 6</li>
-        <li>📏 Rusuk : 12</li>
-        <li>🔴 Titik sudut : 8</li>
-        <li>📐 Volume = p × l × t</li>
-        </ul>
-        `
+[-1.5,0.75,-0.5],
+[1.5,0.75,-0.5],
 
-    );
+[-1.5,-0.75,0.5],
+[1.5,-0.75,0.5],
+
+[-1.5,0.75,0.5],
+[1.5,0.75,0.5]
+
+]);
+
+
+
+ubahMateri(
+"Balok",
+
+`
+<ul>
+<li>⬜ Sisi : 6</li>
+<li>📏 Rusuk : 12</li>
+<li>🔴 Titik sudut : 8</li>
+<li>📐 Volume = p × l × t</li>
+</ul>
+`
+
+);
 
 
 }
@@ -390,69 +354,77 @@ function tampilBalok(){
 function tampilPrisma(){
 
 
-    scene.clear();
+scene.clear();
 
 
 
-    let geometry =
-    new THREE.CylinderGeometry(
-
-        1,
-
-        1,
-
-        2,
-
-        3
-
-    );
+let geometry =
+new THREE.CylinderGeometry(
+1,
+1,
+2,
+3
+);
 
 
 
-    let material =
-    new THREE.MeshBasicMaterial({
+let material =
+new THREE.MeshBasicMaterial({
 
-        color:0x9c27b0
+color:0x9c27b0
 
-    });
-
-
-
-    cube =
-    new THREE.Mesh(
-
-        geometry,
-
-        material
-
-    );
+});
 
 
 
-    scene.add(cube);
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
 
 
 
-    tambahGaris(
-        geometry
-    );
+scene.add(cube);
 
 
 
-    ubahMateri(
+tambahGaris(
+geometry
+);
 
-        "Prisma Segitiga",
 
-        `
-        <ul>
-        <li>🔺 Memiliki 2 alas segitiga</li>
-        <li>📏 Memiliki sisi tegak</li>
-        <li>🔵 Memiliki titik sudut</li>
-        <li>📐 Volume = luas alas × tinggi</li>
-        </ul>
-        `
 
-    );
+// titik sudut prisma
+
+tambahTitikSudut([
+
+[-0.8,-1,-0.6],
+[0.8,-1,-0.6],
+[0,1,-0.6],
+
+[-0.8,-1,0.6],
+[0.8,-1,0.6],
+[0,1,0.6]
+
+]);
+
+
+
+ubahMateri(
+
+"Prisma Segitiga",
+
+`
+<ul>
+<li>🔺 Sisi : 5</li>
+<li>📏 Rusuk : 9</li>
+<li>🔴 Titik sudut : 6</li>
+<li>📐 Volume = luas alas × tinggi</li>
+</ul>
+`
+
+);
 
 
 }
@@ -468,69 +440,63 @@ function tampilPrisma(){
 function tampilTabung(){
 
 
-    scene.clear();
+scene.clear();
 
 
 
-    let geometry =
-    new THREE.CylinderGeometry(
+let geometry =
+new THREE.CylinderGeometry(
 
-        1,
+1,
+1,
+2,
+32
 
-        1,
-
-        2,
-
-        32
-
-    );
+);
 
 
 
-    let material =
-    new THREE.MeshBasicMaterial({
+let material =
+new THREE.MeshBasicMaterial({
 
-        color:0x4caf50
+color:0x4caf50
 
-    });
-
-
-
-    cube =
-    new THREE.Mesh(
-
-        geometry,
-
-        material
-
-    );
+});
 
 
 
-    scene.add(cube);
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
 
 
 
-    tambahGaris(
-        geometry
-    );
+scene.add(cube);
 
 
 
-    ubahMateri(
+tambahGaris(
+geometry
+);
 
-        "Tabung",
 
-        `
-        <ul>
-        <li>🟢 Memiliki 3 sisi</li>
-        <li>📏 Memiliki 2 rusuk lengkung</li>
-        <li>🔵 Tidak memiliki titik sudut</li>
-        <li>📐 Volume = π × r² × t</li>
-        </ul>
-        `
 
-    );
+ubahMateri(
+
+"Tabung",
+
+`
+<ul>
+<li>🟢 Sisi : 3</li>
+<li>📏 Rusuk : 2 rusuk lengkung</li>
+<li>🔵 Titik sudut : 0</li>
+<li>📐 Volume = π × r² × t</li>
+</ul>
+`
+
+);
 
 
 }
@@ -546,67 +512,62 @@ function tampilTabung(){
 function tampilKerucut(){
 
 
-    scene.clear();
+scene.clear();
 
 
 
-    let geometry =
-    new THREE.ConeGeometry(
+let geometry =
+new THREE.ConeGeometry(
 
-        1,
+1,
+2,
+32
 
-        2,
-
-        32
-
-    );
+);
 
 
 
-    let material =
-    new THREE.MeshBasicMaterial({
+let material =
+new THREE.MeshBasicMaterial({
 
-        color:0xffc107
+color:0xffc107
 
-    });
-
-
-
-    cube =
-    new THREE.Mesh(
-
-        geometry,
-
-        material
-
-    );
+});
 
 
 
-    scene.add(cube);
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
 
 
 
-    tambahGaris(
-        geometry
-    );
+scene.add(cube);
 
 
 
-    ubahMateri(
+tambahGaris(
+geometry
+);
 
-        "Kerucut",
 
-        `
-        <ul>
-        <li>🟡 Memiliki 2 sisi</li>
-        <li>📏 Memiliki 1 rusuk lengkung</li>
-        <li>🔵 Memiliki 1 titik sudut</li>
-        <li>📐 Volume = ⅓ × π × r² × t</li>
-        </ul>
-        `
 
-    );
+ubahMateri(
+
+"Kerucut",
+
+`
+<ul>
+<li>🟡 Sisi : 2</li>
+<li>📏 Rusuk : 1 rusuk lengkung</li>
+<li>🔵 Titik sudut : 1</li>
+<li>📐 Volume = ⅓ × π × r² × t</li>
+</ul>
+`
+
+);
 
 
 }
@@ -622,67 +583,64 @@ function tampilKerucut(){
 function tampilBola(){
 
 
-    scene.clear();
+scene.clear();
 
 
 
-    let geometry =
-    new THREE.SphereGeometry(
+let geometry =
+new THREE.SphereGeometry(
 
-        1,
+1,
 
-        32,
+32,
 
-        32
+32
 
-    );
-
-
-
-    let material =
-    new THREE.MeshBasicMaterial({
-
-        color:0xffffff
-
-    });
+);
 
 
 
-    cube =
-    new THREE.Mesh(
+let material =
+new THREE.MeshBasicMaterial({
 
-        geometry,
+color:0xffffff
 
-        material
-
-    );
+});
 
 
 
-    scene.add(cube);
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
 
 
 
-    tambahGaris(
-        geometry
-    );
+scene.add(cube);
 
 
 
-    ubahMateri(
+tambahGaris(
+geometry
+);
 
-        "Bola",
 
-        `
-        <ul>
-        <li>⚪ Memiliki 1 sisi lengkung</li>
-        <li>📏 Tidak memiliki rusuk</li>
-        <li>🔵 Tidak memiliki titik sudut</li>
-        <li>📐 Volume = ⁴⁄₃ × π × r³</li>
-        </ul>
-        `
 
-    );
+ubahMateri(
+
+"Bola",
+
+`
+<ul>
+<li>⚪ Sisi : 1 sisi lengkung</li>
+<li>📏 Rusuk : 0</li>
+<li>🔵 Titik sudut : 0</li>
+<li>📐 Volume = 4/3 × π × r³</li>
+</ul>
+`
+
+);
 
 
 }
@@ -697,11 +655,11 @@ function tampilBola(){
 
 function tampilKuis(){
 
-    alert(
+alert(
 
-        "Kuis Bangun Ruang akan segera dibuat"
+"Kuis Bangun Ruang akan segera dibuat"
 
-    );
+);
 
 }
 
@@ -716,48 +674,38 @@ function tampilKuis(){
 function animasi(){
 
 
-    requestAnimationFrame(
-
-        animasi
-
-    );
+requestAnimationFrame(
+animasi
+);
 
 
 
-    if(cube){
+if(cube){
 
 
-        cube.rotation.x +=0.01;
+cube.rotation.x +=0.01;
 
 
-        cube.rotation.y +=0.01;
+cube.rotation.y +=0.01;
 
 
-    }
+}
 
 
 
-    if(
-
-        renderer &&
-
-        scene &&
-
-        camera
-
-    ){
+if(renderer && scene && camera){
 
 
-        renderer.render(
+renderer.render(
 
-            scene,
+scene,
 
-            camera
+camera
 
-        );
+);
 
 
-    }
+}
 
 
 }
