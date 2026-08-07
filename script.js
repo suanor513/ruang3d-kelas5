@@ -574,19 +574,24 @@ new THREE.CylinderGeometry(
 
 
 
-let material =
-new THREE.MeshBasicMaterial({
+// ======================================
+// WARNA TABUNG
+// ======================================
 
-color:0x4caf50
+let materials = [
 
-});
+new THREE.MeshBasicMaterial({ color:0x4caf50 }), // Selimut (Hijau)
 
+new THREE.MeshBasicMaterial({ color:0x2196f3 }), // Tutup Atas (Biru)
 
+new THREE.MeshBasicMaterial({ color:0xff9800 })  // Alas Bawah (Oranye)
+
+];
 
 cube =
 new THREE.Mesh(
 geometry,
-material
+materials
 );
 
 
