@@ -656,9 +656,15 @@ new THREE.ConeGeometry(
 
 let materials = [
 
-new THREE.MeshBasicMaterial({ color:0xffeb3b }), // Selimut (Kuning)
+new THREE.MeshBasicMaterial({
+    color:0xffeb3b,
+    side:THREE.DoubleSide
+}),
 
-new THREE.MeshBasicMaterial({ color:0x4caf50 })  // Alas (Hijau)
+new THREE.MeshBasicMaterial({
+    color:0x4caf50,
+    side:THREE.DoubleSide
+})
 
 ];
 
