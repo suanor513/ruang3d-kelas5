@@ -634,46 +634,93 @@ ubahMateri(
 
 function tampilKerucut(){
 
+    scene.clear();
 
-scene.clear();
+    // ==================================
+    // SELIMUT KERUCUT
+    // ==================================
+
+    let geometry =
+    new THREE.ConeGeometry(
+        1,
+        2,
+        32
+    );
+
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:0xffeb3b
+    });
+
+    cube =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
+
+    scene.add(cube);
 
 
+    // ==================================
+    // ALAS KERUCUT
+    // ==================================
 
-let geometry =
-new THREE.ConeGeometry(
+    let alasGeometry =
+    new THREE.CircleGeometry(
+        1,
+        32
+    );
 
-1,
-2,
-32
+    let alasMaterial =
+    new THREE.MeshBasicMaterial({
+        color:0x4caf50,
+        side:THREE.DoubleSide
+    });
 
-);
+    let alas =
+    new THREE.Mesh(
+        alasGeometry,
+        alasMaterial
+    );
 
 
+    // Posisi alas di bawah kerucut
+    alas.rotation.x = -Math.PI / 2;
 
-// ======================================
-// WARNA KERUCUT
-// ======================================
+    alas.position.y = -1;
 
-let materials = [
+    cube.add(alas);
 
-new THREE.MeshBasicMaterial({
-    color:0xffeb3b,
-    side:THREE.DoubleSide
-}),
 
-new THREE.MeshBasicMaterial({
-    color:0x4caf50,
-    side:THREE.DoubleSide
-})
+    // ==================================
+    // GARIS KERUCUT
+    // ==================================
 
-];
+    tambahGaris(
+        geometry
+    );
 
-cube =
-new THREE.Mesh(
-geometry,
-materials
-);
 
+    // ==================================
+    // MATERI
+    // ==================================
+
+    ubahMateri(
+
+        "Kerucut",
+
+        `
+        <ul>
+        <li>🟡 Sisi : 2</li>
+        <li>📏 Rusuk : 1 rusuk lengkung</li>
+        <li>🔵 Titik sudut : 1</li>
+        <li>📐 Volume = ⅓ × π × r² × t</li>
+        </ul>
+        `
+
+    );
+
+}
 
 
 scene.add(cube);
