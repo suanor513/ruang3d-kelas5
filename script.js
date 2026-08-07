@@ -1,180 +1,228 @@
+// ===============================
+// VARIABEL UTAMA
+// ===============================
+
 let scene;
 let camera;
 let renderer;
 let cube;
 
 
-// membuat tampilan 3D
+// ===============================
+// MEMBUAT AREA 3D
+// ===============================
+
 function buatCanvas(){
 
-scene = new THREE.Scene();
+    scene = new THREE.Scene();
 
-scene.background = new THREE.Color(0xe3f2fd);
-
-
-camera = new THREE.PerspectiveCamera(
-75,
-600/400,
-0.1,
-1000
-);
+    scene.background = new THREE.Color(0xe3f2fd);
 
 
-renderer = new THREE.WebGLRenderer({
-antialias:true
-});
+    camera = new THREE.PerspectiveCamera(
+        75,
+        600 / 400,
+        0.1,
+        1000
+    );
 
 
-renderer.setSize(600,400);
+    renderer = new THREE.WebGLRenderer({
+        antialias:true
+    });
 
 
-document
-.getElementById("canvas3D")
-.innerHTML="";
+    renderer.setSize(
+        600,
+        400
+    );
 
 
-document
-.getElementById("canvas3D")
-.appendChild(renderer.domElement);
+    let tempat =
+    document.getElementById("canvas3D");
 
 
-camera.position.z=4;
+    tempat.innerHTML="";
 
 
-animasi();
+    tempat.appendChild(
+        renderer.domElement
+    );
+
+
+    camera.position.z = 4;
+
+
+    animasi();
 
 }
 
 
-// kubus
+
+// ===============================
+// TAMPIL KUBUS
+// ===============================
+
 function tampilKubus(){
 
-if(!scene){
-buatCanvas();
+    scene.clear();
+
+
+    let geometry =
+    new THREE.BoxGeometry(
+        2,
+        2,
+        2
+    );
+
+
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:0x2196f3
+    });
+
+
+    cube =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
+
+
+    scene.add(cube);
+
 }
 
-scene.clear();
 
 
-let geometry =
-new THREE.BoxGeometry(2,2,2);
+// ===============================
+// TAMPIL BALOK
+// ===============================
 
-
-let material =
-new THREE.MeshBasicMaterial({
-color:0x2196f3
-});
-
-
-cube =
-new THREE.Mesh(
-geometry,
-material
-);
-
-
-scene.add(cube);
-
-}
-
-
-// balok
 function tampilBalok(){
 
-if(!scene){
-buatCanvas();
-}
-
-scene.clear();
+    scene.clear();
 
 
-let geometry =
-new THREE.BoxGeometry(
-2.5,
-1.5,
-1
-);
+    let geometry =
+    new THREE.BoxGeometry(
+        3,
+        1.5,
+        1
+    );
 
 
-let material =
-new THREE.MeshBasicMaterial({
-color:0xff9800
-});
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:0xff9800
+    });
 
 
-cube =
-new THREE.Mesh(
-geometry,
-material
-);
+    cube =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
 
 
-scene.add(cube);
+    scene.add(cube);
 
 }
 
 
-// prisma
+
+// ===============================
+// TAMPIL PRISMA SEGITIGA
+// ===============================
+
 function tampilPrisma(){
 
-if(!scene){
-buatCanvas();
-}
-
-scene.clear();
+    scene.clear();
 
 
-let geometry =
-new THREE.CylinderGeometry(
-1,
-1,
-2,
-3
-);
+    let geometry =
+    new THREE.CylinderGeometry(
+        1,
+        1,
+        2,
+        3
+    );
 
 
-let material =
-new THREE.MeshBasicMaterial({
-color:0x9c27b0
-});
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:0x9c27b0
+    });
 
 
-cube =
-new THREE.Mesh(
-geometry,
-material
-);
+    cube =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
 
 
-scene.add(cube);
+    scene.add(cube);
 
 }
 
 
-// animasi
+
+// ===============================
+// KUIS SEMENTARA
+// ===============================
+
+function tampilKuis(){
+
+    alert(
+        "Kuis Bangun Ruang akan segera dibuat"
+    );
+
+}
+
+
+
+// ===============================
+// ANIMASI 3D
+// ===============================
+
 function animasi(){
 
-requestAnimationFrame(animasi);
+    requestAnimationFrame(
+        animasi
+    );
 
 
-if(cube){
+    if(cube){
 
-cube.rotation.x +=0.01;
-cube.rotation.y +=0.01;
+        cube.rotation.x += 0.01;
+
+        cube.rotation.y += 0.01;
+
+    }
+
+
+    if(
+        renderer &&
+        scene &&
+        camera
+    ){
+
+        renderer.render(
+            scene,
+            camera
+        );
+
+    }
 
 }
 
 
-if(renderer && scene && camera){
 
-renderer.render(
-scene,
-camera
-);
-
-}
-
-}
+// ===============================
+// JALANKAN APLIKASI
+// ===============================
 
 buatCanvas();
+
 tampilKubus();
