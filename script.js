@@ -723,37 +723,6 @@ function tampilKerucut(){
 }
 
 
-scene.add(cube);
-
-
-
-tambahGaris(
-geometry
-);
-
-
-
-ubahMateri(
-
-"Kerucut",
-
-`
-<ul>
-<li>🟡 Sisi : 2</li>
-<li>📏 Rusuk : 1 rusuk lengkung</li>
-<li>🔵 Titik sudut : 1</li>
-<li>📐 Volume = ⅓ × π × r² × t</li>
-</ul>
-`
-
-);
-
-
-}
-
-
-
-
 
 // ======================================
 // BOLA
