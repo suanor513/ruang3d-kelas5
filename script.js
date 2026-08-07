@@ -775,3 +775,11 @@ camera
 buatCanvas();
 
 tampilKubus();
+
+window.onload = function(){
+
+    buatCanvas();
+
+    tampilKubus();
+
+};
