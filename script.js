@@ -6,7 +6,7 @@ let scene;
 let camera;
 let renderer;
 let cube;
-
+let controls;
 
 
 // ======================================
@@ -60,7 +60,27 @@ function buatCanvas(){
     camera.position.z=4;
 
 
-    animasi();
+// kontrol putar dan zoom
+
+controls =
+new THREE.OrbitControls(
+
+    camera,
+
+    renderer.domElement
+
+);
+
+
+controls.enableDamping = true;
+
+controls.enableZoom = true;
+
+controls.enablePan = false;
+
+
+
+animasi();
 
 }
 
@@ -732,7 +752,11 @@ requestAnimationFrame(
 animasi
 );
 
+if(controls){
 
+    controls.update();
+
+}
 
 if(cube){
 
