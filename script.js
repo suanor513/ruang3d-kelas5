@@ -332,19 +332,30 @@ new THREE.BoxGeometry(
 
 
 
-let material =
-new THREE.MeshBasicMaterial({
+// ======================================
+// WARNA SETIAP SISI BALOK
+// ======================================
 
-color:0xff9800
+let materials = [
 
-});
+new THREE.MeshBasicMaterial({ color:0x2196f3 }), // Kanan - Biru
 
+new THREE.MeshBasicMaterial({ color:0x4caf50 }), // Kiri - Hijau
 
+new THREE.MeshBasicMaterial({ color:0xffeb3b }), // Atas - Kuning
+
+new THREE.MeshBasicMaterial({ color:0xf44336 }), // Bawah - Merah
+
+new THREE.MeshBasicMaterial({ color:0x9c27b0 }), // Depan - Ungu
+
+new THREE.MeshBasicMaterial({ color:0xff9800 })  // Belakang - Oranye
+
+];
 
 cube =
 new THREE.Mesh(
 geometry,
-material
+materials
 );
 
 
