@@ -15,14 +15,12 @@ RUANG 3D HEBAT - Bangun Ruang Kelas V SD
 
 <link rel="stylesheet" href="style.css">
 
-
 </head>
+
 
 
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -31,14 +29,15 @@ RUANG 3D HEBAT - Bangun Ruang Kelas V SD
 </h1>
 
 <h3>
-Belajar Bangun Ruang 3D Kelas V SD
+Media Pembelajaran Bangun Ruang 3D Kelas V SD
 </h3>
 
 </header>
 
 
 
-<!-- MENU -->
+
+<!-- MENU BANGUN RUANG -->
 
 <div class="menu">
 
@@ -50,6 +49,7 @@ Belajar Bangun Ruang 3D Kelas V SD
 </button>
 
 
+
 <button onclick="tampilBalok()">
 
 📦 Balok
@@ -57,11 +57,37 @@ Belajar Bangun Ruang 3D Kelas V SD
 </button>
 
 
+
 <button onclick="tampilPrisma()">
 
 🔺 Prisma Segitiga
 
 </button>
+
+
+
+<button onclick="tampilTabung()">
+
+🟢 Tabung
+
+</button>
+
+
+
+<button onclick="tampilKerucut()">
+
+🟡 Kerucut
+
+</button>
+
+
+
+<button onclick="tampilBola()">
+
+⚪ Bola
+
+</button>
+
 
 
 <button onclick="tampilKuis()">
@@ -79,6 +105,7 @@ Belajar Bangun Ruang 3D Kelas V SD
 
 <!-- INFORMASI MATERI -->
 
+
 <div id="informasi">
 
 
@@ -87,6 +114,7 @@ Belajar Bangun Ruang 3D Kelas V SD
 Kubus
 
 </h2>
+
 
 
 <div id="isiMateri">
@@ -98,7 +126,7 @@ Kubus
 
 <li>📏 Rusuk : 12</li>
 
-<li>🔵 Titik sudut : 8</li>
+<li>🔴 Titik sudut : 8</li>
 
 <li>📐 Volume = s × s × s</li>
 
@@ -114,7 +142,9 @@ Kubus
 
 
 
-<!-- AREA 3D -->
+
+<!-- TEMPAT OBJEK 3D -->
+
 
 <div id="canvas3D">
 
@@ -125,7 +155,10 @@ Kubus
 
 
 
+
+
 <!-- THREE JS -->
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
@@ -133,10 +166,12 @@ Kubus
 
 <!-- SCRIPT APLIKASI -->
 
+
 <script src="script.js"></script>
 
 
 
 </body>
+
 
 </html>
