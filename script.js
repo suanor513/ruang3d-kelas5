@@ -175,3 +175,6 @@ camera
 }
 
 }
+
+buatCanvas();
+tampilKubus();
