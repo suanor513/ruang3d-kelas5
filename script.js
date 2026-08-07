@@ -21,7 +21,6 @@ function buatCanvas(){
     new THREE.Color(0xe3f2fd);
 
 
-
     camera =
     new THREE.PerspectiveCamera(
         75,
@@ -31,19 +30,16 @@ function buatCanvas(){
     );
 
 
-
     renderer =
     new THREE.WebGLRenderer({
         antialias:true
     });
 
 
-
     renderer.setSize(
         600,
         400
     );
-
 
 
     let tempat =
@@ -58,7 +54,6 @@ function buatCanvas(){
     );
 
 
-
     camera.position.z = 4;
 
 
@@ -69,7 +64,7 @@ function buatCanvas(){
 
 
 // ======================================
-// MENGUBAH MATERI
+// MATERI
 // ======================================
 
 function ubahMateri(judul, isi){
@@ -83,7 +78,6 @@ function ubahMateri(judul, isi){
     document.getElementById("isiMateri");
 
 
-
     if(judulBox){
 
         judulBox.innerHTML = judul;
@@ -91,13 +85,11 @@ function ubahMateri(judul, isi){
     }
 
 
-
     if(isiBox){
 
         isiBox.innerHTML = isi;
 
     }
-
 
 }
 
@@ -110,7 +102,6 @@ function ubahMateri(judul, isi){
 function tambahGarisDanTitik(geometry){
 
 
-
     // garis rusuk
 
     let garis =
@@ -121,7 +112,9 @@ function tambahGarisDanTitik(geometry){
 
     let materialGaris =
     new THREE.LineBasicMaterial({
+
         color:0x000000
+
     });
 
 
@@ -136,7 +129,6 @@ function tambahGarisDanTitik(geometry){
 
 
 
-
     // titik sudut
 
     let materialTitik =
@@ -144,7 +136,7 @@ function tambahGarisDanTitik(geometry){
 
         color:0xff0000,
 
-        size:0.08
+        size:0.15
 
     });
 
@@ -174,14 +166,12 @@ function tampilKubus(){
     scene.clear();
 
 
-
     let geometry =
     new THREE.BoxGeometry(
         2,
         2,
         2
     );
-
 
 
     let material =
@@ -192,7 +182,6 @@ function tampilKubus(){
     });
 
 
-
     cube =
     new THREE.Mesh(
         geometry,
@@ -200,9 +189,7 @@ function tampilKubus(){
     );
 
 
-
     scene.add(cube);
-
 
 
     tambahGarisDanTitik(
@@ -212,22 +199,20 @@ function tampilKubus(){
 
 
     ubahMateri(
-
         "Kubus",
-
         `
         <ul>
         <li>⬜ Jumlah sisi : 6</li>
         <li>📏 Jumlah rusuk : 12</li>
-        <li>🔵 Titik sudut : 8</li>
+        <li>🔴 Titik sudut : 8</li>
         <li>📐 Volume = s × s × s</li>
         </ul>
         `
-
     );
 
 
 }
+
 
 
 
@@ -241,18 +226,12 @@ function tampilBalok(){
     scene.clear();
 
 
-
     let geometry =
     new THREE.BoxGeometry(
-
         3,
-
         1.5,
-
         1
-
     );
-
 
 
     let material =
@@ -263,20 +242,14 @@ function tampilBalok(){
     });
 
 
-
     cube =
     new THREE.Mesh(
-
         geometry,
-
         material
-
     );
 
 
-
     scene.add(cube);
-
 
 
     tambahGarisDanTitik(
@@ -286,22 +259,20 @@ function tampilBalok(){
 
 
     ubahMateri(
-
         "Balok",
-
         `
         <ul>
         <li>⬜ Jumlah sisi : 6</li>
         <li>📏 Jumlah rusuk : 12</li>
-        <li>🔵 Titik sudut : 8</li>
+        <li>🔴 Titik sudut : 8</li>
         <li>📐 Volume = p × l × t</li>
         </ul>
         `
-
     );
 
 
 }
+
 
 
 
@@ -315,20 +286,13 @@ function tampilPrisma(){
     scene.clear();
 
 
-
     let geometry =
     new THREE.CylinderGeometry(
-
         1,
-
         1,
-
         2,
-
         3
-
     );
-
 
 
     let material =
@@ -339,20 +303,14 @@ function tampilPrisma(){
     });
 
 
-
     cube =
     new THREE.Mesh(
-
         geometry,
-
         material
-
     );
 
 
-
     scene.add(cube);
-
 
 
     tambahGarisDanTitik(
@@ -362,22 +320,20 @@ function tampilPrisma(){
 
 
     ubahMateri(
-
         "Prisma Segitiga",
-
         `
         <ul>
         <li>🔺 Memiliki alas dan tutup yang sama</li>
         <li>📏 Memiliki sisi tegak</li>
-        <li>🔵 Memiliki titik sudut</li>
+        <li>🔴 Memiliki titik sudut</li>
         <li>📐 Volume = luas alas × tinggi</li>
         </ul>
         `
-
     );
 
 
 }
+
 
 
 
@@ -395,6 +351,7 @@ function tampilKuis(){
 
 
 
+
 // ======================================
 // ANIMASI
 // ======================================
@@ -407,18 +364,13 @@ function animasi(){
     );
 
 
-
     if(cube){
-
 
         cube.rotation.x +=0.01;
 
-
         cube.rotation.y +=0.01;
 
-
     }
-
 
 
     if(
@@ -427,20 +379,15 @@ function animasi(){
         camera
     ){
 
-
         renderer.render(
-
             scene,
-
             camera
-
         );
-
 
     }
 
-
 }
+
 
 
 
