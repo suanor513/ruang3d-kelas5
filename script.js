@@ -1,6 +1,6 @@
-// ===============================
+// =================================
 // VARIABEL UTAMA
-// ===============================
+// =================================
 
 let scene;
 let camera;
@@ -8,18 +8,20 @@ let renderer;
 let cube;
 
 
-// ===============================
-// MEMBUAT AREA 3D
-// ===============================
+// =================================
+// MEMBUAT CANVAS 3D
+// =================================
 
 function buatCanvas(){
 
     scene = new THREE.Scene();
 
-    scene.background = new THREE.Color(0xe3f2fd);
+    scene.background =
+    new THREE.Color(0xe3f2fd);
 
 
-    camera = new THREE.PerspectiveCamera(
+    camera =
+    new THREE.PerspectiveCamera(
         75,
         600 / 400,
         0.1,
@@ -27,7 +29,8 @@ function buatCanvas(){
     );
 
 
-    renderer = new THREE.WebGLRenderer({
+    renderer =
+    new THREE.WebGLRenderer({
         antialias:true
     });
 
@@ -50,7 +53,7 @@ function buatCanvas(){
     );
 
 
-    camera.position.z = 4;
+    camera.position.z=4;
 
 
     animasi();
@@ -59,9 +62,26 @@ function buatCanvas(){
 
 
 
-// ===============================
-// TAMPIL KUBUS
-// ===============================
+// =================================
+// MENGUBAH MATERI
+// =================================
+
+function ubahMateri(judul, isi){
+
+    document.getElementById("judulMateri").innerHTML =
+    judul;
+
+
+    document.getElementById("isiMateri").innerHTML =
+    isi;
+
+}
+
+
+
+// =================================
+// KUBUS
+// =================================
 
 function tampilKubus(){
 
@@ -91,13 +111,27 @@ function tampilKubus(){
 
     scene.add(cube);
 
+
+
+    ubahMateri(
+    "Kubus",
+    `
+    <ul>
+    <li>⬜ Sisi : 6</li>
+    <li>📏 Rusuk : 12</li>
+    <li>🔵 Titik sudut : 8</li>
+    <li>📐 Volume = s × s × s</li>
+    </ul>
+    `
+    );
+
 }
 
 
 
-// ===============================
-// TAMPIL BALOK
-// ===============================
+// =================================
+// BALOK
+// =================================
 
 function tampilBalok(){
 
@@ -127,13 +161,27 @@ function tampilBalok(){
 
     scene.add(cube);
 
+
+
+    ubahMateri(
+    "Balok",
+    `
+    <ul>
+    <li>⬜ Sisi : 6</li>
+    <li>📏 Rusuk : 12</li>
+    <li>🔵 Titik sudut : 8</li>
+    <li>📐 Volume = p × l × t</li>
+    </ul>
+    `
+    );
+
 }
 
 
 
-// ===============================
-// TAMPIL PRISMA SEGITIGA
-// ===============================
+// =================================
+// PRISMA SEGITIGA
+// =================================
 
 function tampilPrisma(){
 
@@ -164,27 +212,40 @@ function tampilPrisma(){
 
     scene.add(cube);
 
-}
 
 
-
-// ===============================
-// KUIS SEMENTARA
-// ===============================
-
-function tampilKuis(){
-
-    alert(
-        "Kuis Bangun Ruang akan segera dibuat"
+    ubahMateri(
+    "Prisma Segitiga",
+    `
+    <ul>
+    <li>🔺 Memiliki alas dan tutup yang sama</li>
+    <li>📏 Memiliki sisi tegak</li>
+    <li>📐 Volume = luas alas × tinggi</li>
+    </ul>
+    `
     );
 
 }
 
 
 
-// ===============================
-// ANIMASI 3D
-// ===============================
+// =================================
+// KUIS
+// =================================
+
+function tampilKuis(){
+
+    alert(
+    "Kuis Bangun Ruang akan segera dibuat"
+    );
+
+}
+
+
+
+// =================================
+// ANIMASI
+// =================================
 
 function animasi(){
 
@@ -195,17 +256,17 @@ function animasi(){
 
     if(cube){
 
-        cube.rotation.x += 0.01;
+        cube.rotation.x +=0.01;
 
-        cube.rotation.y += 0.01;
+        cube.rotation.y +=0.01;
 
     }
 
 
     if(
-        renderer &&
-        scene &&
-        camera
+    renderer &&
+    scene &&
+    camera
     ){
 
         renderer.render(
@@ -219,9 +280,9 @@ function animasi(){
 
 
 
-// ===============================
-// JALANKAN APLIKASI
-// ===============================
+// =================================
+// MULAI APLIKASI
+// =================================
 
 buatCanvas();
 
