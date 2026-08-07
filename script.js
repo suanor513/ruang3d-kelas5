@@ -4,7 +4,8 @@ let renderer;
 let cube;
 
 
-function tampilKubus(){
+// membuat tampilan 3D
+function buatCanvas(){
 
 scene = new THREE.Scene();
 
@@ -13,7 +14,7 @@ scene.background = new THREE.Color(0xe3f2fd);
 
 camera = new THREE.PerspectiveCamera(
 75,
-window.innerWidth / 400,
+600/400,
 0.1,
 1000
 );
@@ -24,10 +25,7 @@ antialias:true
 });
 
 
-renderer.setSize(
-600,
-400
-);
+renderer.setSize(600,400);
 
 
 document
@@ -40,59 +38,7 @@ document
 .appendChild(renderer.domElement);
 
 
-
-let geometry =
-new THREE.BoxGeometry();
-
-
-
-let materials=[
-
-new THREE.MeshBasicMaterial({color:0x42a5f5}),
-new THREE.MeshBasicMaterial({color:0x66bb6a}),
-new THREE.MeshBasicMaterial({color:0xffca28}),
-new THREE.MeshBasicMaterial({color:0xef5350}),
-new THREE.MeshBasicMaterial({color:0xab47bc}),
-new THREE.MeshBasicMaterial({color:0xff7043})
-
-];
-
-
-
-cube =
-new THREE.Mesh(
-geometry,
-materials
-);
-
-
-
-scene.add(cube);
-
-
-
-let garis =
-new THREE.EdgesGeometry(geometry);
-
-
-let garisMaterial =
-new THREE.LineBasicMaterial({
-color:0x000000
-});
-
-
-let outline =
-new THREE.LineSegments(
-garis,
-garisMaterial
-);
-
-
-cube.add(outline);
-
-
-
-camera.position.z=3;
+camera.position.z=4;
 
 
 animasi();
@@ -100,7 +46,112 @@ animasi();
 }
 
 
+// kubus
+function tampilKubus(){
 
+if(!scene){
+buatCanvas();
+}
+
+scene.clear();
+
+
+let geometry =
+new THREE.BoxGeometry(2,2,2);
+
+
+let material =
+new THREE.MeshBasicMaterial({
+color:0x2196f3
+});
+
+
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
+
+
+scene.add(cube);
+
+}
+
+
+// balok
+function tampilBalok(){
+
+if(!scene){
+buatCanvas();
+}
+
+scene.clear();
+
+
+let geometry =
+new THREE.BoxGeometry(
+2.5,
+1.5,
+1
+);
+
+
+let material =
+new THREE.MeshBasicMaterial({
+color:0xff9800
+});
+
+
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
+
+
+scene.add(cube);
+
+}
+
+
+// prisma
+function tampilPrisma(){
+
+if(!scene){
+buatCanvas();
+}
+
+scene.clear();
+
+
+let geometry =
+new THREE.CylinderGeometry(
+1,
+1,
+2,
+3
+);
+
+
+let material =
+new THREE.MeshBasicMaterial({
+color:0x9c27b0
+});
+
+
+cube =
+new THREE.Mesh(
+geometry,
+material
+);
+
+
+scene.add(cube);
+
+}
+
+
+// animasi
 function animasi(){
 
 requestAnimationFrame(animasi);
@@ -114,81 +165,13 @@ cube.rotation.y +=0.01;
 }
 
 
+if(renderer && scene && camera){
+
 renderer.render(
 scene,
 camera
 );
 
-
 }
-
-function tampilBalok(){
-
-scene.clear();
-
-let geometry = new THREE.BoxGeometry(
-    2.5,
-    1.5,
-    1
-);
-
-let material = new THREE.MeshBasicMaterial({
-    color: 0xff9800
-});
-
-cube = new THREE.Mesh(
-    geometry,
-    material
-);
-
-scene.add(cube);
-
-}
-
-
-
-function tampilPrisma(){
-
-scene.clear();
-
-let geometry = new THREE.CylinderGeometry(
-    1,
-    1,
-    2,
-    3
-);
-
-let material = new THREE.MeshBasicMaterial({
-    color: 0x9c27b0
-});
-
-cube = new THREE.Mesh(
-    geometry,
-    material
-);
-
-scene.add(cube);
-
-}
-function tampilKubus(){
-
-scene.clear();
-
-let geometry = new THREE.BoxGeometry(
-    2,
-    2,
-    2
-);
-
-let material = new THREE.MeshBasicMaterial({
-    color: 0x2196f3
-});
-
-cube = new THREE.Mesh(
-    geometry,
-    material
-);
-
-scene.add(cube);
 
 }
