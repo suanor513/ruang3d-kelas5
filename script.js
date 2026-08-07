@@ -650,19 +650,22 @@ new THREE.ConeGeometry(
 
 
 
-let material =
-new THREE.MeshBasicMaterial({
+// ======================================
+// WARNA KERUCUT
+// ======================================
 
-color:0xffc107
+let materials = [
 
-});
+new THREE.MeshBasicMaterial({ color:0xffeb3b }), // Selimut (Kuning)
 
+new THREE.MeshBasicMaterial({ color:0x4caf50 })  // Alas (Hijau)
 
+];
 
 cube =
 new THREE.Mesh(
 geometry,
-material
+materials
 );
 
 
