@@ -1201,17 +1201,93 @@ skorKuis++;
 
 hasil.innerHTML =
 "✅ Benar! Jawabannya adalah Prisma. Skor: "
-+ skorKuis;
++ skorKuis +
+"<br><br><button onclick='soalKeempat()'>Soal Berikutnya</button>";
 
 }else{
 
 hasil.innerHTML =
 "❌ Belum tepat. Jawaban yang benar adalah Prisma. Skor: "
++ skorKuis +
+"<br><br><button onclick='soalKeempat()'>Soal Berikutnya</button>";
+
+}
+
+}
+
+// ======================================
+// SOAL 4 KERUCUT
+// ======================================
+
+function soalKeempat(){
+
+let kuisBox =
+document.getElementById("kuis");
+
+
+kuisBox.innerHTML = `
+
+<h2>⭐ Kuis Bangun Ruang</h2>
+
+<p>
+Bangun ruang yang memiliki 1 sisi alas berbentuk lingkaran dan 1 titik puncak adalah ...
+</p>
+
+
+<button onclick="cekJawaban4('kerucut')">
+🟡 Kerucut
+</button>
+
+
+<button onclick="cekJawaban4('bola')">
+🔵 Bola
+</button>
+
+
+<button onclick="cekJawaban4('kubus')">
+🧊 Kubus
+</button>
+
+
+<button onclick="cekJawaban4('tabung')">
+🛢️ Tabung
+</button>
+
+
+<p id="hasilKuis"></p>
+
+`;
+
+}
+
+// ======================================
+// CEK JAWABAN SOAL 4
+// ======================================
+
+function cekJawaban4(jawaban){
+
+let hasil =
+document.getElementById("hasilKuis");
+
+
+if(jawaban === "kerucut"){
+
+skorKuis++;
+
+hasil.innerHTML =
+"✅ Benar! Jawabannya adalah Kerucut. Skor: "
++ skorKuis;
+
+}else{
+
+hasil.innerHTML =
+"❌ Belum tepat. Jawaban yang benar adalah Kerucut. Skor: "
 + skorKuis;
 
 }
 
 }
+
 // ======================================
 // ANIMASI
 // ======================================
