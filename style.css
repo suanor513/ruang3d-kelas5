@@ -188,6 +188,39 @@ touch-action:none;
 }
 
 /* =================================
+PETUNJUK KONTROL 3D
+================================= */
+
+#petunjuk3D {
+
+    width:600px;
+
+    max-width:90%;
+
+    margin:-15px auto 25px auto;
+
+    background:white;
+
+    padding:10px 15px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,0.12);
+
+}
+
+#petunjuk3D p {
+
+    margin:6px;
+
+    font-size:16px;
+
+    color:#444;
+
+}
+
+/* =================================
    TAMPILAN UNTUK HP
 ================================= */
 
@@ -228,6 +261,19 @@ header h1 {
 
 }
 
+#petunjuk3D {
 
+    width:85%;
+
+    font-size:14px;
 
 }
+
+#petunjuk3D p {
+
+    font-size:14px;
+
+}
+
+}
+
