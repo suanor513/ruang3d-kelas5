@@ -1177,8 +1177,27 @@ Tabung
 </button>
 
 
-<button onclick="cekJawaban2('prisma')">
-🔷 Prisma
+<button onclick="cekJawaban3('prisma')">
+
+<svg class="ikon-prisma"
+viewBox="0 0 60 60">
+
+<polygon
+points="8,48 30,8 52,48"
+fill="#2196f3"/>
+
+<polygon
+points="30,8 48,18 48,48 30,48"
+fill="#1976d2"/>
+
+<polygon
+points="8,48 30,48 48,48 30,56"
+fill="#64b5f6"/>
+
+</svg>
+
+Prisma
+
 </button>
 
 
