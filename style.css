@@ -317,3 +317,26 @@ KOTAK KUIS
     box-sizing:border-box;
 
 }
+/* =================================
+IKON TABUNG
+================================= */
+
+.ikon-tabung {
+
+    display:inline-block;
+
+    width:24px;
+
+    height:30px;
+
+    background:#4caf50;
+
+    border-radius:50% / 15%;
+
+    margin-right:8px;
+
+    vertical-align:middle;
+
+    position:relative;
+
+}
