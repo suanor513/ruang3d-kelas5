@@ -1262,7 +1262,7 @@ Bangun ruang yang memiliki 1 sisi alas berbentuk lingkaran dan 1 titik puncak ad
 </p>
 
 
-<button onclick="cekJawaban('kerucut')">
+<button onclick="cekJawaban4('kerucut')">
 
 <svg class="ikon-kerucut"
 viewBox="0 0 60 60">
@@ -1320,16 +1320,17 @@ hasil.innerHTML =
 "✅ Benar! Jawabannya adalah Kerucut. Skor: "
 + skorKuis;
 
+
 }else{
 
 hasil.innerHTML =
 "❌ Belum tepat. Jawaban yang benar adalah Kerucut. Skor: "
 + skorKuis;
 
-}
 
 }
 
+}
 // ======================================
 // ANIMASI
 // ======================================
