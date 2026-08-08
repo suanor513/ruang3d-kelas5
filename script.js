@@ -1019,7 +1019,21 @@ Bangun ruang yang memiliki 6 sisi berbentuk persegi adalah ...
 </button>
 
 <button onclick="cekJawaban('kerucut')">
-🟡 Kerucut
+
+<svg class="ikon-kerucut"
+viewBox="0 0 60 60">
+
+<path d="M30 5 L10 45 Q30 55 50 45 Z"
+fill="#ffeb3b"/>
+
+<ellipse cx="30" cy="45"
+rx="20" ry="6"
+fill="#fbc02d"/>
+
+</svg>
+
+Kerucut
+
 </button>
 
 <p id="hasilKuis"></p>
@@ -1173,8 +1187,22 @@ Bangun ruang yang memiliki dua sisi berbentuk segitiga dan sisi lainnya berbentu
 </button>
 
 
-<button onclick="cekJawaban3('kerucut')">
-🟡 Kerucut
+<button onclick="cekJawaban('kerucut')">
+
+<svg class="ikon-kerucut"
+viewBox="0 0 60 60">
+
+<path d="M30 5 L10 45 Q30 55 50 45 Z"
+fill="#ffeb3b"/>
+
+<ellipse cx="30" cy="45"
+rx="20" ry="6"
+fill="#fbc02d"/>
+
+</svg>
+
+Kerucut
+
 </button>
 
 
@@ -1234,8 +1262,22 @@ Bangun ruang yang memiliki 1 sisi alas berbentuk lingkaran dan 1 titik puncak ad
 </p>
 
 
-<button onclick="cekJawaban4('kerucut')">
-🟡 Kerucut
+<button onclick="cekJawaban('kerucut')">
+
+<svg class="ikon-kerucut"
+viewBox="0 0 60 60">
+
+<path d="M30 5 L10 45 Q30 55 50 45 Z"
+fill="#ffeb3b"/>
+
+<ellipse cx="30" cy="45"
+rx="20" ry="6"
+fill="#fbc02d"/>
+
+</svg>
+
+Kerucut
+
 </button>
 
 
