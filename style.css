@@ -406,3 +406,27 @@ IKON BALOK 3D
     vertical-align:middle;
     margin-right:8px;
 }
+/* =================================
+UKURAN IKON MENU - PATOKAN
+================================= */
+
+.ikon-kubus {
+    width:35px !important;
+    height:35px !important;
+    vertical-align:middle;
+    margin-right:8px;
+}
+
+.ikon-balok {
+    width:35px !important;
+    height:35px !important;
+    vertical-align:middle;
+    margin-right:8px;
+}
+
+.ikon-kerucut {
+    width:35px !important;
+    height:35px !important;
+    vertical-align:middle;
+    margin-right:8px;
+}
