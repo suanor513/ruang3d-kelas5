@@ -353,3 +353,18 @@ IKON TABUNG
     border-radius:50% / 20%;
 
 }
+/* =================================
+IKON KERUCUT 3D
+================================= */
+
+.ikon-kerucut {
+
+    width:35px;
+
+    height:35px;
+
+    vertical-align:middle;
+
+    margin-right:8px;
+
+}
