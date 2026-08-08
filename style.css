@@ -374,9 +374,9 @@ IKON PRISMA 3D
 
 .ikon-prisma {
 
-    width:28px;
+    width:24px;
 
-    height:28px;
+    height:24px;
 
     vertical-align:middle;
 
@@ -384,13 +384,3 @@ IKON PRISMA 3D
 
 }
 
-
-/* pengecil ukuran prisma */
-
-.ikon-prisma {
-
-    width:24px !important;
-
-    height:24px !important;
-
-}
