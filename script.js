@@ -750,9 +750,7 @@ new THREE.SphereGeometry(
 
 let material =
 new THREE.MeshBasicMaterial({
-
-color:0xffffff
-
+    color:0x90caf9
 });
 
 
