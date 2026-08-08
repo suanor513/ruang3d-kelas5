@@ -296,7 +296,20 @@ header h1 {
         width:28px;
         height:28px;
     }
+.ikon-kubus,
+.ikon-tabung,
+.ikon-prisma,
+.ikon-kerucut {
 
+width:30px;
+
+height:30px;
+
+vertical-align:middle;
+
+margin-right:8px;
+
+}
 }
 /* =================================
 KOTAK KUIS
