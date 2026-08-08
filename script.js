@@ -730,67 +730,69 @@ function tampilKerucut(){
 
 function tampilBola(){
 
+    scene.clear();
 
-scene.clear();
+    // ==================================
+    // BENTUK BOLA
+    // ==================================
 
-
-
-let geometry =
-new THREE.SphereGeometry(
-
-1,
-
-32,
-
-32
-
-);
+    let geometry =
+    new THREE.SphereGeometry(
+        1,
+        32,
+        32
+    );
 
 
+    // ==================================
+    // WARNA BOLA
+    // ==================================
 
-let material =
-new THREE.MeshBasicMaterial({
-    color:0x90caf9
-});
-
-
-
-cube =
-new THREE.Mesh(
-geometry,
-material
-);
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:0x90caf9
+    });
 
 
-
-scene.add(cube);
-
-
-
-tambahGaris(
-geometry
-);
+    cube =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
 
 
+    scene.add(cube);
 
-ubahMateri(
 
-"Bola",
+    // ==================================
+    // GARIS PERMUKAAN
+    // ==================================
 
-`
-<ul>
-<li>⚪ Sisi : 1 sisi lengkung</li>
-<li>📏 Rusuk : 0</li>
-<li>🔵 Titik sudut : 0</li>
-<li>📐 Volume = 4/3 × π × r³</li>
-</ul>
-`
+    tambahGaris(
+        geometry
+    );
 
-);
 
+    // ==================================
+    // MATERI
+    // ==================================
+
+    ubahMateri(
+
+        "Bola",
+
+        `
+        <ul>
+        <li>⚪ Sisi : 1 sisi lengkung</li>
+        <li>📏 Rusuk : 0</li>
+        <li>🔵 Titik sudut : 0</li>
+        <li>📐 Volume = 4/3 × π × r³</li>
+        </ul>
+        `
+
+    );
 
 }
-
 
 
 
