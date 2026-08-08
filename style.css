@@ -327,14 +327,29 @@ IKON TABUNG
 
     width:22px;
 
-    height:30px;
-
-    background:#4caf50;
-
-    border-radius:50% / 20%;
+    height:28px;
 
     margin-right:8px;
 
     vertical-align:middle;
+
+    position:relative;
+
+}
+
+
+.ikon-tabung::before {
+
+    content:"";
+
+    display:block;
+
+    width:22px;
+
+    height:28px;
+
+    background:#4caf50;
+
+    border-radius:50% / 20%;
 
 }
