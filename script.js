@@ -1428,24 +1428,33 @@ document.getElementById("kuis");
 
 kuisBox.innerHTML = `
 
+<div class="hasil-kuis">
+
 <h2>🎉 Kuis Selesai</h2>
 
 <p>
-Skor kamu adalah:
+Hebat! Kamu sudah menyelesaikan semua soal.
 </p>
 
-<h1>
+<div class="nilai-kuis">
+
 ${skorKuis}/5
-</h1>
+
+</div>
 
 <p>
-Terus belajar bangun ruang! ⭐
+⭐ Skor Akhir
 </p>
+
+<p>
+Tetap semangat belajar bangun ruang!
+</p>
+
+</div>
 
 `;
 
 }
-
 // ======================================
 // ANIMASI
 // ======================================
