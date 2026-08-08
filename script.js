@@ -1030,7 +1030,31 @@ Kubus
 </button>
 
 <button onclick="cekJawaban('tabung')">
-🛢️ Tabung
+
+<svg class="ikon-tabung"
+viewBox="0 0 60 60">
+
+<ellipse cx="30" cy="12"
+rx="18" ry="7"
+fill="#81c784"/>
+
+<rect x="12" y="12"
+width="36"
+height="32"
+fill="#4caf50"/>
+
+<ellipse cx="30" cy="44"
+rx="18" ry="7"
+fill="#2e7d32"/>
+
+<ellipse cx="30" cy="12"
+rx="18" ry="7"
+fill="#a5d6a7"/>
+
+</svg>
+
+Tabung
+
 </button>
 
 <button onclick="cekJawaban('bola')">
