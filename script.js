@@ -992,40 +992,46 @@ function tampilBola(){
 let skorKuis = 0;
 let nomorSoal = 1;
 
+
 function tampilKuis(){
 
-    let kuisBox =
-    document.getElementById("kuis");
+let kuisBox =
+document.getElementById("kuis");
 
-    kuisBox.innerHTML = `
+kuisBox.innerHTML = `
 
-        <h2>⭐ Kuis Bangun Ruang</h2>
+<h2>⭐ Kuis Bangun Ruang</h2>
 
-        <p>
-        Bangun ruang yang memiliki 6 sisi berbentuk persegi adalah ...
-        </p>
+<p>
+Bangun ruang yang memiliki 6 sisi berbentuk persegi adalah ...
+</p>
 
-        <button onclick="cekJawaban('kubus')">
-        🧊 Kubus
-        </button>
+<button onclick="cekJawaban('kubus')">
+🧊 Kubus
+</button>
 
-        <button onclick="cekJawaban('tabung')">
-        🟢 Tabung
-        </button>
+<button onclick="cekJawaban('tabung')">
+🛢️ Tabung
+</button>
 
-        <button onclick="cekJawaban('bola')">
-        🔵 Bola
-        </button>
+<button onclick="cekJawaban('bola')">
+🔵 Bola
+</button>
 
-        <button onclick="cekJawaban('kerucut')">
-        🟡 Kerucut
-        </button>
+<button onclick="cekJawaban('kerucut')">
+🟡 Kerucut
+</button>
 
-        <p id="hasilKuis"></p>
+<p id="hasilKuis"></p>
 
-    `;
+`;
 
 }
+
+
+// ======================================
+// CEK JAWABAN SOAL 1
+// ======================================
 
 function cekJawaban(jawaban){
 
@@ -1035,20 +1041,76 @@ document.getElementById("hasilKuis");
 
 if(jawaban === "kubus"){
 
-    skorKuis++;
+skorKuis++;
 
-    hasil.innerHTML =
-    "✅ Benar! Jawabannya adalah Kubus. Skor: " + skorKuis;
+hasil.innerHTML =
+"✅ Benar! Jawabannya adalah Kubus. Skor: "
++ skorKuis +
+"<br><br><button onclick='soalBerikutnya()'>Soal Berikutnya</button>";
 
 }else{
 
-    hasil.innerHTML =
-    "❌ Belum tepat. Coba lagi! Skor: " + skorKuis;
+hasil.innerHTML =
+"❌ Belum tepat. Coba lagi! Skor: "
++ skorKuis +
+"<br><br><button onclick='soalBerikutnya()'>Soal Berikutnya</button>";
 
 }
 
 }
 
+
+// ======================================
+// SOAL BERIKUTNYA
+// ======================================
+
+function soalBerikutnya(){
+
+nomorSoal++;
+
+let kuisBox =
+document.getElementById("kuis");
+
+
+kuisBox.innerHTML = `
+
+<h2>⭐ Kuis Bangun Ruang</h2>
+
+<p>
+Bangun ruang yang memiliki 2 sisi berbentuk lingkaran dan 1 sisi lengkung adalah ...
+</p>
+
+
+<button onclick="cekJawaban2('tabung')">
+🛢️ Tabung
+</button>
+
+
+<button onclick="cekJawaban2('bola')">
+🔵 Bola
+</button>
+
+
+<button onclick="cekJawaban2('kubus')">
+🧊 Kubus
+</button>
+
+
+<button onclick="cekJawaban2('prisma')">
+🔷 Prisma
+</button>
+
+
+<p id="hasilKuis"></p>
+
+`;
+
+}
+
+
+// ======================================
+// CEK JAWABAN SOAL 2
+// ======================================
 
 function cekJawaban2(jawaban){
 
@@ -1058,20 +1120,21 @@ document.getElementById("hasilKuis");
 
 if(jawaban === "tabung"){
 
-    skorKuis++;
+skorKuis++;
 
-    hasil.innerHTML =
-    "✅ Benar! Jawabannya adalah Tabung. Skor: " + skorKuis;
+hasil.innerHTML =
+"✅ Benar! Jawabannya adalah Tabung. Skor: "
++ skorKuis;
 
 }else{
 
-    hasil.innerHTML =
-    "❌ Belum tepat. Jawaban yang benar adalah Tabung. Skor: " + skorKuis;
+hasil.innerHTML =
+"❌ Belum tepat. Jawaban yang benar adalah Tabung. Skor: "
++ skorKuis;
 
 }
 
 }
-
 
 // ======================================
 // ANIMASI
