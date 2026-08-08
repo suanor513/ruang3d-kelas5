@@ -990,6 +990,8 @@ function tampilBola(){
 // ======================================
 
 let skorKuis = 0;
+let nomorSoal = 1;
+
 function tampilKuis(){
 
     let kuisBox =
@@ -1030,22 +1032,45 @@ function cekJawaban(jawaban){
 let hasil =
 document.getElementById("hasilKuis");
 
+
 if(jawaban === "kubus"){
 
     skorKuis++;
 
     hasil.innerHTML =
-    "✅ Benar! Jawabannya adalah Kubus.<br>Skor: " + skorKuis;
+    "✅ Benar! Jawabannya adalah Kubus. Skor: " + skorKuis;
 
 }else{
 
     hasil.innerHTML =
-    "❌ Belum tepat. Coba lagi!<br>Skor: " + skorKuis;
+    "❌ Belum tepat. Coba lagi! Skor: " + skorKuis;
 
 }
 
 }
 
+
+function cekJawaban2(jawaban){
+
+let hasil =
+document.getElementById("hasilKuis");
+
+
+if(jawaban === "tabung"){
+
+    skorKuis++;
+
+    hasil.innerHTML =
+    "✅ Benar! Jawabannya adalah Tabung. Skor: " + skorKuis;
+
+}else{
+
+    hasil.innerHTML =
+    "❌ Belum tepat. Jawaban yang benar adalah Tabung. Skor: " + skorKuis;
+
+}
+
+}
 
 
 // ======================================
