@@ -323,11 +323,13 @@ scene.clear();
 
 
 
+let skalaBalok = window.innerWidth <= 700 ? 0.6 : 1;
+
 let geometry =
 new THREE.BoxGeometry(
-3,
-1.5,
-1
+3 * skalaBalok,
+1.5 * skalaBalok,
+1 * skalaBalok
 );
 
 
@@ -372,20 +374,19 @@ geometry
 
 tambahTitikSudut([
 
-[-1.5,-0.75,-0.5],
-[1.5,-0.75,-0.5],
+[-1.5 * skalaBalok,-0.75 * skalaBalok,-0.5 * skalaBalok],
+[1.5 * skalaBalok,-0.75 * skalaBalok,-0.5 * skalaBalok],
 
-[-1.5,0.75,-0.5],
-[1.5,0.75,-0.5],
+[-1.5 * skalaBalok,0.75 * skalaBalok,-0.5 * skalaBalok],
+[1.5 * skalaBalok,0.75 * skalaBalok,-0.5 * skalaBalok],
 
-[-1.5,-0.75,0.5],
-[1.5,-0.75,0.5],
+[-1.5 * skalaBalok,-0.75 * skalaBalok,0.5 * skalaBalok],
+[1.5 * skalaBalok,-0.75 * skalaBalok,0.5 * skalaBalok],
 
-[-1.5,0.75,0.5],
-[1.5,0.75,0.5]
+[-1.5 * skalaBalok,0.75 * skalaBalok,0.5 * skalaBalok],
+[1.5 * skalaBalok,0.75 * skalaBalok,0.5 * skalaBalok]
 
 ]);
-
 
 
 ubahMateri(
