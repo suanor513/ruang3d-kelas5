@@ -1334,6 +1334,119 @@ hasil.innerHTML =
 }
 
 // ======================================
+// SOAL 5 BOLA
+// ======================================
+
+function soalKelima(){
+
+let kuisBox =
+document.getElementById("kuis");
+
+
+kuisBox.innerHTML = `
+
+<h2>⭐ Kuis Bangun Ruang</h2>
+
+<p>
+Bangun ruang yang seluruh permukaannya berbentuk lengkung dan tidak memiliki rusuk adalah ...
+</p>
+
+
+<button onclick="cekJawaban5('bola')">
+
+🔵 Bola
+
+</button>
+
+
+<button onclick="cekJawaban5('kubus')">
+
+🧊 Kubus
+
+</button>
+
+
+<button onclick="cekJawaban5('tabung')">
+
+🛢️ Tabung
+
+</button>
+
+
+<button onclick="cekJawaban5('prisma')">
+
+🔷 Prisma
+
+</button>
+
+
+<p id="hasilKuis"></p>
+
+`;
+
+}
+
+// ======================================
+// CEK JAWABAN SOAL 5
+// ======================================
+
+function cekJawaban5(jawaban){
+
+let hasil =
+document.getElementById("hasilKuis");
+
+
+if(jawaban === "bola"){
+
+skorKuis++;
+
+hasil.innerHTML =
+"✅ Benar! Jawabannya adalah Bola. Skor: "
++ skorKuis +
+"<br><br><button onclick='selesaiKuis()'>Lihat Hasil</button>";
+
+}else{
+
+hasil.innerHTML =
+"❌ Belum tepat. Jawaban yang benar adalah Bola. Skor: "
++ skorKuis +
+"<br><br><button onclick='selesaiKuis()'>Lihat Hasil</button>";
+
+}
+
+}
+
+// ======================================
+// HASIL AKHIR KUIS
+// ======================================
+
+function selesaiKuis(){
+
+let kuisBox =
+document.getElementById("kuis");
+
+
+kuisBox.innerHTML = `
+
+<h2>🎉 Kuis Selesai</h2>
+
+<p>
+Skor kamu adalah:
+</p>
+
+<h1>
+${skorKuis}/5
+</h1>
+
+<p>
+Terus belajar bangun ruang! ⭐
+</p>
+
+`;
+
+}
+
+// ======================================
 // ANIMASI
 // ======================================
 
