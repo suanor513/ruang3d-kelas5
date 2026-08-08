@@ -282,7 +282,15 @@ header h1 {
     padding:15px;
 
 }
+#kuis button {
 
+    width:90%;
+
+    margin:8px auto;
+
+    display:block;
+
+    font-size:17px;
 }
 
 /* =================================
