@@ -429,3 +429,47 @@ UKURAN IKON MENU - PATOKAN
     vertical-align:middle;
     margin-right:8px;
 }
+/* =================================
+HASIL AKHIR KUIS
+================================= */
+
+.hasil-kuis {
+
+background:white;
+
+width:80%;
+
+max-width:400px;
+
+margin:20px auto;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+.hasil-kuis h2 {
+
+color:#1976d2;
+
+margin-top:0;
+
+}
+
+
+.nilai-kuis {
+
+font-size:50px;
+
+font-weight:bold;
+
+color:#ff9800;
+
+margin:20px;
+
+}
