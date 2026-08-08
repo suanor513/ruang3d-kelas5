@@ -411,142 +411,329 @@ ubahMateri(
 
 function tampilPrisma(){
 
+    scene.clear();
 
-scene.clear();
+    // ==================================
+    // GROUP PRISMA
+    // ==================================
 
+    let prisma = new THREE.Group();
 
+    cube = prisma;
 
-let geometry =
-new THREE.CylinderGeometry(
-
-    1,
-
-    1,
-
-    2,
-
-    3
-
-);
+    scene.add(prisma);
 
 
+    // ==================================
+    // UKURAN PRISMA
+    // ==================================
 
-// ======================================
-// WARNA SETIAP SISI PRISMA
-// ======================================
+    let tinggi = 2.4;
 
-let materials = [
+    
+    // ==================================
+    // TITIK-TITIK PRISMA
+    // ==================================
 
-new THREE.MeshBasicMaterial({ color:0xff5252 }), // Segitiga depan
+    let A = new THREE.Vector3(
+        0,
+        1.2,
+        1
+    );
 
-new THREE.MeshBasicMaterial({ color:0xff5252 }), // Segitiga belakang
+    let B = new THREE.Vector3(
+        -0.8,
+        -1.2,
+        1
+    );
 
-new THREE.MeshBasicMaterial({ color:0x2196f3 }), // Persegi panjang 1
-
-new THREE.MeshBasicMaterial({ color:0x4caf50 }), // Persegi panjang 2
-
-new THREE.MeshBasicMaterial({ color:0xffeb3b })  // Persegi panjang 3
-
-];
-
-cube =
-new THREE.Mesh(
-    geometry,
-    materials
-);
-
-
-
-scene.add(cube);
-
-
-
-tambahGaris(
-    geometry
-);
+    let C = new THREE.Vector3(
+        0.8,
+        -1.2,
+        1
+    );
 
 
+    let D = new THREE.Vector3(
+        0,
+        1.2,
+        -1
+    );
 
-// Titik sudut prisma sesuai posisi geometry
+    let E = new THREE.Vector3(
+        -0.8,
+        -1.2,
+        -1
+    );
 
-let tinggi = 1;
-
-let radius = 1;
-
-
-
-let titikPrisma = [
-
-    [
-        radius * Math.cos(Math.PI/2),
-        tinggi,
-        radius * Math.sin(Math.PI/2)
-    ],
-
-
-    [
-        radius * Math.cos(Math.PI/2 + (2*Math.PI/3)),
-        tinggi,
-        radius * Math.sin(Math.PI/2 + (2*Math.PI/3))
-    ],
+    let F = new THREE.Vector3(
+        0.8,
+        -1.2,
+        -1
+    );
 
 
-    [
-        radius * Math.cos(Math.PI/2 + (4*Math.PI/3)),
-        tinggi,
-        radius * Math.sin(Math.PI/2 + (4*Math.PI/3))
-    ],
+    // ==================================
+    // MATERIAL
+    // ==================================
+
+    let merah =
+    new THREE.MeshBasicMaterial({
+        color:0xf44336,
+        side:THREE.DoubleSide
+    });
 
 
-
-    [
-        radius * Math.cos(Math.PI/2),
-        -tinggi,
-        radius * Math.sin(Math.PI/2)
-    ],
-
-
-    [
-        radius * Math.cos(Math.PI/2 + (2*Math.PI/3)),
-        -tinggi,
-        radius * Math.sin(Math.PI/2 + (2*Math.PI/3))
-    ],
+    let biru =
+    new THREE.MeshBasicMaterial({
+        color:0x2196f3,
+        side:THREE.DoubleSide
+    });
 
 
-    [
-        radius * Math.cos(Math.PI/2 + (4*Math.PI/3)),
-        -tinggi,
-        radius * Math.sin(Math.PI/2 + (4*Math.PI/3))
-    ]
-
-];
+    let hijau =
+    new THREE.MeshBasicMaterial({
+        color:0x4caf50,
+        side:THREE.DoubleSide
+    });
 
 
+    let kuning =
+    new THREE.MeshBasicMaterial({
+        color:0xffeb3b,
+        side:THREE.DoubleSide
+    });
 
-tambahTitikSudut(
-    titikPrisma
-);
+
+    // ==================================
+    // SISI SEGITIGA DEPAN
+    // ==================================
+
+    let segitigaDepan =
+    new THREE.BufferGeometry();
+
+    segitigaDepan.setFromPoints([
+        A,
+        B,
+        C
+    ]);
+
+    let meshDepan =
+    new THREE.Mesh(
+        segitigaDepan,
+        merah
+    );
+
+    prisma.add(meshDepan);
 
 
+    // ==================================
+    // SISI SEGITIGA BELAKANG
+    // ==================================
 
-ubahMateri(
+    let segitigaBelakang =
+    new THREE.BufferGeometry();
 
-"Prisma Segitiga",
+    segitigaBelakang.setFromPoints([
+        D,
+        F,
+        E
+    ]);
 
-`
-<ul>
-<li>🔺 Sisi : 5</li>
-<li>📏 Rusuk : 9</li>
-<li>🔴 Titik sudut : 6</li>
-<li>📐 Volume = luas alas × tinggi</li>
-</ul>
-`
+    let meshBelakang =
+    new THREE.Mesh(
+        segitigaBelakang,
+        merah
+    );
 
-);
+    prisma.add(meshBelakang);
 
+
+    // ==================================
+    // SISI PERSEGI PANJANG 1
+    // ==================================
+
+    let sisi1 =
+    new THREE.BufferGeometry();
+
+    sisi1.setFromPoints([
+        A,
+        D,
+        E,
+        A,
+        E,
+        B
+    ]);
+
+    let meshSisi1 =
+    new THREE.Mesh(
+        sisi1,
+        biru
+    );
+
+    prisma.add(meshSisi1);
+
+
+    // ==================================
+    // SISI PERSEGI PANJANG 2
+    // ==================================
+
+    let sisi2 =
+    new THREE.BufferGeometry();
+
+    sisi2.setFromPoints([
+        B,
+        E,
+        F,
+        B,
+        F,
+        C
+    ]);
+
+    let meshSisi2 =
+    new THREE.Mesh(
+        sisi2,
+        hijau
+    );
+
+    prisma.add(meshSisi2);
+
+
+    // ==================================
+    // SISI PERSEGI PANJANG 3
+    // ==================================
+
+    let sisi3 =
+    new THREE.BufferGeometry();
+
+    sisi3.setFromPoints([
+        C,
+        F,
+        D,
+        C,
+        D,
+        A
+    ]);
+
+    let meshSisi3 =
+    new THREE.Mesh(
+        sisi3,
+        kuning
+    );
+
+    prisma.add(meshSisi3);
+
+
+    // ==================================
+    // GARIS RUSUK
+    // ==================================
+
+    let garisMaterial =
+    new THREE.LineBasicMaterial({
+        color:0x000000
+    });
+
+
+    function garis(a,b){
+
+        let geometry =
+        new THREE.BufferGeometry();
+
+        geometry.setFromPoints([
+            a,
+            b
+        ]);
+
+        let line =
+        new THREE.Line(
+            geometry,
+            garisMaterial
+        );
+
+        prisma.add(line);
+
+    }
+
+
+    // Segitiga depan
+
+    garis(A,B);
+    garis(B,C);
+    garis(C,A);
+
+
+    // Segitiga belakang
+
+    garis(D,E);
+    garis(E,F);
+    garis(F,D);
+
+
+    // Rusuk penghubung
+
+    garis(A,D);
+    garis(B,E);
+    garis(C,F);
+
+
+    // ==================================
+    // TITIK SUDUT
+    // ==================================
+
+    let titikMaterial =
+    new THREE.MeshBasicMaterial({
+        color:0xff0000
+    });
+
+
+    let titikData = [
+        A,B,C,D,E,F
+    ];
+
+
+    titikData.forEach(function(p){
+
+        let titik =
+        new THREE.Mesh(
+
+            new THREE.SphereGeometry(
+                0.09,
+                16,
+                16
+            ),
+
+            titikMaterial
+
+        );
+
+
+        titik.position.copy(p);
+
+        prisma.add(titik);
+
+    });
+
+
+    // ==================================
+    // MATERI
+    // ==================================
+
+    ubahMateri(
+
+        "Prisma Segitiga",
+
+        `
+        <ul>
+        <li>🔺 Sisi : 5</li>
+        <li>📏 Rusuk : 9</li>
+        <li>🔴 Titik sudut : 6</li>
+        <li>📐 Volume = luas alas × tinggi prisma</li>
+        </ul>
+        `
+
+    );
 
 }
-
 
 
 
