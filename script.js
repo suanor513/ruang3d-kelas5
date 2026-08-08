@@ -989,6 +989,7 @@ function tampilBola(){
 // KUIS
 // ======================================
 
+let skorKuis = 0;
 function tampilKuis(){
 
     let kuisBox =
@@ -1026,20 +1027,22 @@ function tampilKuis(){
 
 function cekJawaban(jawaban){
 
-    let hasil =
-    document.getElementById("hasilKuis");
+let hasil =
+document.getElementById("hasilKuis");
 
-    if(jawaban === "kubus"){
+if(jawaban === "kubus"){
 
-        hasil.innerHTML =
-        "✅ Benar! Jawabannya adalah Kubus.";
+    skorKuis++;
 
-    }else{
+    hasil.innerHTML =
+    "✅ Benar! Jawabannya adalah Kubus.<br>Skor: " + skorKuis;
 
-        hasil.innerHTML =
-        "❌ Belum tepat. Coba lagi!";
+}else{
 
-    }
+    hasil.innerHTML =
+    "❌ Belum tepat. Coba lagi!<br>Skor: " + skorKuis;
+
+}
 
 }
 
