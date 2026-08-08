@@ -1124,16 +1124,88 @@ skorKuis++;
 
 hasil.innerHTML =
 "✅ Benar! Jawabannya adalah Tabung. Skor: "
-+ skorKuis;
++ skorKuis +
+"<br><br><button onclick='soalKetiga()'>Soal Berikutnya</button>";
 
 }else{
 
 hasil.innerHTML =
 "❌ Belum tepat. Jawaban yang benar adalah Tabung. Skor: "
++ skorKuis +
+"<br><br><button onclick='soalKetiga()'>Soal Berikutnya</button>";
+
+}
+// ======================================
+// SOAL 3 PRISMA
+// ======================================
+
+function soalKetiga(){
+
+let kuisBox =
+document.getElementById("kuis");
+
+
+kuisBox.innerHTML = `
+
+<h2>⭐ Kuis Bangun Ruang</h2>
+
+<p>
+Bangun ruang yang memiliki dua sisi berbentuk segitiga dan sisi lainnya berbentuk persegi panjang adalah ...
+</p>
+
+
+<button onclick="cekJawaban3('prisma')">
+🔷 Prisma
+</button>
+
+
+<button onclick="cekJawaban3('kubus')">
+🧊 Kubus
+</button>
+
+
+<button onclick="cekJawaban3('bola')">
+🔵 Bola
+</button>
+
+
+<button onclick="cekJawaban3('kerucut')">
+🟡 Kerucut
+</button>
+
+
+<p id="hasilKuis"></p>
+
+`;
+
+}
+// ======================================
+// CEK JAWABAN SOAL 3
+// ======================================
+
+function cekJawaban3(jawaban){
+
+let hasil =
+document.getElementById("hasilKuis");
+
+
+if(jawaban === "prisma"){
+
+skorKuis++;
+
+hasil.innerHTML =
+"✅ Benar! Jawabannya adalah Prisma. Skor: "
++ skorKuis;
+
+}else{
+
+hasil.innerHTML =
+"❌ Belum tepat. Jawaban yang benar adalah Prisma. Skor: "
 + skorKuis;
 
 }
 
+}    
 }
 
 // ======================================
