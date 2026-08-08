@@ -292,7 +292,12 @@ header h1 {
 
     font-size:17px;
 }
+ .ikon-balok {
+        width:28px;
+        height:28px;
+    }
 
+}
 /* =================================
 KOTAK KUIS
 ================================= */
@@ -388,6 +393,16 @@ IKON KUBUS 3D
 .ikon-kubus {
     width:35px;
     height:35px;
+    vertical-align:middle;
+    margin-right:8px;
+}
+/* =================================
+IKON BALOK 3D
+================================= */
+
+.ikon-balok {
+    width:28px;
+    height:28px;
     vertical-align:middle;
     margin-right:8px;
 }
