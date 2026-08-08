@@ -1135,6 +1135,10 @@ hasil.innerHTML =
 "<br><br><button onclick='soalKetiga()'>Soal Berikutnya</button>";
 
 }
+
+}
+
+
 // ======================================
 // SOAL 3 PRISMA
 // ======================================
@@ -1179,6 +1183,8 @@ Bangun ruang yang memiliki dua sisi berbentuk segitiga dan sisi lainnya berbentu
 `;
 
 }
+
+
 // ======================================
 // CEK JAWABAN SOAL 3
 // ======================================
@@ -1205,9 +1211,7 @@ hasil.innerHTML =
 
 }
 
-}    
 }
-
 // ======================================
 // ANIMASI
 // ======================================
