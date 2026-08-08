@@ -277,3 +277,27 @@ header h1 {
 
 }
 
+/* =================================
+KOTAK KUIS
+================================= */
+
+#kuis {
+
+    width:600px;
+
+    max-width:90%;
+
+    margin:25px auto;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.15);
+
+    box-sizing:border-box;
+
+}
