@@ -325,18 +325,16 @@ IKON TABUNG
 
     display:inline-block;
 
-    width:18px;
+    width:22px;
 
-    height:28px;
+    height:30px;
 
     background:#4caf50;
 
-    border-radius:8px;
+    border-radius:50% / 20%;
 
     margin-right:8px;
 
     vertical-align:middle;
-
-    color:transparent;
 
 }
