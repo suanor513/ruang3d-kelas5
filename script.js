@@ -1318,19 +1318,21 @@ skorKuis++;
 
 hasil.innerHTML =
 "✅ Benar! Jawabannya adalah Kerucut. Skor: "
-+ skorKuis;
++ skorKuis +
+"<br><br><button onclick='soalKelima()'>Soal Berikutnya</button>";
 
 
 }else{
 
 hasil.innerHTML =
 "❌ Belum tepat. Jawaban yang benar adalah Kerucut. Skor: "
-+ skorKuis;
++ skorKuis +
+"<br><br><button onclick='soalKelima()'>Soal Berikutnya</button>";
 
+}
 
 }
 
-}
 // ======================================
 // ANIMASI
 // ======================================
