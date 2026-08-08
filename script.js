@@ -990,15 +990,57 @@ function tampilBola(){
 
 function tampilKuis(){
 
-alert(
+    let kuisBox =
+    document.getElementById("kuis");
 
-"Kuis Bangun Ruang akan segera dibuat"
+    kuisBox.innerHTML = `
 
-);
+        <h2>⭐ Kuis Bangun Ruang</h2>
+
+        <p>
+        Bangun ruang yang memiliki 6 sisi berbentuk persegi adalah ...
+        </p>
+
+        <button onclick="cekJawaban('kubus')">
+        🧊 Kubus
+        </button>
+
+        <button onclick="cekJawaban('tabung')">
+        🟢 Tabung
+        </button>
+
+        <button onclick="cekJawaban('bola')">
+        🔵 Bola
+        </button>
+
+        <button onclick="cekJawaban('kerucut')">
+        🟡 Kerucut
+        </button>
+
+        <p id="hasilKuis"></p>
+
+    `;
 
 }
 
+function cekJawaban(jawaban){
 
+    let hasil =
+    document.getElementById("hasilKuis");
+
+    if(jawaban === "kubus"){
+
+        hasil.innerHTML =
+        "✅ Benar! Jawabannya adalah Kubus.";
+
+    }else{
+
+        hasil.innerHTML =
+        "❌ Belum tepat. Coba lagi!";
+
+    }
+
+}
 
 
 
