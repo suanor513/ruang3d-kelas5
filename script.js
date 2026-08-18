@@ -648,7 +648,20 @@ panelJaringKubus.push(sisi);
 
 }
 
+// ======================================
+// KONTROL BUKA / TUTUP JARING-JARING
+// ======================================
 
+function toggleJaringKubus(){
+
+    if(sedangAnimasiJaringKubus){
+        return;
+    }
+
+    jaringKubusTerbuka =
+        !jaringKubusTerbuka;
+
+}
 
 // ======================================
 // SCROLL OTOMATIS KE BANGUN RUANG
