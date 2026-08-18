@@ -576,29 +576,14 @@ function tampilJaringKubus(){
 }
 
 // ======================================
-// JARING-JARING KUBUS ANIMASI
-// ======================================
-
-let jaringKubus = [];
-let statusJaringKubus = "terbuka";
-
-
-// ======================================
-// TAMPILKAN JARING-JARING KUBUS
+// JARING-JARING KUBUS
 // ======================================
 
 function tampilJaringKubus(){
 
     scene.clear();
 
-    jaringKubus = [];
-
     let ukuran = 1;
-
-
-    // ==================================
-    // FUNGSI MEMBUAT SISI
-    // ==================================
 
     function buatSisi(x, y, warna){
 
@@ -620,12 +605,13 @@ function tampilJaringKubus(){
             material
         );
 
-
         sisi.position.set(
             x,
             y,
             0
         );
+
+        scene.add(sisi);
 
 
         // ==================================
@@ -650,16 +636,11 @@ function tampilJaringKubus(){
 
         sisi.add(garis);
 
-
-        scene.add(sisi);
-
-        jaringKubus.push(sisi);
-
     }
 
 
     // ==================================
-    // 6 SISI KUBUS
+    // JARING-JARING KUBUS
     // ==================================
 
     buatSisi(
@@ -711,13 +692,11 @@ function tampilJaringKubus(){
         <ul>
         <li>⬜ Terdiri dari 6 persegi</li>
         <li>📏 Semua sisi memiliki ukuran sama</li>
-        <li>🔓 Jaring-jaring dapat dibuka</li>
-        <li>🔒 Dapat dilipat menjadi kubus</li>
+        <li>📐 Dapat dilipat menjadi kubus</li>
         </ul>
         `
 
     );
-
 
     scrollKeTampilan();
 
