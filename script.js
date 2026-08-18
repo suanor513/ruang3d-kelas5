@@ -1009,19 +1009,23 @@ Bangun ruang yang memiliki 6 sisi berbentuk persegi adalah ...
 <button onclick="cekJawaban('kubus')">
 
 <svg class="ikon-kubus"
-viewBox="0 0 60 60">
+viewBox="0 0 60 60"
+xmlns="http://www.w3.org/2000/svg">
 
+<!-- Sisi kiri -->
 <polygon
-points="20,10 45,20 45,45 20,35"
-fill="#64b5f6"/>
+points="10,20 30,30 30,52 10,42"
+fill="#2196f3"/>
 
+<!-- Sisi kanan -->
 <polygon
-points="20,10 10,20 10,45 20,35"
+points="30,30 50,20 50,42 30,52"
 fill="#1976d2"/>
 
+<!-- Sisi atas -->
 <polygon
-points="10,20 35,30 45,20 20,10"
-fill="#90caf9"/>
+points="10,20 30,10 50,20 30,30"
+fill="#64b5f6"/>
 
 </svg>
 
