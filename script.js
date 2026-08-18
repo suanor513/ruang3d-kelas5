@@ -659,8 +659,20 @@ sisiAtas.userData.sudutBuka = 0;
 
 function toggleJaringKubus(){
 
-    if(sedangAnimasiJaringKubus){
+    if(!sisiAtas){
         return;
+    }
+
+    if(jaringKubusTerbuka){
+
+        sisiAtas.rotation.z =
+            sisiAtas.userData.sudutTutup;
+
+    }else{
+
+        sisiAtas.rotation.z =
+            sisiAtas.userData.sudutBuka;
+
     }
 
     jaringKubusTerbuka =
