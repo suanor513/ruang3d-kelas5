@@ -545,7 +545,7 @@ function tampilJaringKubus(){
         );
 
         scene.add(sisi);
-
+panelJaringKubus.push(sisi);
 
         // ==================================
         // GARIS TEPI HITAM
