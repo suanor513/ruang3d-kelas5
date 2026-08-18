@@ -509,7 +509,7 @@ let animasiJaringKubus = false;
 let jaringKubusTerbuka = true;
 let sedangAnimasiJaringKubus = false;
 let dataJaringKubus = [];
-
+let kecepatanJaringKubus = 700;
 
 // ======================================
 // TAMPILKAN JARING-JARING KUBUS
@@ -900,7 +900,7 @@ function toggleJaringKubus(){
         !jaringKubusTerbuka;
 
 
-    let durasi = 700;
+    let durasi = kecepatanJaringKubus;
 
     let waktuMulai =
         performance.now();
