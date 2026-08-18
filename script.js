@@ -306,16 +306,13 @@ function tambahLabel3D(teks, posisi, target){
     });
 
 
-    let titikAwal =
+    let points = [
+
     new THREE.Vector3(
-        posisi[0] + 0.55,
+        posisi[0],
         posisi[1],
         posisi[2]
-    );
-
-let points = [
-
-    titikAwal,
+    ),
 
     new THREE.Vector3(
         target[0],
