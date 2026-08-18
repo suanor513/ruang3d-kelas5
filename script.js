@@ -261,10 +261,10 @@ function tambahLabel3D(teks, posisi, target){
     new THREE.Sprite(material);
 
     label.scale.set(
-        1.5,
-        0.4,
-        1
-    );
+    1.15,
+    0.3,
+    1
+);
 
     label.position.set(
         posisi[0],
@@ -379,19 +379,19 @@ tambahTitikSudut([
 
 tambahLabel3D(
     "Titik Sudut",
-    [2.2, 1.5, 1],
+    [1.7, 1.25, 1],
     [1, 1, 1]
 );
 
 tambahLabel3D(
     "Sisi",
-    [-2.2, 0.5, 1],
+    [-1.7, 0.4, 1],
     [-1, 0, 0]
 );
 
 tambahLabel3D(
     "Rusuk",
-    [2.2, -1.2, 1],
+    [1.7, -1.05, 0.8],
     [1, -1, 0]
 );
 
