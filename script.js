@@ -270,16 +270,10 @@ function tambahLabel3D(teks, posisi, target){
         1
     );
 
-    // ==================================
-// POSISI TULISAN DI UJUNG PANAH
-// ==================================
-
-let jarakLabel = 0.12;
-
-label.position.set(
-    posisi[0] - arah.x * jarakLabel,
-    posisi[1] - arah.y * jarakLabel,
-    posisi[2] - arah.z * jarakLabel
+   label.position.set(
+    posisi[0],
+    posisi[1],
+    posisi[2]
 );
 
     cube.add(label);
