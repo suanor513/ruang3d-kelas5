@@ -1347,7 +1347,7 @@ function cekJawaban3(jawaban){
 
 let hasil =
 document.getElementById("hasilKuis");
-
+kunciJawaban();
 
 if(jawaban === "prisma"){
 
