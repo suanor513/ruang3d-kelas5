@@ -1238,7 +1238,7 @@ function cekJawaban2(jawaban){
 let hasil =
 document.getElementById("hasilKuis");
 
-
+kunciJawaban();
 if(jawaban === "tabung"){
 
 skorKuis++;
