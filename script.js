@@ -916,10 +916,8 @@ function tampilKerucut(){
         `
 
     );
-function tampilKerucut(){
+
 }
-
-
 
 // ======================================
 // BOLA
