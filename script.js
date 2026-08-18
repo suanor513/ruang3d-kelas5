@@ -596,11 +596,11 @@ return sisi;
         0x2196f3
     );
 
-    buatSisi(
-        0,
-        1,
-        0x4caf50
-    );
+    let sisiAtas = buatSisi(
+    0,
+    1,
+    0x4caf50
+);
 
     buatSisi(
         0,
