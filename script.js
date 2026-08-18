@@ -499,7 +499,128 @@ scrollKeTampilan();
 
 
 }
+// ======================================
+// JARING-JARING KUBUS
+// ======================================
 
+function tampilJaringKubus(){
+
+    scene.clear();
+
+    // Ukuran setiap persegi
+    let ukuran = 1;
+
+    // Material kubus
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:0x90caf9,
+        side:THREE.DoubleSide
+    });
+
+
+    // ==================================
+    // FUNGSI MEMBUAT SISI
+    // ==================================
+
+    function buatSisi(x, y, warna){
+
+        let geometry =
+        new THREE.PlaneGeometry(
+            ukuran,
+            ukuran
+        );
+
+        let mat =
+        new THREE.MeshBasicMaterial({
+            color:warna,
+            side:THREE.DoubleSide
+        });
+
+        let sisi =
+        new THREE.Mesh(
+            geometry,
+            mat
+        );
+
+        sisi.position.set(
+            x,
+            y,
+            0
+        );
+
+        scene.add(sisi);
+
+    }
+
+
+    // ==================================
+    // JARING-JARING KUBUS
+    // ==================================
+
+    // Sisi tengah
+    buatSisi(
+        0,
+        0,
+        0x2196f3
+    );
+
+    // Atas
+    buatSisi(
+        0,
+        1,
+        0x4caf50
+    );
+
+    // Bawah
+    buatSisi(
+        0,
+        -1,
+        0xffeb3b
+    );
+
+    // Kiri
+    buatSisi(
+        -1,
+        0,
+        0xf44336
+    );
+
+    // Kanan
+    buatSisi(
+        1,
+        0,
+        0x9c27b0
+    );
+
+    // Sisi paling bawah
+    buatSisi(
+        0,
+        -2,
+        0xff9800
+    );
+
+
+    // ==================================
+    // MATERI
+    // ==================================
+
+    ubahMateri(
+
+        "Jaring-Jaring Kubus",
+
+        `
+        <ul>
+        <li>⬜ Terdiri dari 6 persegi</li>
+        <li>📏 Semua sisi memiliki ukuran sama</li>
+        <li>📐 Dapat dilipat menjadi kubus</li>
+        </ul>
+        `
+
+    );
+
+    scrollKeTampilan();
+
+}
 // ======================================
 // SCROLL OTOMATIS KE BANGUN RUANG
 // ======================================
