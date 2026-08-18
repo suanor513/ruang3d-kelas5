@@ -1461,7 +1461,7 @@ function cekJawaban4(jawaban){
 let hasil =
 document.getElementById("hasilKuis");
 
-
+kunciJawaban();
 if(jawaban === "kerucut"){
 
 skorKuis++;
