@@ -306,22 +306,24 @@ function tambahLabel3D(teks, posisi, target){
     });
 
 
-    let points = [
+    let titikAwal =
+    new THREE.Vector3(
+        posisi[0] + 0.55,
+        posisi[1],
+        posisi[2]
+    );
 
-        new THREE.Vector3(
-            posisi[0],
-            posisi[1],
-            posisi[2]
-        ),
+let points = [
 
-        new THREE.Vector3(
-            target[0],
-            target[1],
-            target[2]
-        )
+    titikAwal,
 
-    ];
+    new THREE.Vector3(
+        target[0],
+        target[1],
+        target[2]
+    )
 
+];
 
     let lineGeometry =
     new THREE.BufferGeometry()
@@ -472,8 +474,8 @@ tambahLabel3D(
 
 tambahLabel3D(
     "Sisi",
-    [-1.35, 0.35, 0.55],
-    [-1.05, 0, 0.45]
+    [-1.55, 0, 0],
+    [-1, 0, 0]
 );
 
 tambahLabel3D(
