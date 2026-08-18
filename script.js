@@ -1745,3 +1745,12 @@ window.onload = function(){
     tampilKubus();
 
 };
+// ======================================
+// KEMBALI KE POSISI ATAS SAAT HALAMAN DIBUKA
+// ======================================
+
+window.addEventListener("load", function(){
+
+    window.scrollTo(0, 0);
+
+});
