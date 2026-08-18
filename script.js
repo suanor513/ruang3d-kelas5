@@ -524,33 +524,56 @@ function tampilJaringKubus(){
 
     function buatSisi(x, y, warna){
 
-        let geometry =
-        new THREE.PlaneGeometry(
-            ukuran,
-            ukuran
-        );
+    let geometry =
+    new THREE.PlaneGeometry(
+        ukuran,
+        ukuran
+    );
 
-        let mat =
-        new THREE.MeshBasicMaterial({
-            color:warna,
-            side:THREE.DoubleSide
-        });
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:warna,
+        side:THREE.DoubleSide
+    });
 
-        let sisi =
-        new THREE.Mesh(
-            geometry,
-            mat
-        );
+    let sisi =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
 
-        sisi.position.set(
-            x,
-            y,
-            0
-        );
+    sisi.position.set(
+        x,
+        y,
+        0
+    );
 
-        scene.add(sisi);
+    scene.add(sisi);
 
-    }
+
+    // ==================================
+    // GARIS TEPI HITAM
+    // ==================================
+
+    let garisGeometry =
+    new THREE.EdgesGeometry(
+        geometry
+    );
+
+    let garisMaterial =
+    new THREE.LineBasicMaterial({
+        color:0x000000
+    });
+
+    let garis =
+    new THREE.LineSegments(
+        garisGeometry,
+        garisMaterial
+    );
+
+    sisi.add(garis);
+
+}
 
 
     // ==================================
