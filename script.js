@@ -507,6 +507,9 @@ scrollKeTampilan();
 let panelJaringKubus = [];
 let animasiJaringKubus = false;
 
+let jaringKubusTerbuka = true;
+let sedangAnimasiJaringKubus = false;
+
 function tampilJaringKubus(){
 
     scene.clear();
