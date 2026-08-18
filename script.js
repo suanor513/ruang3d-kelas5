@@ -225,10 +225,14 @@ function tambahTitikSudut(data){
 }
 
 // ======================================
-// LABEL BAGIAN BANGUN 3D
+// LABEL 3D DENGAN TANDA PANAH
 // ======================================
 
 function tambahLabel3D(teks, posisi, target){
+
+    // ==================================
+    // TULISAN LABEL
+    // ==================================
 
     let canvas =
     document.createElement("canvas");
@@ -261,10 +265,10 @@ function tambahLabel3D(teks, posisi, target){
     new THREE.Sprite(material);
 
     label.scale.set(
-    1.15,
-    0.3,
-    1
-);
+        1.15,
+        0.3,
+        1
+    );
 
     label.position.set(
         posisi[0],
@@ -274,33 +278,55 @@ function tambahLabel3D(teks, posisi, target){
 
     cube.add(label);
 
-    let points = [];
 
-    points.push(
+    // ==================================
+    // GARIS PANAH
+    // ==================================
+
+    let arah =
+    new THREE.Vector3(
+        target[0] - posisi[0],
+        target[1] - posisi[1],
+        target[2] - posisi[2]
+    );
+
+    let panjang =
+    arah.length();
+
+    arah.normalize();
+
+
+    // ==================================
+    // GARIS UTAMA PANAH
+    // ==================================
+
+    let lineMaterial =
+    new THREE.LineBasicMaterial({
+        color:0x000000
+    });
+
+
+    let points = [
+
         new THREE.Vector3(
             posisi[0],
             posisi[1],
             posisi[2]
-        )
-    );
+        ),
 
-    points.push(
         new THREE.Vector3(
             target[0],
             target[1],
             target[2]
         )
-    );
+
+    ];
+
 
     let lineGeometry =
-    new THREE.BufferGeometry().setFromPoints(
-        points
-    );
+    new THREE.BufferGeometry()
+    .setFromPoints(points);
 
-    let lineMaterial =
-    new THREE.LineBasicMaterial({
-        color: 0x000000
-    });
 
     let line =
     new THREE.Line(
@@ -310,8 +336,69 @@ function tambahLabel3D(teks, posisi, target){
 
     cube.add(line);
 
-}
 
+    // ==================================
+    // UJUNG PANAH
+    // ==================================
+
+    let arrowLength =
+    Math.min(
+        0.18,
+        panjang * 0.2
+    );
+
+    let arrowWidth =
+    arrowLength * 0.6;
+
+
+    let coneGeometry =
+    new THREE.ConeGeometry(
+        arrowWidth,
+        arrowLength,
+        8
+    );
+
+
+    let coneMaterial =
+    new THREE.MeshBasicMaterial({
+        color:0x000000
+    });
+
+
+    let arrowHead =
+    new THREE.Mesh(
+        coneGeometry,
+        coneMaterial
+    );
+
+
+    // ==================================
+    // ARAHKAN UJUNG CONE KE TARGET
+    // ==================================
+
+    arrowHead.position.set(
+        target[0],
+        target[1],
+        target[2]
+    );
+
+
+    arrowHead.quaternion.setFromUnitVectors(
+
+        new THREE.Vector3(
+            0,
+            1,
+            0
+        ),
+
+        arah
+
+    );
+
+
+    cube.add(arrowHead);
+
+}
 // ======================================
 // KUBUS
 // ======================================
