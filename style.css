@@ -398,36 +398,10 @@ svg.ikon-prisma {
     vertical-align: middle;
     margin-right: 8px;
 }
-/* =================================
-IKON KUBUS 3D
-================================= */
 
-.ikon-kubus {
-    width:35px;
-    height:35px;
-    vertical-align:middle;
-    margin-right:8px;
-}
 /* =================================
 IKON BALOK 3D
 ================================= */
-
-.ikon-balok {
-    width:28px;
-    height:28px;
-    vertical-align:middle;
-    margin-right:8px;
-}
-/* =================================
-UKURAN IKON MENU - PATOKAN
-================================= */
-
-.ikon-kubus {
-    width:35px !important;
-    height:35px !important;
-    vertical-align:middle;
-    margin-right:8px;
-}
 
 .ikon-balok {
     width:35px !important;
@@ -474,7 +448,6 @@ margin-top:0;
 
 }
 
-
 .nilai-kuis {
 
 font-size:50px;
@@ -486,21 +459,7 @@ color:#ff9800;
 margin:20px;
 
 }
-/* =================================
-IKON KUBUS KUIS
-================================= */
 
-.ikon-kubus {
-
-width:35px;
-
-height:35px;
-
-vertical-align:middle;
-
-margin-right:8px;
-
-}
 /* =================================
 IKON TABUNG KUIS
 ================================= */
@@ -514,5 +473,26 @@ height:35px;
 vertical-align:middle;
 
 margin-right:8px;
+
+}
+/* =================================
+IKON KUBUS KUIS
+================================= */
+
+.ikon-kubus {
+
+    display:inline-block;
+
+    width:35px !important;
+
+    height:35px !important;
+
+    max-width:35px !important;
+
+    max-height:35px !important;
+
+    vertical-align:middle;
+
+    margin-right:8px;
 
 }
