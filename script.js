@@ -855,56 +855,30 @@ function tampilJaringKubus(){
         margin-bottom:15px;
     ">
 
-        <button
-        id="tombolJaringKubus"
-        onclick="toggleJaringKubus()"
-        style="
-        padding:10px 18px;
-        margin-bottom:12px;
-        cursor:pointer;
-        font-size:16px;
-        "
-        >
-        Tutup Jaring-Jaring
-        </button>
-
-
         <div style="
-        font-size:15px;
-        margin-bottom:6px;
+        font-size:16px;
+        font-weight:bold;
+        margin-bottom:8px;
         ">
-        ⚡ Kecepatan Lipatan
+        🔓 Buka &nbsp;&nbsp;&nbsp;&nbsp; 🔒 Tutup
         </div>
 
 
         <input
         type="range"
-        min="200"
-        max="2000"
-        step="100"
-        value="700"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0"
         oninput="
-        kecepatanJaringKubus =
-        Number(this.value);
+        aturJaringKubus(Number(this.value));
         "
         style="
-        width:80%;
-        max-width:300px;
+        width:90%;
+        max-width:320px;
+        height:35px;
         "
         >
-
-
-        <div style="
-        display:flex;
-        justify-content:space-between;
-        width:80%;
-        max-width:300px;
-        margin:auto;
-        font-size:13px;
-        ">
-        <span>Cepat</span>
-        <span>Lambat</span>
-        </div>
 
     </div>
 
@@ -912,15 +886,14 @@ function tampilJaringKubus(){
     <ul>
     <li>⬜ Terdiri dari 6 persegi</li>
     <li>📏 Semua sisi memiliki ukuran sama</li>
-    <li>🔓 Dapat dibuka</li>
-    <li>🔒 Dapat dilipat menjadi kubus</li>
+    <li>🔓 Geser ke kiri untuk membuka</li>
+    <li>🔒 Geser ke kanan untuk menutup</li>
     </ul>
     `
 
 );
 
-scrollKeTampilan();
-}
+scrollKeTampilan();}
 
 // ======================================
 // BUKA / TUTUP JARING-JARING KUBUS
@@ -1044,6 +1017,44 @@ function toggleJaringKubus(){
     requestAnimationFrame(
         animasi
     );
+
+}
+// ======================================
+// KONTROL SLIDER BUKA - TUTUP
+// ======================================
+
+function aturJaringKubus(nilai){
+
+    if(dataJaringKubus.length === 0){
+        return;
+    }
+
+    dataJaringKubus.forEach(
+        function(data){
+
+            let sudut =
+                data.sudutBuka +
+                (
+                    data.sudutTutup -
+                    data.sudutBuka
+                ) * nilai;
+
+            data.pivot.rotation[
+                data.sumbu
+            ] = sudut;
+
+        }
+    );
+
+    if(nilai <= 0){
+
+        jaringKubusTerbuka = true;
+
+    }else if(nilai >= 1){
+
+        jaringKubusTerbuka = false;
+
+    }
 
 }
 
