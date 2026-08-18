@@ -1790,3 +1790,26 @@ function scrollKeKerucut(){
     }, 100);
 
 }
+// ======================================
+// SCROLL OTOMATIS KHUSUS BOLA
+// ======================================
+
+function scrollKeBola(){
+
+    const canvas =
+    document.getElementById("canvas3D");
+
+    if(!canvas){
+        return;
+    }
+
+    setTimeout(function(){
+
+        canvas.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 100);
+
+}
