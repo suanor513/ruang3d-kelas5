@@ -501,20 +501,48 @@ scrollKeTampilan();
 }
 
 // ======================================
-// JARING-JARING KUBUS
+// JARING-JARING KUBUS 3D
 // ======================================
 
 let panelJaringKubus = [];
 let animasiJaringKubus = false;
-
 let jaringKubusTerbuka = true;
 let sedangAnimasiJaringKubus = false;
+let dataJaringKubus = [];
+
+
+// ======================================
+// TAMPILKAN JARING-JARING KUBUS
+// ======================================
 
 function tampilJaringKubus(){
 
     scene.clear();
 
     panelJaringKubus = [];
+    dataJaringKubus = [];
+
+    jaringKubusTerbuka = true;
+    sedangAnimasiJaringKubus = false;
+
+
+    // ==================================
+    // GROUP UTAMA
+    // ==================================
+
+    let root =
+    new THREE.Group();
+
+    // Agar kubus saat tertutup tetap berada
+    // di sekitar titik tengah tampilan
+    root.position.z = -0.5;
+
+    scene.add(root);
+
+
+    // ==================================
+    // UKURAN SISI
+    // ==================================
 
     let ukuran = 1;
 
@@ -523,7 +551,7 @@ function tampilJaringKubus(){
     // FUNGSI MEMBUAT SISI
     // ==================================
 
-    function buatSisi(x, y, warna){
+    function buatPanel(warna){
 
         let geometry =
         new THREE.PlaneGeometry(
@@ -531,11 +559,13 @@ function tampilJaringKubus(){
             ukuran
         );
 
+
         let material =
         new THREE.MeshBasicMaterial({
             color:warna,
             side:THREE.DoubleSide
         });
+
 
         let sisi =
         new THREE.Mesh(
@@ -543,21 +573,6 @@ function tampilJaringKubus(){
             material
         );
 
-        sisi.position.set(
-            x,
-            y,
-            0
-        );
-
-        sisi.userData.posisiAwal = {
-    x: x,
-    y: y,
-    z: 0
-};
-
-sisi.userData.sudutAwal = 0;
-        scene.add(sisi);
-panelJaringKubus.push(sisi);
 
         // ==================================
         // GARIS TEPI HITAM
@@ -568,10 +583,12 @@ panelJaringKubus.push(sisi);
             geometry
         );
 
+
         let garisMaterial =
         new THREE.LineBasicMaterial({
             color:0x000000
         });
+
 
         let garis =
         new THREE.LineSegments(
@@ -579,75 +596,249 @@ panelJaringKubus.push(sisi);
             garisMaterial
         );
 
+
         sisi.add(garis);
 
-return sisi;
 
-}
+        panelJaringKubus.push(sisi);
+
+
+        return sisi;
+
+    }
 
 
     // ==================================
-    // 6 SISI JARING-JARING KUBUS
+    // FUNGSI MEMBUAT ENGSEL
     // ==================================
 
-    let sisiTengah = buatSisi(
-    0,
-    0,
-    0x2196f3
-);
+    function buatEngsel(
+        pivotX,
+        pivotY,
+        sisiX,
+        sisiY,
+        warna,
+        sumbu,
+        sudutTutup,
+        parent
+    ){
 
-let sisiAtas = buatSisi(
-    0,
-    1,
-    0x4caf50
-);
-
-let sisiBawah = buatSisi(
-    0,
-    -1,
-    0xffeb3b
-);
-
-let sisiKiri = buatSisi(
-    -1,
-    0,
-    0xf44336
-);
-
-let sisiKanan = buatSisi(
-    1,
-    0,
-    0x9c27b0
-);
-
-let sisiPalingBawah = buatSisi(
-    0,
-    -2,
-    0xff9800
-);
+        let pivot =
+        new THREE.Group();
 
 
-// ==================================
-// SUDUT BUKA / TUTUP
-// ==================================
+        pivot.position.set(
+            pivotX,
+            pivotY,
+            0
+        );
 
-sisiTengah.userData.sudutBuka = 0;
-sisiTengah.userData.sudutTutup = 0;
 
-sisiAtas.userData.sudutBuka = 0;
-sisiAtas.userData.sudutTutup = -Math.PI / 2;
+        parent.add(pivot);
 
-sisiBawah.userData.sudutBuka = 0;
-sisiBawah.userData.sudutTutup = Math.PI / 2;
 
-sisiKiri.userData.sudutBuka = 0;
-sisiKiri.userData.sudutTutup = Math.PI / 2;
+        let sisi =
+        buatPanel(warna);
 
-sisiKanan.userData.sudutBuka = 0;
-sisiKanan.userData.sudutTutup = -Math.PI / 2;
 
-sisiPalingBawah.userData.sudutBuka = 0;
-sisiPalingBawah.userData.sudutTutup = Math.PI;
+        sisi.position.set(
+            sisiX,
+            sisiY,
+            0
+        );
+
+
+        pivot.add(sisi);
+
+
+        dataJaringKubus.push({
+
+            pivot:pivot,
+
+            sumbu:sumbu,
+
+            sudutBuka:0,
+
+            sudutTutup:sudutTutup
+
+        });
+
+
+        return pivot;
+
+    }
+
+
+    // ==================================
+    // SISI TENGAH
+    // ==================================
+
+    let sisiTengah =
+    buatPanel(
+        0x2196f3
+    );
+
+
+    sisiTengah.position.set(
+        0,
+        0,
+        0
+    );
+
+
+    root.add(
+        sisiTengah
+    );
+
+
+    // ==================================
+    // SISI ATAS
+    // ==================================
+
+    buatEngsel(
+
+        0,
+        0.5,
+
+        0,
+        0.5,
+
+        0x4caf50,
+
+        "x",
+
+        Math.PI / 2,
+
+        root
+
+    );
+
+
+    // ==================================
+    // SISI BAWAH
+    // ==================================
+
+    buatEngsel(
+
+        0,
+        -0.5,
+
+        0,
+        -0.5,
+
+        0xffeb3b,
+
+        "x",
+
+        -Math.PI / 2,
+
+        root
+
+    );
+
+
+    // ==================================
+    // SISI KIRI
+    // ==================================
+
+    buatEngsel(
+
+        -0.5,
+        0,
+
+        -0.5,
+        0,
+
+        0xf44336,
+
+        "y",
+
+        Math.PI / 2,
+
+        root
+
+    );
+
+
+    // ==================================
+    // SISI KANAN
+    // ==================================
+
+    buatEngsel(
+
+        0.5,
+        0,
+
+        0.5,
+        0,
+
+        0x9c27b0,
+
+        "y",
+
+        -Math.PI / 2,
+
+        root
+
+    );
+
+
+    // ==================================
+    // SISI PALING BAWAH
+    // ==================================
+
+    let engselBawah =
+    new THREE.Group();
+
+
+    engselBawah.position.set(
+        0,
+        -1,
+        0
+    );
+
+
+    // Engsel ini menjadi anak
+    // dari sisi bawah
+
+    let pivotSisiBawah =
+    root.children[2];
+
+
+    pivotSisiBawah.add(
+        engselBawah
+    );
+
+
+    let sisiPalingBawah =
+    buatPanel(
+        0xff9800
+    );
+
+
+    sisiPalingBawah.position.set(
+        0,
+        -0.5,
+        0
+    );
+
+
+    engselBawah.add(
+        sisiPalingBawah
+    );
+
+
+    dataJaringKubus.push({
+
+        pivot:engselBawah,
+
+        sumbu:"x",
+
+        sudutBuka:0,
+
+        sudutTutup:-Math.PI / 2
+
+    });
 
 
     // ==================================
@@ -659,10 +850,24 @@ sisiPalingBawah.userData.sudutTutup = Math.PI;
         "Jaring-Jaring Kubus",
 
         `
+        <button
+        id="tombolJaringKubus"
+        onclick="toggleJaringKubus()"
+        style="
+        padding:10px 18px;
+        margin-bottom:10px;
+        cursor:pointer;
+        font-size:16px;
+        "
+        >
+        Tutup Jaring-Jaring
+        </button>
+
         <ul>
         <li>⬜ Terdiri dari 6 persegi</li>
         <li>📏 Semua sisi memiliki ukuran sama</li>
-        <li>📐 Dapat dilipat menjadi kubus</li>
+        <li>🔓 Dapat dibuka</li>
+        <li>🔒 Dapat dilipat menjadi kubus</li>
         </ul>
         `
 
@@ -673,36 +878,129 @@ sisiPalingBawah.userData.sudutTutup = Math.PI;
 
 }
 
+
 // ======================================
-// KONTROL BUKA / TUTUP JARING-JARING
+// BUKA / TUTUP JARING-JARING KUBUS
 // ======================================
 
 function toggleJaringKubus(){
 
-    if(!panelJaringKubus.length){
+    if(
+        sedangAnimasiJaringKubus ||
+        dataJaringKubus.length === 0
+    ){
         return;
     }
 
-    let target =
-        jaringKubusTerbuka
-        ? "sudutTutup"
-        : "sudutBuka";
+
+    sedangAnimasiJaringKubus = true;
 
 
-    panelJaringKubus.forEach(function(sisi){
+    let targetTerbuka =
+        !jaringKubusTerbuka;
 
-        if(sisi.userData[target] !== undefined){
 
-            sisi.rotation.z =
-                sisi.userData[target];
+    let durasi = 700;
+
+    let waktuMulai =
+        performance.now();
+
+
+    let posisiAwal =
+        dataJaringKubus.map(
+            function(data){
+
+                return data.pivot.rotation[
+                    data.sumbu
+                ];
+
+            }
+        );
+
+
+    function animasi(waktuSekarang){
+
+        let perkembangan =
+            (waktuSekarang - waktuMulai)
+            / durasi;
+
+
+        if(perkembangan > 1){
+            perkembangan = 1;
+        }
+
+
+        // Gerakan lebih halus
+        let halus =
+            perkembangan *
+            perkembangan *
+            (3 - 2 * perkembangan);
+
+
+        dataJaringKubus.forEach(
+
+            function(data, index){
+
+                let target =
+                    targetTerbuka
+                    ? data.sudutBuka
+                    : data.sudutTutup;
+
+
+                let awal =
+                    posisiAwal[index];
+
+
+                data.pivot.rotation[
+                    data.sumbu
+                ] =
+                    awal +
+                    (target - awal) *
+                    halus;
+
+            }
+
+        );
+
+
+        if(perkembangan < 1){
+
+            requestAnimationFrame(
+                animasi
+            );
+
+        }else{
+
+            jaringKubusTerbuka =
+                targetTerbuka;
+
+            sedangAnimasiJaringKubus =
+                false;
+
+
+            let tombol =
+                document.getElementById(
+                    "tombolJaringKubus"
+                );
+
+
+            if(tombol){
+
+                tombol.textContent =
+                    jaringKubusTerbuka
+                    ? "Tutup Jaring-Jaring"
+                    : "Buka Jaring-Jaring";
+
+            }
 
         }
 
-    });
+    }
 
 
-    jaringKubusTerbuka =
-        !jaringKubusTerbuka;
+    requestAnimationFrame(
+        animasi
+    );
 
 }
 
