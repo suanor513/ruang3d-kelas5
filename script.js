@@ -850,38 +850,7 @@ function tampilJaringKubus(){
     "Jaring-Jaring Kubus",
 
     `
-    <div style="
-        text-align:center;
-        margin-bottom:15px;
-    ">
-
-        <div style="
-        font-size:16px;
-        font-weight:bold;
-        margin-bottom:8px;
-        ">
-        🔓 Buka &nbsp;&nbsp;&nbsp;&nbsp; 🔒 Tutup
-        </div>
-
-
-        <input
-        type="range"
-        min="0"
-        max="1"
-        step="0.01"
-        value="0"
-        oninput="
-        aturJaringKubus(Number(this.value));
-        "
-        style="
-        width:90%;
-        max-width:320px;
-        height:35px;
-        "
-        >
-
-    </div>
-
+    
 
     <ul>
     <li>⬜ Terdiri dari 6 persegi</li>
