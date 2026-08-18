@@ -581,7 +581,9 @@ panelJaringKubus.push(sisi);
 
         sisi.add(garis);
 
-    }
+return sisi;
+
+}
 
 
     // ==================================
