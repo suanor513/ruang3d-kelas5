@@ -874,7 +874,7 @@ function tampilJaringKubus(){
 );
 
 scrollKeTampilan();
-
+}
 
 // ======================================
 // BUKA / TUTUP JARING-JARING KUBUS
