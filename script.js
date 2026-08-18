@@ -224,7 +224,93 @@ function tambahTitikSudut(data){
 
 }
 
+// ======================================
+// LABEL BAGIAN BANGUN 3D
+// ======================================
 
+function tambahLabel3D(teks, posisi, target){
+
+    let canvas =
+    document.createElement("canvas");
+
+    canvas.width = 256;
+    canvas.height = 64;
+
+    let ctx =
+    canvas.getContext("2d");
+
+    ctx.font = "bold 24px Arial";
+    ctx.fillStyle = "black";
+
+    ctx.fillText(
+        teks,
+        10,
+        40
+    );
+
+    let texture =
+    new THREE.CanvasTexture(canvas);
+
+    let material =
+    new THREE.SpriteMaterial({
+        map: texture,
+        transparent: true
+    });
+
+    let label =
+    new THREE.Sprite(material);
+
+    label.scale.set(
+        1.5,
+        0.4,
+        1
+    );
+
+    label.position.set(
+        posisi[0],
+        posisi[1],
+        posisi[2]
+    );
+
+    cube.add(label);
+
+    let points = [];
+
+    points.push(
+        new THREE.Vector3(
+            posisi[0],
+            posisi[1],
+            posisi[2]
+        )
+    );
+
+    points.push(
+        new THREE.Vector3(
+            target[0],
+            target[1],
+            target[2]
+        )
+    );
+
+    let lineGeometry =
+    new THREE.BufferGeometry().setFromPoints(
+        points
+    );
+
+    let lineMaterial =
+    new THREE.LineBasicMaterial({
+        color: 0x000000
+    });
+
+    let line =
+    new THREE.Line(
+        lineGeometry,
+        lineMaterial
+    );
+
+    cube.add(line);
+
+}
 
 // ======================================
 // KUBUS
@@ -291,7 +377,23 @@ tambahTitikSudut([
 
 ]);
 
+tambahLabel3D(
+    "Titik Sudut",
+    [2.2, 1.5, 1],
+    [1, 1, 1]
+);
 
+tambahLabel3D(
+    "Sisi",
+    [-2.2, 0.5, 1],
+    [-1, 0, 1]
+);
+
+tambahLabel3D(
+    "Rusuk",
+    [2.2, -1.2, 1],
+    [1, -1, 1]
+);
 
 ubahMateri(
 "Kubus",
