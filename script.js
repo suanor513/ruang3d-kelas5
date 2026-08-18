@@ -1748,3 +1748,22 @@ window.addEventListener("load", function(){
     window.scrollTo(0, 0);
 
 });
+// ======================================
+// SCROLL OTOMATIS KE BANGUN 3D
+// ======================================
+
+function scrollKeTampilan(){
+
+    const canvas =
+    document.getElementById("canvas3D");
+
+    if(!canvas){
+        return;
+    }
+
+    canvas.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
