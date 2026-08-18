@@ -544,6 +544,13 @@ function tampilJaringKubus(){
             0
         );
 
+        sisi.userData.posisiAwal = {
+    x: x,
+    y: y,
+    z: 0
+};
+
+sisi.userData.sudutAwal = 0;
         scene.add(sisi);
 panelJaringKubus.push(sisi);
 
