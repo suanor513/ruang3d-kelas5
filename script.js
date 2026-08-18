@@ -590,44 +590,64 @@ return sisi;
     // 6 SISI JARING-JARING KUBUS
     // ==================================
 
-    buatSisi(
-        0,
-        0,
-        0x2196f3
-    );
+    let sisiTengah = buatSisi(
+    0,
+    0,
+    0x2196f3
+);
 
-   let sisiAtas = buatSisi(
+let sisiAtas = buatSisi(
     0,
     1,
     0x4caf50
 );
 
-sisiAtas.userData.sudutTutup = -Math.PI / 2;
+let sisiBawah = buatSisi(
+    0,
+    -1,
+    0xffeb3b
+);
+
+let sisiKiri = buatSisi(
+    -1,
+    0,
+    0xf44336
+);
+
+let sisiKanan = buatSisi(
+    1,
+    0,
+    0x9c27b0
+);
+
+let sisiPalingBawah = buatSisi(
+    0,
+    -2,
+    0xff9800
+);
+
+
+// ==================================
+// SUDUT BUKA / TUTUP
+// ==================================
+
+sisiTengah.userData.sudutBuka = 0;
+sisiTengah.userData.sudutTutup = 0;
+
 sisiAtas.userData.sudutBuka = 0;
+sisiAtas.userData.sudutTutup = -Math.PI / 2;
 
-    buatSisi(
-        0,
-        -1,
-        0xffeb3b
-    );
+sisiBawah.userData.sudutBuka = 0;
+sisiBawah.userData.sudutTutup = Math.PI / 2;
 
-    buatSisi(
-        -1,
-        0,
-        0xf44336
-    );
+sisiKiri.userData.sudutBuka = 0;
+sisiKiri.userData.sudutTutup = Math.PI / 2;
 
-    buatSisi(
-        1,
-        0,
-        0x9c27b0
-    );
+sisiKanan.userData.sudutBuka = 0;
+sisiKanan.userData.sudutTutup = -Math.PI / 2;
 
-    buatSisi(
-        0,
-        -2,
-        0xff9800
-    );
+sisiPalingBawah.userData.sudutBuka = 0;
+sisiPalingBawah.userData.sudutTutup = Math.PI;
 
 
     // ==================================
@@ -659,21 +679,27 @@ sisiAtas.userData.sudutBuka = 0;
 
 function toggleJaringKubus(){
 
-    if(!sisiAtas){
+    if(!panelJaringKubus.length){
         return;
     }
 
-    if(jaringKubusTerbuka){
+    let target =
+        jaringKubusTerbuka
+        ? "sudutTutup"
+        : "sudutBuka";
 
-        sisiAtas.rotation.z =
-            sisiAtas.userData.sudutTutup;
 
-    }else{
+    panelJaringKubus.forEach(function(sisi){
 
-        sisiAtas.rotation.z =
-            sisiAtas.userData.sudutBuka;
+        if(sisi.userData[target] !== undefined){
 
-    }
+            sisi.rotation.z =
+                sisi.userData[target];
+
+        }
+
+    });
+
 
     jaringKubusTerbuka =
         !jaringKubusTerbuka;
