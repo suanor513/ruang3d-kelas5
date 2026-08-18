@@ -1584,7 +1584,7 @@ function cekJawaban5(jawaban){
 let hasil =
 document.getElementById("hasilKuis");
 
-
+kunciJawaban();
 if(jawaban === "bola"){
 
 skorKuis++;
