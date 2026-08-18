@@ -511,6 +511,8 @@ function tampilJaringKubus(){
 
     scene.clear();
 
+    panelJaringKubus = [];
+
     let ukuran = 1;
 
 
