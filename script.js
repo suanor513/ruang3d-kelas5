@@ -642,7 +642,26 @@ panelJaringKubus.push(sisi);
     scrollKeTampilan();
 
 }
-    
+
+// ======================================
+// ANIMASI JARING-JARING KUBUS
+// ======================================
+
+function animasiJaringKubus(){
+
+    if(!panelJaringKubus.length){
+        return;
+    }
+
+    panelJaringKubus.forEach(function(sisi){
+
+        sisi.rotation.z =
+        sisi.userData.sudutAwal;
+
+    });
+
+}
+
 // ======================================
 // SCROLL OTOMATIS KE BANGUN RUANG
 // ======================================
