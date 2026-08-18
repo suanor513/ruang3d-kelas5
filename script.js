@@ -472,8 +472,8 @@ tambahLabel3D(
 
 tambahLabel3D(
     "Sisi",
-    [-1.15, 0.35, 1],
-    [-1, 0, 0]
+    [-1.35, 0.35, 0.55],
+    [-1.05, 0, 0.45]
 );
 
 tambahLabel3D(
