@@ -575,47 +575,123 @@ function tampilJaringKubus(){
 
 }
 
+// ======================================
+// JARING-JARING KUBUS ANIMASI
+// ======================================
+
+let jaringKubus = [];
+let statusJaringKubus = "terbuka";
+
+
+// ======================================
+// TAMPILKAN JARING-JARING KUBUS
+// ======================================
+
+function tampilJaringKubus(){
+
+    scene.clear();
+
+    jaringKubus = [];
+
+    let ukuran = 1;
+
 
     // ==================================
-    // JARING-JARING KUBUS
+    // FUNGSI MEMBUAT SISI
     // ==================================
 
-    // Sisi tengah
+    function buatSisi(x, y, warna){
+
+        let geometry =
+        new THREE.PlaneGeometry(
+            ukuran,
+            ukuran
+        );
+
+        let material =
+        new THREE.MeshBasicMaterial({
+            color:warna,
+            side:THREE.DoubleSide
+        });
+
+        let sisi =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+
+        sisi.position.set(
+            x,
+            y,
+            0
+        );
+
+
+        // ==================================
+        // GARIS TEPI HITAM
+        // ==================================
+
+        let garisGeometry =
+        new THREE.EdgesGeometry(
+            geometry
+        );
+
+        let garisMaterial =
+        new THREE.LineBasicMaterial({
+            color:0x000000
+        });
+
+        let garis =
+        new THREE.LineSegments(
+            garisGeometry,
+            garisMaterial
+        );
+
+        sisi.add(garis);
+
+
+        scene.add(sisi);
+
+        jaringKubus.push(sisi);
+
+    }
+
+
+    // ==================================
+    // 6 SISI KUBUS
+    // ==================================
+
     buatSisi(
         0,
         0,
         0x2196f3
     );
 
-    // Atas
     buatSisi(
         0,
         1,
         0x4caf50
     );
 
-    // Bawah
     buatSisi(
         0,
         -1,
         0xffeb3b
     );
 
-    // Kiri
     buatSisi(
         -1,
         0,
         0xf44336
     );
 
-    // Kanan
     buatSisi(
         1,
         0,
         0x9c27b0
     );
 
-    // Sisi paling bawah
     buatSisi(
         0,
         -2,
@@ -635,15 +711,18 @@ function tampilJaringKubus(){
         <ul>
         <li>⬜ Terdiri dari 6 persegi</li>
         <li>📏 Semua sisi memiliki ukuran sama</li>
-        <li>📐 Dapat dilipat menjadi kubus</li>
+        <li>🔓 Jaring-jaring dapat dibuka</li>
+        <li>🔒 Dapat dilipat menjadi kubus</li>
         </ul>
         `
 
     );
 
+
     scrollKeTampilan();
 
 }
+    
 // ======================================
 // SCROLL OTOMATIS KE BANGUN RUANG
 // ======================================
