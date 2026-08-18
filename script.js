@@ -596,11 +596,14 @@ return sisi;
         0x2196f3
     );
 
-    let sisiAtas = buatSisi(
+   let sisiAtas = buatSisi(
     0,
     1,
     0x4caf50
 );
+
+sisiAtas.userData.sudutTutup = -Math.PI / 2;
+sisiAtas.userData.sudutBuka = 0;
 
     buatSisi(
         0,
