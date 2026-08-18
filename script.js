@@ -504,6 +504,9 @@ scrollKeTampilan();
 // JARING-JARING KUBUS
 // ======================================
 
+let panelJaringKubus = [];
+let animasiJaringKubus = false;
+
 function tampilJaringKubus(){
 
     scene.clear();
