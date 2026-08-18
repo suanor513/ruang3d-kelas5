@@ -822,12 +822,8 @@ ubahMateri(
 
 );
 
-
+scrollKeTampilan();
 }
-
-
-
-
 
 // ======================================
 // KERUCUT
