@@ -1139,7 +1139,27 @@ function tampilKerucut(){
     tambahGaris(
         geometry
     );
+// ======================================
+// LABEL KERUCUT
+// ======================================
 
+tambahLabel3D(
+    "Titik Sudut",
+    [1.35, 1.25, 0],
+    [0, 1, 0]
+);
+
+tambahLabel3D(
+    "Sisi",
+    [-1.45, 0.1, 0],
+    [-0.45, 0, 0.6]
+);
+
+tambahLabel3D(
+    "Rusuk",
+    [1.35, -1.15, 0],
+    [0.7, -1, 0]
+);
 
     // ==================================
     // MATERI
