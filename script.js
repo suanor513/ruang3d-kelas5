@@ -585,6 +585,11 @@ function tampilJaringKubus(){
 
     let ukuran = 1;
 
+
+    // ==================================
+    // FUNGSI MEMBUAT SISI
+    // ==================================
+
     function buatSisi(x, y, warna){
 
         let geometry =
@@ -640,7 +645,7 @@ function tampilJaringKubus(){
 
 
     // ==================================
-    // JARING-JARING KUBUS
+    // 6 SISI JARING-JARING KUBUS
     // ==================================
 
     buatSisi(
@@ -697,6 +702,7 @@ function tampilJaringKubus(){
         `
 
     );
+
 
     scrollKeTampilan();
 
