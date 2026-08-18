@@ -466,7 +466,7 @@ tambahTitikSudut([
 
 tambahLabel3D(
     "Titik Sudut",
-    [1.7, 1.25, 1],
+    [1.35, 1.15, 1],
     [1, 1, 1]
 );
 
