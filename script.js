@@ -1767,3 +1767,26 @@ function scrollKeTampilan(){
     });
 
 }
+// ======================================
+// SCROLL OTOMATIS KHUSUS KERUCUT
+// ======================================
+
+function scrollKeKerucut(){
+
+    const canvas =
+    document.getElementById("canvas3D");
+
+    if(!canvas){
+        return;
+    }
+
+    setTimeout(function(){
+
+        canvas.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 100);
+
+}
