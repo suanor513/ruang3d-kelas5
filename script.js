@@ -589,6 +589,27 @@ tambahTitikSudut([
 
 ]);
 
+// ======================================
+// LABEL BALOK
+// ======================================
+
+tambahLabel3D(
+    "Titik Sudut",
+    [2.0 * skalaBalok, 1.0 * skalaBalok, 0.5 * skalaBalok],
+    [1.5 * skalaBalok, 0.75 * skalaBalok, 0.5 * skalaBalok]
+);
+
+tambahLabel3D(
+    "Sisi",
+    [-2.0 * skalaBalok, 0, 0],
+    [-1.5 * skalaBalok, 0, 0]
+);
+
+tambahLabel3D(
+    "Rusuk",
+    [1.8 * skalaBalok, -1.0 * skalaBalok, 0],
+    [1.5 * skalaBalok, -0.75 * skalaBalok, 0]
+);    
 
 ubahMateri(
 "Balok",
