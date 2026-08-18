@@ -850,18 +850,64 @@ function tampilJaringKubus(){
     "Jaring-Jaring Kubus",
 
     `
-    <button
-    id="tombolJaringKubus"
-    onclick="toggleJaringKubus()"
-    style="
-    padding:10px 18px;
-    margin-bottom:10px;
-    cursor:pointer;
-    font-size:16px;
-    "
-    >
-    Tutup Jaring-Jaring
-    </button>
+    <div style="
+        text-align:center;
+        margin-bottom:15px;
+    ">
+
+        <button
+        id="tombolJaringKubus"
+        onclick="toggleJaringKubus()"
+        style="
+        padding:10px 18px;
+        margin-bottom:12px;
+        cursor:pointer;
+        font-size:16px;
+        "
+        >
+        Tutup Jaring-Jaring
+        </button>
+
+
+        <div style="
+        font-size:15px;
+        margin-bottom:6px;
+        ">
+        ⚡ Kecepatan Lipatan
+        </div>
+
+
+        <input
+        type="range"
+        min="200"
+        max="2000"
+        step="100"
+        value="700"
+        oninput="
+        kecepatanJaringKubus =
+        Number(this.value);
+        "
+        style="
+        width:80%;
+        max-width:300px;
+        "
+        >
+
+
+        <div style="
+        display:flex;
+        justify-content:space-between;
+        width:80%;
+        max-width:300px;
+        margin:auto;
+        font-size:13px;
+        ">
+        <span>Cepat</span>
+        <span>Lambat</span>
+        </div>
+
+    </div>
+
 
     <ul>
     <li>⬜ Terdiri dari 6 persegi</li>
