@@ -1050,13 +1050,13 @@ tambahLabel3D(
     [1, 1, 0]
 );
 tambahLabel3D(
-    "Alas Atas",
+    "Sisi Atas",
     [-1.5, 1.25, 0],
     [0, 1, 0.4]
 );
 
 tambahLabel3D(
-    "Alas Bawah",
+    "Sisi Bawah",
     [-1.5, -1.25, 0],
     [0, -1, 0.4]
 );
