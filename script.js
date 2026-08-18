@@ -1098,12 +1098,14 @@ function cekJawaban(jawaban){
 
 let hasil =
 document.getElementById("hasilKuis");
-
+kunciJawaban();
 
 if(jawaban === "kubus"){
 
 skorKuis++;
 
+
+    
 hasil.innerHTML =
 "✅ Benar! Jawabannya adalah Kubus. Skor: "
 + skorKuis +
@@ -1120,7 +1122,22 @@ hasil.innerHTML =
 
 }
 
+// ======================================
+// KUNCI JAWABAN SETELAH DIPILIH
+// ======================================
 
+function kunciJawaban(){
+
+let tombol =
+document.querySelectorAll("#kuis button");
+
+tombol.forEach(function(tombol){
+
+tombol.disabled = true;
+
+});
+
+}
 // ======================================
 // SOAL BERIKUTNYA
 // ======================================
