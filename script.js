@@ -1813,3 +1813,26 @@ function scrollKeBola(){
     }, 100);
 
 }
+// ======================================
+// SCROLL OTOMATIS KHUSUS KUIS
+// ======================================
+
+function scrollKeKuis(){
+
+    const kuis =
+    document.getElementById("kuis");
+
+    if(!kuis){
+        return;
+    }
+
+    setTimeout(function(){
+
+        kuis.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 100);
+
+}
