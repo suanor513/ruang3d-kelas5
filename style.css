@@ -310,6 +310,17 @@ vertical-align:middle;
 margin-right:8px;
 
 }
+   input[type="range"] {
+
+    width:85%;
+
+    height:35px;
+
+    display:block;
+
+    margin:10px auto;
+
+}
 }
 /* =================================
 KOTAK KUIS
