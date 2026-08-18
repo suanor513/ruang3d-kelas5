@@ -307,10 +307,23 @@ ubahMateri(
 
 );
 
+scrollKeTampilan();
+
 
 }
 
+// ======================================
+// SCROLL OTOMATIS KE BANGUN RUANG
+// ======================================
 
+function scrollKeTampilan(){
+
+    document.getElementById("canvas3D").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
 
 // ======================================
 // BALOK
