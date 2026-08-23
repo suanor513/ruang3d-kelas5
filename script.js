@@ -1156,6 +1156,16 @@ scrollKeTampilan();
 }
 
 // ======================================
+// JARING-JARING BALOK
+// ======================================
+
+function tampilJaringBalok(){
+
+    alert("Jaring-jaring Balok");
+
+}
+
+// ======================================
 // PRISMA SEGITIGA
 // ======================================
 
