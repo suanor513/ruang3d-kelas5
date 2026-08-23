@@ -1155,16 +1155,92 @@ ubahMateri(
 scrollKeTampilan();
 }
 
-// ======================================
+/// ======================================
 // JARING-JARING BALOK
 // ======================================
 
 function tampilJaringBalok(){
 
-    alert("Jaring-jaring Balok");
+    let kuisBox =
+    document.getElementById("kuis");
+
+    kuisBox.innerHTML = `
+
+    <h2>🧩 Jaring-Jaring Balok</h2>
+
+    <p>
+    Jaring-jaring balok terdiri dari 6 sisi.
+    </p>
+
+    <svg
+        viewBox="0 0 600 400"
+        width="100%"
+        style="max-width:600px; display:block; margin:20px auto;"
+    >
+
+        <!-- sisi kiri -->
+        <rect
+            x="60" y="140"
+            width="100" height="120"
+            fill="#2196f3"
+            stroke="#222"
+            stroke-width="3"
+        />
+
+        <!-- sisi depan -->
+        <rect
+            x="160" y="140"
+            width="180" height="120"
+            fill="#4caf50"
+            stroke="#222"
+            stroke-width="3"
+        />
+
+        <!-- sisi kanan -->
+        <rect
+            x="340" y="140"
+            width="100" height="120"
+            fill="#1976d2"
+            stroke="#222"
+            stroke-width="3"
+        />
+
+        <!-- sisi belakang -->
+        <rect
+            x="440" y="140"
+            width="100" height="120"
+            fill="#ff9800"
+            stroke="#222"
+            stroke-width="3"
+        />
+
+        <!-- sisi atas -->
+        <rect
+            x="160" y="20"
+            width="180" height="120"
+            fill="#ffeb3b"
+            stroke="#222"
+            stroke-width="3"
+        />
+
+        <!-- sisi bawah -->
+        <rect
+            x="160" y="260"
+            width="180" height="120"
+            fill="#f44336"
+            stroke="#222"
+            stroke-width="3"
+        />
+
+    </svg>
+
+    <button onclick="tampilBalok()">
+        ↩️ Kembali ke Balok 3D
+    </button>
+
+    `;
 
 }
-
 // ======================================
 // PRISMA SEGITIGA
 // ======================================
