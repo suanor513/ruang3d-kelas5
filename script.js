@@ -1155,7 +1155,7 @@ ubahMateri(
 scrollKeTampilan();
 }
 
-/// ======================================
+// ======================================
 // JARING-JARING BALOK
 // ======================================
 
@@ -1168,6 +1168,27 @@ function tampilJaringBalok(){
 
     <h2>🧩 Jaring-Jaring Balok</h2>
 
+    <button onclick="bukaJaringBalok()">
+        👁️ Buka Jaring-Jaring
+    </button>
+
+    <div id="jaringBalok"></div>
+
+    `;
+
+}
+
+// ======================================
+// BUKA JARING-JARING BALOK
+// ======================================
+
+function bukaJaringBalok(){
+
+    let area =
+    document.getElementById("jaringBalok");
+
+    area.innerHTML = `
+
     <p>
     Jaring-jaring balok terdiri dari 6 sisi.
     </p>
@@ -1178,7 +1199,6 @@ function tampilJaringBalok(){
         style="max-width:600px; display:block; margin:20px auto;"
     >
 
-        <!-- sisi kiri -->
         <rect
             x="60" y="140"
             width="100" height="120"
@@ -1187,7 +1207,6 @@ function tampilJaringBalok(){
             stroke-width="3"
         />
 
-        <!-- sisi depan -->
         <rect
             x="160" y="140"
             width="180" height="120"
@@ -1196,7 +1215,6 @@ function tampilJaringBalok(){
             stroke-width="3"
         />
 
-        <!-- sisi kanan -->
         <rect
             x="340" y="140"
             width="100" height="120"
@@ -1205,7 +1223,6 @@ function tampilJaringBalok(){
             stroke-width="3"
         />
 
-        <!-- sisi belakang -->
         <rect
             x="440" y="140"
             width="100" height="120"
@@ -1214,7 +1231,6 @@ function tampilJaringBalok(){
             stroke-width="3"
         />
 
-        <!-- sisi atas -->
         <rect
             x="160" y="20"
             width="180" height="120"
@@ -1223,7 +1239,6 @@ function tampilJaringBalok(){
             stroke-width="3"
         />
 
-        <!-- sisi bawah -->
         <rect
             x="160" y="260"
             width="180" height="120"
@@ -1234,13 +1249,27 @@ function tampilJaringBalok(){
 
     </svg>
 
-    <button onclick="tampilBalok()">
-        ↩️ Kembali ke Balok 3D
+    <button onclick="tutupJaringBalok()">
+        ❌ Tutup Jaring-Jaring
     </button>
 
     `;
 
 }
+
+// ======================================
+// TUTUP JARING-JARING BALOK
+// ======================================
+
+function tutupJaringBalok(){
+
+    let area =
+    document.getElementById("jaringBalok");
+
+    area.innerHTML = "";
+
+}
+
 // ======================================
 // PRISMA SEGITIGA
 // ======================================
