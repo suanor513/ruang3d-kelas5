@@ -1303,6 +1303,68 @@ function tampilJaringBalok3D(){
 }
 
 // ======================================
+// MEMBUAT PANEL JARING-JARING BALOK 3D
+// TAHAP 3
+// ======================================
+
+function buatPanelBalok3D(
+    ukuranX,
+    ukuranY,
+    warna
+){
+
+    let geometry =
+    new THREE.PlaneGeometry(
+        ukuranX,
+        ukuranY
+    );
+
+    let material =
+    new THREE.MeshBasicMaterial({
+        color:warna,
+        side:THREE.DoubleSide
+    });
+
+    let sisi =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
+
+
+    // ==================================
+    // GARIS TEPI
+    // ==================================
+
+    let garisGeometry =
+    new THREE.EdgesGeometry(
+        geometry
+    );
+
+    let garisMaterial =
+    new THREE.LineBasicMaterial({
+        color:0x000000
+    });
+
+    let garis =
+    new THREE.LineSegments(
+        garisGeometry,
+        garisMaterial
+    );
+
+    sisi.add(garis);
+
+
+    panelJaringBalok3D.push(
+        sisi
+    );
+
+
+    return sisi;
+
+}
+
+// ======================================
 // PRISMA SEGITIGA
 // ======================================
 
