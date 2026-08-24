@@ -1270,6 +1270,14 @@ function tutupJaringBalok(){
 
 }
 
+// ======================================
+// JARING-JARING BALOK 3D
+// TAHAP 1
+// ======================================
+
+let panelJaringBalok3D = [];
+let dataJaringBalok3D = [];
+let jaringBalok3DTerbuka = true;
 
 // ======================================
 // PRISMA SEGITIGA
