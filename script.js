@@ -1573,7 +1573,7 @@ buatEngsel(
     // MATERI
     // ==================================
 
-    ubahMateri(
+        ubahMateri(
 
         "Jaring-Jaring Balok",
 
@@ -1589,6 +1589,10 @@ buatEngsel(
         `
 
     );
+
+    scrollKeTampilan();
+
+}
 
 }
 
