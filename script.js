@@ -1280,6 +1280,29 @@ let dataJaringBalok3D = [];
 let jaringBalok3DTerbuka = true;
 
 // ======================================
+// TAMPILKAN JARING-JARING BALOK 3D
+// TAHAP 2
+// ======================================
+
+function tampilJaringBalok3D(){
+
+    scene.clear();
+
+    panelJaringBalok3D = [];
+    dataJaringBalok3D = [];
+
+    jaringBalok3DTerbuka = true;
+
+    let root =
+    new THREE.Group();
+
+    root.position.z = -0.5;
+
+    scene.add(root);
+
+}
+
+// ======================================
 // PRISMA SEGITIGA
 // ======================================
 
