@@ -1271,6 +1271,328 @@ function tutupJaringBalok(){
 }
 
 // ======================================
+// JARING-JARING BALOK 3D
+// ======================================
+
+let panelJaringBalok = [];
+let dataJaringBalok = [];
+let jaringBalokTerbuka = true;
+
+
+// ======================================
+// TAMPILKAN JARING-JARING BALOK
+// ======================================
+
+function tampilJaringBalok3D(){
+
+    scene.clear();
+
+    panelJaringBalok = [];
+    dataJaringBalok = [];
+
+    jaringBalokTerbuka = true;
+
+
+    let root =
+    new THREE.Group();
+
+    root.position.z = -0.5;
+
+    scene.add(root);
+
+
+    // ==================================
+    // UKURAN BALOK
+    // ==================================
+
+    let panjang = 3;
+    let lebar = 1.5;
+    let tinggi = 1;
+
+
+    // ==================================
+    // BUAT PANEL
+    // ==================================
+
+    function buatPanel(
+        ukuranX,
+        ukuranY,
+        warna
+    ){
+
+        let geometry =
+        new THREE.PlaneGeometry(
+            ukuranX,
+            ukuranY
+        );
+
+        let material =
+        new THREE.MeshBasicMaterial({
+            color:warna,
+            side:THREE.DoubleSide
+        });
+
+        let sisi =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+
+        let garisGeometry =
+        new THREE.EdgesGeometry(
+            geometry
+        );
+
+        let garisMaterial =
+        new THREE.LineBasicMaterial({
+            color:0x000000
+        });
+
+        let garis =
+        new THREE.LineSegments(
+            garisGeometry,
+            garisMaterial
+        );
+
+        sisi.add(garis);
+
+        panelJaringBalok.push(sisi);
+
+        return sisi;
+
+    }
+
+
+    // ==================================
+    // ENGSEL
+    // ==================================
+
+    function buatEngsel(
+        pivotX,
+        pivotY,
+        sisiX,
+        sisiY,
+        ukuranX,
+        ukuranY,
+        warna,
+        sumbu,
+        sudutTutup,
+        parent
+    ){
+
+        let pivot =
+        new THREE.Group();
+
+        pivot.position.set(
+            pivotX,
+            pivotY,
+            0
+        );
+
+        parent.add(pivot);
+
+
+        let sisi =
+        buatPanel(
+            ukuranX,
+            ukuranY,
+            warna
+        );
+
+        sisi.position.set(
+            sisiX,
+            sisiY,
+            0
+        );
+
+        pivot.add(sisi);
+
+
+        dataJaringBalok.push({
+
+            pivot:pivot,
+            sumbu:sumbu,
+            sudutBuka:0,
+            sudutTutup:sudutTutup
+
+        });
+
+    }
+
+
+    // ==================================
+    // SISI DEPAN
+    // ==================================
+
+    let depan =
+    buatPanel(
+        panjang,
+        tinggi,
+        0x4caf50
+    );
+
+    depan.position.set(
+        0,
+        0,
+        0
+    );
+
+    root.add(depan);
+
+
+    // ==================================
+    // SISI ATAS
+    // ==================================
+
+    buatEngsel(
+
+        0,
+        tinggi / 2,
+
+        0,
+        lebar / 2,
+
+        panjang,
+        lebar,
+
+        0xffeb3b,
+
+        "x",
+
+        Math.PI / 2,
+
+        root
+
+    );
+
+
+    // ==================================
+    // SISI BAWAH
+    // ==================================
+
+    buatEngsel(
+
+        0,
+        -tinggi / 2,
+
+        0,
+        -lebar / 2,
+
+        panjang,
+        lebar,
+
+        0xf44336,
+
+        "x",
+
+        -Math.PI / 2,
+
+        root
+
+    );
+
+
+    // ==================================
+    // SISI KIRI
+    // ==================================
+
+    buatEngsel(
+
+        -panjang / 2,
+        0,
+
+        -tinggi / 2,
+        0,
+
+        tinggi,
+        tinggi,
+
+        0x2196f3,
+
+        "y",
+
+        Math.PI / 2,
+
+        root
+
+    );
+
+
+    // ==================================
+    // SISI KANAN
+    // ==================================
+
+    buatEngsel(
+
+        panjang / 2,
+        0,
+
+        tinggi / 2,
+        0,
+
+        tinggi,
+        tinggi,
+
+        0x1976d2,
+
+        "y",
+
+        -Math.PI / 2,
+
+        root
+
+    );
+
+    // ==================================
+// SISI BELAKANG
+// ==================================
+
+buatEngsel(
+
+    panjang + 0.5,
+    0,
+
+    panjang / 2,
+    0,
+
+    panjang,
+    tinggi,
+
+    0xff9800,
+
+    "y",
+
+    Math.PI / 2,
+
+    root
+
+);
+
+    // ==================================
+    // MATERI
+    // ==================================
+
+    ubahMateri(
+
+        "Jaring-Jaring Balok",
+
+        `
+        <ul>
+        <li>⬜ Terdiri dari 6 sisi</li>
+        <li>📏 Panjang : 3</li>
+        <li>📏 Lebar : 1,5</li>
+        <li>📏 Tinggi : 1</li>
+        <li>🔓 Slider untuk membuka</li>
+        <li>🔒 Slider untuk menutup</li>
+        </ul>
+        `
+
+    );
+
+}
+
+// ======================================
 // PRISMA SEGITIGA
 // ======================================
 
