@@ -1299,26 +1299,7 @@ function tampilJaringBalok3D(){
     root.position.z = -0.5;
 
     scene.add(root);
-
-// ==================================
-// PANEL DEPAN
-// ==================================
-
-let depan =
-    buatPanelBalok3D(
-        3,
-        1,
-        0x4caf50
-    );
-
-depan.position.set(
-    0,
-    0,
-    0
-);
-
-root.add(depan);
-    
+   
 // ==================================
 // PANEL DEPAN
 // ==================================
