@@ -1328,7 +1328,7 @@ let belakang =
 
 belakang.position.set(
     0,
-    1.5,
+    2.5,
     0
 );
 
@@ -1346,7 +1346,7 @@ let atas =
 
 atas.position.set(
     0,
-    0.75,
+    1.25,
     0
 );
 
