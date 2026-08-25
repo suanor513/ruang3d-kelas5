@@ -1337,27 +1337,20 @@ root.add(belakang);
 // PANEL ATAS
 // ==================================
 
-buatEngselBalok3D(
+let atas =
+    buatPanelBalok3D(
+        3,
+        1.5,
+        0xffeb3b
+    );
 
-    0,
-    0.5,
-
+atas.position.set(
     0,
     0.75,
-
-    3,
-    1.5,
-
-    0xffeb3b,
-
-    "x",
-
-    Math.PI / 2,
-
-    root
-
+    0
 );
 
+root.add(atas);
 // ==================================
 // SCROLL KE TAMPILAN 3D
 // ==================================
