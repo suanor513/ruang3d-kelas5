@@ -1330,23 +1330,20 @@ function tampilJaringBalok3D(){
 
     scene.clear();
 
-    let kontrolKubus =
-        document.getElementById("kontrolJaringKubus");
+    // ==================================
+    // AKTIFKAN SLIDER JARING-JARING 3D
+    // ==================================
 
-    if(kontrolKubus){
+    let kontrolJaring3D =
+        document.getElementById("kontrolJaring3D");
 
-        kontrolKubus.style.display = "none";
+    if(kontrolJaring3D){
 
-    }
-
-    let kontrolBalok =
-        document.getElementById("kontrolJaringBalok3D");
-
-    if(kontrolBalok){
-
-        kontrolBalok.style.display = "block";
+        kontrolJaring3D.style.display = "block";
 
     }
+
+    jenisJaring3DAktif = "balok";
 
     panelJaringBalok3D = [];
     dataJaringBalok3D = [];
@@ -1357,10 +1354,10 @@ function tampilJaringBalok3D(){
         new THREE.Group();
 
     root.position.set(
-    -1.5,
-    0,
-    -0.5
-);
+        -1.5,
+        0,
+        -0.5
+    );
 
     scene.add(root);
     
