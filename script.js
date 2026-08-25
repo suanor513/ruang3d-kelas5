@@ -1076,7 +1076,27 @@ function tampilBalok(){
 
 scene.clear();
 
+// ==================================
+// SEMBUNYIKAN SLIDER JARING-JARING
+// ==================================
 
+let kontrolKubus =
+    document.getElementById("kontrolJaringKubus");
+
+if(kontrolKubus){
+
+    kontrolKubus.style.display = "none";
+
+}
+
+let kontrolBalok =
+    document.getElementById("kontrolJaringBalok3D");
+
+if(kontrolBalok){
+
+    kontrolBalok.style.display = "none";
+
+}
 
 let skalaBalok = window.innerWidth <= 700 ? 0.6 : 1;
 
