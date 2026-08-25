@@ -1313,6 +1313,34 @@ depan.position.set(
 );
 
 root.add(depan);
+
+
+// ==================================
+// PANEL BELAKANG
+// ==================================
+
+let belakang =
+    buatPanelBalok3D(
+        3,
+        1,
+        0xff9800
+    );
+
+belakang.position.set(
+    0,
+    1.5,
+    0
+);
+
+root.add(belakang);
+
+
+// ==================================
+// SCROLL KE TAMPILAN 3D
+// ==================================
+
+scrollKeTampilan();
+
 }
 
 // ======================================
