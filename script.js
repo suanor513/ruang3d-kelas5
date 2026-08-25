@@ -538,14 +538,16 @@ let kecepatanJaringKubus = 700;
 function tampilJaringKubus(){
 
     scene.clear();
-let kontrolKubus =
-    document.getElementById("kontrolJaringKubus");
+let kontrolJaring3D =
+    document.getElementById("kontrolJaring3D");
 
-if(kontrolKubus){
+if(kontrolJaring3D){
 
-    kontrolKubus.style.display = "block";
+    kontrolJaring3D.style.display = "block";
 
 }
+
+jenisJaring3DAktif = "kubus";
     panelJaringKubus = [];
     dataJaringKubus = [];
 
@@ -1049,6 +1051,20 @@ function aturJaringKubus(nilai){
     }else if(nilai >= 1){
 
         jaringKubusTerbuka = false;
+
+    }
+
+}
+
+// ======================================
+// SLIDER UNIVERSAL JARING-JARING 3D
+// ======================================
+
+function aturJaring3D(nilai){
+
+    if(jenisJaring3DAktif === "kubus"){
+
+        aturJaringKubus(nilai);
 
     }
 
