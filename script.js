@@ -1299,7 +1299,30 @@ function tampilJaringBalok3D(){
     root.position.z = -0.5;
 
     scene.add(root);
-    let depan =
+    
+    // ==================================
+// 4 SISI UTAMA
+// ==================================
+
+// SISI KIRI
+let kiri =
+    buatPanelBalok3D(
+        1,
+        1,
+        0x2196f3
+    );
+
+kiri.position.set(
+    -2,
+    0,
+    0
+);
+
+root.add(kiri);
+
+
+// SISI DEPAN
+let depan =
     buatPanelBalok3D(
         3,
         1,
@@ -1315,10 +1338,24 @@ depan.position.set(
 root.add(depan);
 
 
-// ==================================
-// PANEL BELAKANG
-// ==================================
+// SISI KANAN
+let kanan =
+    buatPanelBalok3D(
+        1,
+        1,
+        0x9c27b0
+    );
 
+kanan.position.set(
+    2,
+    0,
+    0
+);
+
+root.add(kanan);
+
+
+// SISI BELAKANG
 let belakang =
     buatPanelBalok3D(
         3,
@@ -1327,30 +1364,12 @@ let belakang =
     );
 
 belakang.position.set(
+    4,
     0,
-    2.5,
     0
 );
 
 root.add(belakang);
-// ==================================
-// PANEL ATAS
-// ==================================
-
-let atas =
-    buatPanelBalok3D(
-        3,
-        1.5,
-        0xffeb3b
-    );
-
-atas.position.set(
-    0,
-    1.25,
-    0
-);
-
-root.add(atas);
 // ==================================
 // SCROLL KE TAMPILAN 3D
 // ==================================
