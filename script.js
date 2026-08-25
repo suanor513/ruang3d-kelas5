@@ -1162,63 +1162,35 @@ scrollKeTampilan();
 
 function tampilJaringBalok(){
 
-    // ======================================
-// SLIDER JARING-JARING BALOK
-// ======================================
-
 let kuisBox =
     document.getElementById("kuis");
 
 if(kuisBox){
 
-    let sliderLama =
-        document.getElementById(
-            "kontrolJaringBalok3D"
-        );
+    kuisBox.innerHTML += `
 
-    if(sliderLama){
+    <div style="
+        margin:15px 0;
+        text-align:center;
+    ">
 
-        sliderLama.remove();
-
-    }
-
-
-    kuisBox.insertAdjacentHTML(
-        "beforeend",
-        `
-
-        <div
-            id="kontrolJaringBalok3D"
-            style="
-                margin:15px 0;
-                text-align:center;
-            "
-        >
-
-            <div>
-                🔓 Buka
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                🔒 Tutup
-            </div>
-
+        <label>
+            🔓 Buka
             <input
                 type="range"
                 min="0"
                 max="1"
                 step="0.01"
                 value="0"
-                oninput="
-                    aturJaringBalok3D(
-                        Number(this.value)
-                    )
-                "
+                oninput="aturJaringBalok3D(this.value)"
                 style="width:80%;"
             >
+            🔒 Tutup
+        </label>
 
-        </div>
+    </div>
 
-        `
-    );
+    `;
 
 }
 
