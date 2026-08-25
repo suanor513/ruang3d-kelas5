@@ -404,14 +404,34 @@ function tambahLabel3D(teks, posisi, target){
 
 function tampilKubus(){
 
+    scene.clear();
 
-scene.clear();
+    // ==================================
+    // SEMBUNYIKAN SLIDER JARING-JARING
+    // ==================================
 
+    let kontrolKubus =
+        document.getElementById("kontrolJaringKubus");
 
-let geometry =
-new THREE.BoxGeometry(
-2,2,2
-);
+    if(kontrolKubus){
+
+        kontrolKubus.style.display = "none";
+
+    }
+
+    let kontrolBalok =
+        document.getElementById("kontrolJaringBalok3D");
+
+    if(kontrolBalok){
+
+        kontrolBalok.style.display = "none";
+
+    }
+
+    let geometry =
+    new THREE.BoxGeometry(
+        2,2,2
+    );
 
 
 let materials = [
