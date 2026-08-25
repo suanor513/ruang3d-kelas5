@@ -1393,6 +1393,25 @@ atas.position.set(
 );
 
 root.add(atas);    
+
+// ==================================
+// SISI BAWAH
+// ==================================
+
+let bawah =
+    buatPanelBalok3D(
+        3,
+        1.5,
+        0xf44336
+    );
+
+bawah.position.set(
+    0,
+    -1.25,
+    0
+);
+
+root.add(bawah);
     
 // ==================================
 // SCROLL KE TAMPILAN 3D
