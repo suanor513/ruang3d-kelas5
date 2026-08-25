@@ -1333,7 +1333,30 @@ belakang.position.set(
 );
 
 root.add(belakang);
+// ==================================
+// PANEL ATAS
+// ==================================
 
+buatEngselBalok3D(
+
+    0,
+    0.5,
+
+    0,
+    0.75,
+
+    3,
+    1.5,
+
+    0xffeb3b,
+
+    "x",
+
+    Math.PI / 2,
+
+    root
+
+);
 
 // ==================================
 // SCROLL KE TAMPILAN 3D
