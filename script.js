@@ -1328,21 +1328,32 @@ let nilaiSliderJaringBalok3D = 0;
 function tampilJaringBalok3D(){
 
     scene.clear();
-let kontrolKubus =
-    document.getElementById("kontrolJaringKubus");
 
-if(kontrolKubus){
+    let kontrolKubus =
+        document.getElementById("kontrolJaringKubus");
 
-    kontrolKubus.style.display = "none";
+    if(kontrolKubus){
 
-}
+        kontrolKubus.style.display = "none";
+
+    }
+
+    let kontrolBalok =
+        document.getElementById("kontrolJaringBalok3D");
+
+    if(kontrolBalok){
+
+        kontrolBalok.style.display = "block";
+
+    }
+
     panelJaringBalok3D = [];
     dataJaringBalok3D = [];
 
     jaringBalok3DTerbuka = true;
 
     let root =
-    new THREE.Group();
+        new THREE.Group();
 
     root.position.set(
     -1.5,
