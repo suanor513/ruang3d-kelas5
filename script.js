@@ -518,7 +518,14 @@ let kecepatanJaringKubus = 700;
 function tampilJaringKubus(){
 
     scene.clear();
+let kontrolKubus =
+    document.getElementById("kontrolJaringKubus");
 
+if(kontrolKubus){
+
+    kontrolKubus.style.display = "block";
+
+}
     panelJaringKubus = [];
     dataJaringKubus = [];
 
@@ -1282,7 +1289,14 @@ let nilaiSliderJaringBalok3D = 0;
 function tampilJaringBalok3D(){
 
     scene.clear();
+let kontrolKubus =
+    document.getElementById("kontrolJaringKubus");
 
+if(kontrolKubus){
+
+    kontrolKubus.style.display = "none";
+
+}
     panelJaringBalok3D = [];
     dataJaringBalok3D = [];
 
