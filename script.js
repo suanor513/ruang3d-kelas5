@@ -1296,7 +1296,11 @@ function tampilJaringBalok3D(){
     let root =
     new THREE.Group();
 
-    root.position.z = -0.5;
+    root.position.set(
+    -1.5,
+    0,
+    -0.5
+);
 
     scene.add(root);
     
