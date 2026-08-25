@@ -1431,7 +1431,7 @@ let kuisBox =
 
 if(kuisBox){
 
-    kuisBox.innerHTML += `
+    kuisBox.innerHTML = `
 
     <div style="
         margin:15px 0;
