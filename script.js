@@ -1318,7 +1318,8 @@ function tutupJaringBalok(){
 let panelJaringBalok3D = [];
 let dataJaringBalok3D = [];
 let jaringBalok3DTerbuka = true;
-let nilaiSliderJaringBalok3D = 0;
+
+let jenisJaring3DAktif = "";
 
 // ======================================
 // TAMPILKAN JARING-JARING BALOK 3D
