@@ -1088,17 +1088,11 @@ geometry,
 materials
 );
 
-
-
 scene.add(cube);
-
-
 
 tambahGaris(
 geometry
 );
-
-
 
 tambahTitikSudut([
 
@@ -1540,6 +1534,17 @@ function buatEngselBalok3D(
     });
 
     return pivot;
+
+}
+
+// ======================================
+// KONTROL SLIDER JARING-JARING BALOK 3D
+// TAHAP 2
+// ======================================
+
+function aturJaringBalok3D(nilai){
+
+    nilaiSliderJaringBalok3D = nilai;
 
 }
 
