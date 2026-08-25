@@ -1421,42 +1421,7 @@ bawah.position.set(
 
 root.add(bawah);
 
-// ==================================
-// SLIDER JARING-JARING BALOK
-// TAHAP 3
-// ==================================
 
-let kuisBox =
-    document.getElementById("kuis");
-
-if(kuisBox){
-
-    kuisBox.innerHTML = `
-
-    <div style="
-        margin:15px 0;
-        text-align:center;
-    ">
-
-        <label>
-            🔓 Buka
-            <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value="0"
-                oninput="aturJaringBalok3D(this.value)"
-                style="width:80%;"
-            >
-            🔒 Tutup
-        </label>
-
-    </div>
-
-    `;
-
-}
     
 // ==================================
 // SCROLL KE TAMPILAN 3D
