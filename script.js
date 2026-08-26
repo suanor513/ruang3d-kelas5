@@ -1489,7 +1489,7 @@ buatEngselBalok3D(
 
 buatEngselBalok3D(
 
-    1.5,
+    2,
     0,
 
     1.5,
@@ -1502,7 +1502,7 @@ buatEngselBalok3D(
 
     "y",
 
-    Math.PI,
+    -Math.PI,
 
     root
 
