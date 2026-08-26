@@ -1506,7 +1506,7 @@ buatEngselBalok3D(
 
     root,
 
-    1,
+    0,
     0
 
 );
