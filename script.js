@@ -1504,7 +1504,10 @@ buatEngselBalok3D(
 
     -Math.PI,
 
-    root
+    root,
+
+    1,
+    0
 
 );
     
