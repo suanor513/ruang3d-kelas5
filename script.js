@@ -1051,16 +1051,67 @@ function aturJaringKubus(nilai){
 // SLIDER UNIVERSAL JARING-JARING 3D
 // ======================================
 
+// ======================================
+// SLIDER UNIVERSAL JARING-JARING 3D
+// ======================================
+
 function aturJaring3D(nilai){
+
+    // ==================================
+    // JARING-JARING KUBUS
+    // ==================================
 
     if(jenisJaring3DAktif === "kubus"){
 
         aturJaringKubus(nilai);
 
+        return;
+
+    }
+
+
+    // ==================================
+    // JARING-JARING BALOK
+    // ==================================
+
+    if(jenisJaring3DAktif === "balok"){
+
+        if(dataJaringBalok3D.length === 0){
+
+            return;
+
+        }
+
+        dataJaringBalok3D.forEach(
+            function(data){
+
+                let sudut =
+                    data.sudutBuka +
+                    (
+                        data.sudutTutup -
+                        data.sudutBuka
+                    ) * nilai;
+
+                data.pivot.rotation[
+                    data.sumbu
+                ] = sudut;
+
+            }
+        );
+
+        if(nilai <= 0){
+
+            jaringBalok3DTerbuka = true;
+
+        }else if(nilai >= 1){
+
+            jaringBalok3DTerbuka = false;
+
+        }
+
     }
 
 }
-
 // ======================================
 // SCROLL OTOMATIS KE BANGUN RUANG
 // ======================================
