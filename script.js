@@ -1510,20 +1510,26 @@ buatEngselBalok3D(
 // SISI BAWAH
 // ==================================
 
-let bawah =
-    buatPanelBalok3D(
-        3,
-        1.5,
-        0xf44336
-    );
+buatEngselBalok3D(
 
-bawah.position.set(
     0,
-    -1.25,
-    0
-);
+    -0.5,
 
-root.add(bawah);
+    0,
+    -0.75,
+
+    3,
+    1.5,
+
+    0xf44336,
+
+    "x",
+
+    -Math.PI / 2,
+
+    root
+
+);
 
 
     
