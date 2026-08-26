@@ -1489,10 +1489,10 @@ buatEngselBalok3D(
 
 buatEngselBalok3D(
 
-    2.5,
+    2,
     0,
 
-    1,
+    1.5,
     0,
 
     3,
