@@ -1427,7 +1427,7 @@ buatEngselBalok3D(
     0,
 
     1,
-    1,
+    1.5,
 
     0x2196f3,
 
