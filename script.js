@@ -1485,20 +1485,26 @@ root.add(belakang);
 // SISI ATAS
 // ==================================
 
-let atas =
-    buatPanelBalok3D(
-        3,
-        1.5,
-        0xffeb3b
-    );
+buatEngselBalok3D(
 
-atas.position.set(
     0,
-    1.25,
-    0
-);
+    0.5,
 
-root.add(atas);    
+    0,
+    0.75,
+
+    3,
+    1.5,
+
+    0xffeb3b,
+
+    "x",
+
+    Math.PI / 2,
+
+    root
+
+);    
 
 // ==================================
 // SISI BAWAH
