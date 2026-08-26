@@ -1483,21 +1483,30 @@ buatEngselBalok3D(
 );
 
 
+// ==================================
 // SISI BELAKANG
-let belakang =
-    buatPanelBalok3D(
-        3,
-        1,
-        0xff9800
-    );
+// ==================================
 
-belakang.position.set(
-    4,
+buatEngselBalok3D(
+
+    3.5,
     0,
-    0
-);
 
-root.add(belakang);
+    1.5,
+    0,
+
+    3,
+    1,
+
+    0xff9800,
+
+    "y",
+
+    Math.PI,
+
+    root
+
+);
 
 // ==================================
 // SISI ATAS
