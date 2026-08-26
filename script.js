@@ -1414,21 +1414,30 @@ function tampilJaringBalok3D(){
 // 4 SISI UTAMA
 // ==================================
 
+// ==================================
 // SISI KIRI
-let kiri =
-    buatPanelBalok3D(
-        1,
-        1,
-        0x2196f3
-    );
+// ==================================
 
-kiri.position.set(
-    -2,
+buatEngselBalok3D(
+
+    -1.5,
     0,
-    0
-);
 
-root.add(kiri);
+    -0.5,
+    0,
+
+    1,
+    1,
+
+    0x2196f3,
+
+    "y",
+
+    Math.PI / 2,
+
+    root
+
+);
 
 
 // SISI DEPAN
