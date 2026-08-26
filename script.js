@@ -1457,21 +1457,30 @@ depan.position.set(
 root.add(depan);
 
 
+// ==================================
 // SISI KANAN
-let kanan =
-    buatPanelBalok3D(
-        1,
-        1,
-        0x9c27b0
-    );
+// ==================================
 
-kanan.position.set(
-    2,
+buatEngselBalok3D(
+
+    1.5,
     0,
-    0
-);
 
-root.add(kanan);
+    0.5,
+    0,
+
+    1,
+    1,
+
+    0x9c27b0,
+
+    "y",
+
+    -Math.PI / 2,
+
+    root
+
+);
 
 
 // SISI BELAKANG
