@@ -410,23 +410,14 @@ function tampilKubus(){
     // SEMBUNYIKAN SLIDER JARING-JARING
     // ==================================
 
-    let kontrolKubus =
-        document.getElementById("kontrolJaringKubus");
+let kontrolJaring3D =
+    document.getElementById("kontrolJaring3D");
 
-    if(kontrolKubus){
+if(kontrolJaring3D){
 
-        kontrolKubus.style.display = "none";
+    kontrolJaring3D.style.display = "none";
 
-    }
-
-    let kontrolBalok =
-        document.getElementById("kontrolJaringBalok3D");
-
-    if(kontrolBalok){
-
-        kontrolBalok.style.display = "none";
-
-    }
+}
 
     let geometry =
     new THREE.BoxGeometry(
