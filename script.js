@@ -1644,7 +1644,7 @@ function buatEngselBalok3D(
     warna,
     sumbu,
     sudutTutup,
-    parent
+    parent,
     pivotZ = 0,
     sisiZ = 0
 ){
@@ -1690,7 +1690,6 @@ function buatEngselBalok3D(
     return pivot;
 
 }
-
 // ======================================
 // KONTROL SLIDER JARING-JARING BALOK 3D
 // TAHAP 2
