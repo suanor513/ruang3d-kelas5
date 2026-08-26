@@ -1645,6 +1645,8 @@ function buatEngselBalok3D(
     sumbu,
     sudutTutup,
     parent
+    pivotZ = 0,
+    sisiZ = 0
 ){
 
     let pivot =
@@ -1653,7 +1655,7 @@ function buatEngselBalok3D(
     pivot.position.set(
         pivotX,
         pivotY,
-        0
+        pivotZ
     );
 
     parent.add(pivot);
@@ -1668,7 +1670,7 @@ function buatEngselBalok3D(
     sisi.position.set(
         sisiX,
         sisiY,
-        0
+        sisiZ
     );
 
     pivot.add(sisi);
