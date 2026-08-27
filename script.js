@@ -1540,9 +1540,23 @@ function tampilJaringTabung3D(){
         selimut
     );
 
- // ==================================
+// ==================================
 // LINGKARAN ATAS
 // ==================================
+
+let pivotLingkaranAtas =
+    new THREE.Group();
+
+pivotLingkaranAtas.position.set(
+    0,
+    1,
+    0
+);
+
+root.add(
+    pivotLingkaranAtas
+);
+
 
 let geometryAtas =
     new THREE.CircleGeometry(
@@ -1562,13 +1576,15 @@ let lingkaranAtas =
         materialAtas
     );
 
+
+// Posisi lingkaran relatif terhadap engsel
 lingkaranAtas.position.set(
     0,
-    2,
+    1,
     0
 );
 
-root.add(
+pivotLingkaranAtas.add(
     lingkaranAtas
 );
 
@@ -1576,6 +1592,23 @@ panelJaringTabung3D.push(
     lingkaranAtas
 );
 
+
+// ==================================
+// DATA ENGSEL LINGKARAN ATAS
+// ==================================
+
+dataJaringTabung3D.push({
+
+    pivot:pivotLingkaranAtas,
+
+    sumbu:"x",
+
+    sudutBuka:0,
+
+    sudutTutup:
+        Math.PI / 2
+
+});
 
 // ==================================
 // LINGKARAN BAWAH
