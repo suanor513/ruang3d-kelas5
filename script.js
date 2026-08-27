@@ -1831,6 +1831,14 @@ dataJaringPrisma3D.push({
 });
 
 // ======================================
+// SELESAI JARING-JARING PRISMA 3D
+// ======================================
+
+scrollKeTampilan();
+
+}
+    
+// ======================================
 // TAMPILKAN JARING-JARING BALOK 3D
 // TAHAP 2
 // ======================================
