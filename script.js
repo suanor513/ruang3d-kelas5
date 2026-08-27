@@ -1603,8 +1603,25 @@ sisi3.position.set(
 );
 
 root.add(sisi3);
-    
-}
+
+// ==================================
+    // SEGITIGA 1
+    // ==================================
+
+    let segitiga1 =
+        buatSegitigaPrisma(
+            0xf44336
+        );
+
+    segitiga1.position.set(
+        -1.2,
+        0,
+        0
+    );
+
+    root.add(segitiga1);
+
+}  
 
 // ======================================
 // TAMPILKAN JARING-JARING BALOK 3D
