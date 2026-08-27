@@ -1490,7 +1490,7 @@ let pivotKanan =
 let pivotBelakang =
     buatEngselBalok3D(
 
-        0,
+        1.5,
         0,
 
         1.5,
