@@ -1379,6 +1379,49 @@ let dataJaringPrisma3D = [];
 let jaringPrisma3DTerbuka = true;
 
 // ======================================
+// TAMPILKAN JARING-JARING PRISMA SEGITIGA 3D
+// ======================================
+
+function tampilJaringPrisma3D(){
+
+    scene.clear();
+
+    // ==================================
+    // AKTIFKAN SLIDER JARING-JARING 3D
+    // ==================================
+
+    let kontrolJaring3D =
+        document.getElementById("kontrolJaring3D");
+
+    if(kontrolJaring3D){
+
+        kontrolJaring3D.style.display = "block";
+
+    }
+
+    jenisJaring3DAktif = "prisma";
+
+    // ==================================
+    // RESET DATA JARING-JARING
+    // ==================================
+
+    panelJaringPrisma3D = [];
+    dataJaringPrisma3D = [];
+
+    jaringPrisma3DTerbuka = true;
+
+    // ==================================
+    // GROUP UTAMA
+    // ==================================
+
+    let root =
+        new THREE.Group();
+
+    scene.add(root);
+
+}
+
+// ======================================
 // TAMPILKAN JARING-JARING BALOK 3D
 // TAHAP 2
 // ======================================
