@@ -1778,25 +1778,57 @@ dataJaringPrisma3D.push({
 });
 
 // ==================================
-    // SEGITIGA 2
-    // ==================================
+// SEGITIGA 2 - BAWAH
+// ==================================
 
-    let segitiga2 =
-        buatSegitigaPrisma(
-            0xf44336
-        );
+let pivotSegitigaBawah =
+    new THREE.Group();
 
-    segitiga2.position.set(
+pivotSegitigaBawah.position.set(
     0,
-    -2.2,
+    -1,
+    0
+);
+
+root.add(
+    pivotSegitigaBawah
+);
+
+
+let segitiga2 =
+    buatSegitigaPrisma(
+        0xf44336
+    );
+
+segitiga2.position.set(
+    0,
+    -1.2,
     0
 );
 
 segitiga2.rotation.z = Math.PI;
 
-    root.add(segitiga2);    
-    
-}  
+pivotSegitigaBawah.add(
+    segitiga2
+);
+
+
+// ==================================
+// DATA ENGSEL SEGITIGA BAWAH
+// ==================================
+
+dataJaringPrisma3D.push({
+
+    pivot:pivotSegitigaBawah,
+
+    sumbu:"x",
+
+    sudutBuka:0,
+
+    sudutTutup:
+        -Math.PI / 2
+
+});
 
 // ======================================
 // TAMPILKAN JARING-JARING BALOK 3D
