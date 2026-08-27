@@ -1540,6 +1540,78 @@ function tampilJaringTabung3D(){
         selimut
     );
 
+ // ==================================
+// LINGKARAN ATAS
+// ==================================
+
+let geometryAtas =
+    new THREE.CircleGeometry(
+        radius,
+        48
+    );
+
+let materialAtas =
+    new THREE.MeshBasicMaterial({
+        color:0x2196f3,
+        side:THREE.DoubleSide
+    });
+
+let lingkaranAtas =
+    new THREE.Mesh(
+        geometryAtas,
+        materialAtas
+    );
+
+lingkaranAtas.position.set(
+    0,
+    1.5,
+    0
+);
+
+root.add(
+    lingkaranAtas
+);
+
+panelJaringTabung3D.push(
+    lingkaranAtas
+);
+
+
+// ==================================
+// LINGKARAN BAWAH
+// ==================================
+
+let geometryBawah =
+    new THREE.CircleGeometry(
+        radius,
+        48
+    );
+
+let materialBawah =
+    new THREE.MeshBasicMaterial({
+        color:0xff9800,
+        side:THREE.DoubleSide
+    });
+
+let lingkaranBawah =
+    new THREE.Mesh(
+        geometryBawah,
+        materialBawah
+    );
+
+lingkaranBawah.position.set(
+    0,
+    -1.5,
+    0
+);
+
+root.add(
+    lingkaranBawah
+);
+
+panelJaringTabung3D.push(
+    lingkaranBawah
+);
 
     // ==================================
     // MATERI
