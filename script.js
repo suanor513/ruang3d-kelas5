@@ -1621,6 +1621,23 @@ root.add(sisi3);
 
     root.add(segitiga1);
 
+// ==================================
+    // SEGITIGA 2
+    // ==================================
+
+    let segitiga2 =
+        buatSegitigaPrisma(
+            0xf44336
+        );
+
+    segitiga2.position.set(
+        6.2,
+        0,
+        0
+    );
+
+    root.add(segitiga2);    
+    
 }  
 
 // ======================================
