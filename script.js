@@ -1603,6 +1603,23 @@ panelJaringTabung3D.push(
 );
 
 // ==================================
+// DATA ENGSEL SELIMUT TABUNG
+// ==================================
+
+dataJaringTabung3D.push({
+
+    pivot:pivotSelimutTabung,
+
+    sumbu:"y",
+
+    sudutBuka:0,
+
+    sudutTutup:
+        Math.PI * 2
+
+});
+ 
+// ==================================
 // LINGKARAN ATAS
 // ==================================
 
