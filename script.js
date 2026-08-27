@@ -1458,58 +1458,56 @@ root.add(depan);
 
 
 // ==================================
-// SISI KANAN
+// SISI KANAN / UNGU
 // ==================================
 
-buatEngselBalok3D(
+let pivotKanan =
+    buatEngselBalok3D(
 
-    1.5,
-    0,
+        1.5,
+        0,
 
-    0.75,
-    0,
+        0.75,
+        0,
 
-    1.5,
-    1,
+        1.5,
+        1,
 
-    0x9c27b0,
+        0x9c27b0,
 
-    "y",
+        "y",
 
-    -Math.PI / 2,
+        -Math.PI / 2,
 
-    root
+        root
 
-);
-
+    );
 
 // ==================================
-// SISI BELAKANG
+// SISI BELAKANG / ORANYE
 // ==================================
 
-buatEngselBalok3D(
+let pivotBelakang =
+    buatEngselBalok3D(
 
-    3,
-    0,
+        0,
+        0,
 
-    1.5,
-    0,
+        1.5,
+        0,
 
-    3,
-    1,
+        3,
+        1,
 
-    0xff9800,
+        0xff9800,
 
-    "y",
+        "y",
 
-    -Math.PI,
+        -Math.PI / 2,
 
-    root,
+        pivotKanan
 
-    0,
-    0
-
-);
+    );
     
 // ==================================
 // SISI ATAS
