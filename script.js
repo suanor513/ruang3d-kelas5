@@ -1419,6 +1419,65 @@ function tampilJaringPrisma3D(){
 
     scene.add(root);
 
+    // ==================================
+    // UKURAN JARING-JARING
+    // ==================================
+
+    let panjang = 2;
+    let tinggi = 1.5;
+
+    // ==================================
+    // FUNGSI PANEL PERSEGI PANJANG
+    // ==================================
+
+    function buatPanelPrisma(
+        ukuranX,
+        ukuranY,
+        warna
+    ){
+
+        let geometry =
+            new THREE.PlaneGeometry(
+                ukuranX,
+                ukuranY
+            );
+
+        let material =
+            new THREE.MeshBasicMaterial({
+                color:warna,
+                side:THREE.DoubleSide
+            });
+
+        let panel =
+            new THREE.Mesh(
+                geometry,
+                material
+            );
+
+        let garisGeometry =
+            new THREE.EdgesGeometry(
+                geometry
+            );
+
+        let garisMaterial =
+            new THREE.LineBasicMaterial({
+                color:0x000000
+            });
+
+        let garis =
+            new THREE.LineSegments(
+                garisGeometry,
+                garisMaterial
+            );
+
+        panel.add(garis);
+
+        panelJaringPrisma3D.push(panel);
+
+        return panel;
+
+    }
+    
 }
 
 // ======================================
