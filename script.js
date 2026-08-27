@@ -1564,7 +1564,7 @@ let lingkaranAtas =
 
 lingkaranAtas.position.set(
     0,
-    1.5,
+    2,
     0
 );
 
@@ -1601,7 +1601,7 @@ let lingkaranBawah =
 
 lingkaranBawah.position.set(
     0,
-    -1.5,
+    -2,
     0
 );
 
