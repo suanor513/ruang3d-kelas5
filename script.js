@@ -1674,11 +1674,11 @@ buatEngselPrisma3D(
 
     0x2196f3,
 
-    "y",
+"y",
 
-    Math.PI / 2,
+Math.PI * 108.435 / 180,
 
-    root
+root
 
 );
 
@@ -1721,9 +1721,9 @@ buatEngselPrisma3D(
 
     "y",
 
-    -Math.PI / 2,
+-Math.PI * 108.435 / 180,
 
-    root
+root
 
 );
     
