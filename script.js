@@ -1549,6 +1549,65 @@ function buatSegitigaPrisma(
     return segitiga;
 
 }
+
+    // ==================================
+    // FUNGSI ENGSEL PRISMA SEGITIGA
+    // ==================================
+
+    function buatEngselPrisma3D(
+        pivotX,
+        pivotY,
+        sisiX,
+        sisiY,
+        ukuranX,
+        ukuranY,
+        warna,
+        sumbu,
+        sudutTutup,
+        parent
+    ){
+
+        let pivot =
+            new THREE.Group();
+
+        pivot.position.set(
+            pivotX,
+            pivotY,
+            0
+        );
+
+        parent.add(pivot);
+
+        let sisi =
+            buatPanelPrisma(
+                ukuranX,
+                ukuranY,
+                warna
+            );
+
+        sisi.position.set(
+            sisiX,
+            sisiY,
+            0
+        );
+
+        pivot.add(sisi);
+
+        dataJaringPrisma3D.push({
+
+            pivot:pivot,
+
+            sumbu:sumbu,
+
+            sudutBuka:0,
+
+            sudutTutup:sudutTutup
+
+        });
+
+        return pivot;
+
+    }
     
 // ==================================
 // 3 SISI PERSEGI PANJANG
