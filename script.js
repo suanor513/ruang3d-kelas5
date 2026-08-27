@@ -1778,8 +1778,22 @@ dataJaringPrisma3D.push({
 });
 
 // ==================================
-// SEGITIGA 2
+// SEGITIGA 2 - BAWAH
 // ==================================
+
+let pivotSegitigaBawah =
+    new THREE.Group();
+
+pivotSegitigaBawah.position.set(
+    0,
+    -1,
+    0
+);
+
+root.add(
+    pivotSegitigaBawah
+);
+
 
 let segitiga2 =
     buatSegitigaPrisma(
@@ -1788,13 +1802,15 @@ let segitiga2 =
 
 segitiga2.position.set(
     0,
-    -2.2,
+    -1.2,
     0
 );
 
 segitiga2.rotation.z = Math.PI;
 
-root.add(segitiga2);
+pivotSegitigaBawah.add(
+    segitiga2
+);
 
 
 // ==================================
