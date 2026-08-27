@@ -1477,6 +1477,60 @@ function tampilJaringPrisma3D(){
         return panel;
 
     }
+
+// ==================================
+// 3 SISI PERSEGI PANJANG
+// ==================================
+
+// SISI 1
+let sisi1 =
+    buatPanelPrisma(
+        2,
+        1.5,
+        0x2196f3
+    );
+
+sisi1.position.set(
+    0,
+    0,
+    0
+);
+
+root.add(sisi1);
+
+
+// SISI 2
+let sisi2 =
+    buatPanelPrisma(
+        2,
+        1.5,
+        0x4caf50
+    );
+
+sisi2.position.set(
+    2,
+    0,
+    0
+);
+
+root.add(sisi2);
+
+
+// SISI 3
+let sisi3 =
+    buatPanelPrisma(
+        2,
+        1.5,
+        0xffeb3b
+    );
+
+sisi3.position.set(
+    4,
+    0,
+    0
+);
+
+root.add(sisi3);
     
 }
 
