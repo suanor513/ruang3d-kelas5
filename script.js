@@ -1609,59 +1609,72 @@ function buatSegitigaPrisma(
 
     }
     
-// ==================================
-// 3 SISI PERSEGI PANJANG
-// ==================================
+    // ==================================
+    // 3 SISI PERSEGI PANJANG
+    // ==================================
 
-// SISI 1
-let sisi1 =
-    buatPanelPrisma(
-        2,
-        1.5,
-        0x2196f3
+    // Panjang sisi segitiga:
+    // AB = CA ≈ 2.53
+    // BC = 1.6
+
+    // ==================================
+    // SISI 1
+    // ==================================
+
+    let sisi1 =
+        buatPanelPrisma(
+            2.53,
+            2,
+            0x2196f3
+        );
+
+    sisi1.position.set(
+        -2.065,
+        0,
+        0
     );
 
-sisi1.position.set(
-    0,
-    0,
-    0
-);
-
-root.add(sisi1);
+    root.add(sisi1);
 
 
-// SISI 2
-let sisi2 =
-    buatPanelPrisma(
-        2,
-        1.5,
-        0x4caf50
+    // ==================================
+    // SISI 2 - TENGAH
+    // ==================================
+
+    let sisi2 =
+        buatPanelPrisma(
+            1.6,
+            2,
+            0x4caf50
+        );
+
+    sisi2.position.set(
+        0,
+        0,
+        0
     );
 
-sisi2.position.set(
-    2,
-    0,
-    0
-);
-
-root.add(sisi2);
+    root.add(sisi2);
 
 
-// SISI 3
-let sisi3 =
-    buatPanelPrisma(
-        2,
-        1.5,
-        0xffeb3b
+    // ==================================
+    // SISI 3
+    // ==================================
+
+    let sisi3 =
+        buatPanelPrisma(
+            2.53,
+            2,
+            0xffeb3b
+        );
+
+    sisi3.position.set(
+        2.065,
+        0,
+        0
     );
 
-sisi3.position.set(
-    4,
-    0,
-    0
-);
-
-root.add(sisi3);
+    root.add(sisi3);
 
 // ==================================
     // SEGITIGA 1
@@ -1673,10 +1686,10 @@ root.add(sisi3);
         );
 
     segitiga1.position.set(
-        -1.2,
-        0,
-        0
-    );
+    0,
+    2.2,
+    0
+);
 
     root.add(segitiga1);
 
@@ -1690,10 +1703,12 @@ root.add(sisi3);
         );
 
     segitiga2.position.set(
-        6.2,
-        0,
-        0
-    );
+    0,
+    -2.2,
+    0
+);
+
+segitiga2.rotation.z = Math.PI;
 
     root.add(segitiga2);    
     
