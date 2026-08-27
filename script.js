@@ -7,7 +7,7 @@ let camera;
 let renderer;
 let cube;
 let controls;
-
+ 
 
 // ======================================
 // MEMBUAT CANVAS 3D
