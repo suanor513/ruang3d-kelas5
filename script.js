@@ -1656,22 +1656,6 @@ dataJaringTabung3D.push({
 // LINGKARAN BAWAH
 // ==================================
 
-let geometryBawah =
-    new THREE.CircleGeometry(
-        radius,
-        48
-    );
-
-let materialBawah =
-    new THREE.MeshBasicMaterial({
-        color:0xff9800,
-        side:THREE.DoubleSide
-    });
-
-// ==================================
-// LINGKARAN BAWAH
-// ==================================
-
 let pivotLingkaranBawah =
     new THREE.Group();
 
