@@ -1668,6 +1668,36 @@ let materialBawah =
         side:THREE.DoubleSide
     });
 
+// ==================================
+// LINGKARAN BAWAH
+// ==================================
+
+let pivotLingkaranBawah =
+    new THREE.Group();
+
+pivotLingkaranBawah.position.set(
+    0,
+    -1,
+    0
+);
+
+root.add(
+    pivotLingkaranBawah
+);
+
+
+let geometryBawah =
+    new THREE.CircleGeometry(
+        radius,
+        48
+    );
+
+let materialBawah =
+    new THREE.MeshBasicMaterial({
+        color:0xff9800,
+        side:THREE.DoubleSide
+    });
+
 let lingkaranBawah =
     new THREE.Mesh(
         geometryBawah,
@@ -1676,17 +1706,35 @@ let lingkaranBawah =
 
 lingkaranBawah.position.set(
     0,
-    -2,
+    -1,
     0
 );
 
-root.add(
+pivotLingkaranBawah.add(
     lingkaranBawah
 );
 
 panelJaringTabung3D.push(
     lingkaranBawah
 );
+
+
+// ==================================
+// DATA ENGSEL LINGKARAN BAWAH
+// ==================================
+
+dataJaringTabung3D.push({
+
+    pivot:pivotLingkaranBawah,
+
+    sumbu:"x",
+
+    sudutBuka:0,
+
+    sudutTutup:
+        -Math.PI / 2
+
+});
 
     // ==================================
     // MATERI
