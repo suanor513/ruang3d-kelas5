@@ -1521,53 +1521,23 @@ function tampilJaringTabung3D(){
 
 
     // ==================================
-    // SELIMUT TABUNG
-    // ==================================
+// SELIMUT TABUNG BERSEGMEN
+// ==================================
 
-    let geometry =
-        new THREE.PlaneGeometry(
-            Math.PI * 2 * radius,
-            tinggi
-        );
+let jumlahSegmen = 32;
 
-    let material =
-        new THREE.MeshBasicMaterial({
-            color:0x4caf50,
-            side:THREE.DoubleSide
-        });
+let lebarSegmen =
+    (Math.PI * 2 * radius) / jumlahSegmen;
 
-    let selimut =
-        new THREE.Mesh(
-            geometry,
-            material
-        );
-
-
-    // ==================================
-    // GARIS TEPI
-    // ==================================
-
-    let garisGeometry =
-        new THREE.EdgesGeometry(
-            geometry
-        );
-
-    let garisMaterial =
-        new THREE.LineBasicMaterial({
-            color:0x000000
-        });
-
-    let garis =
-        new THREE.LineSegments(
-            garisGeometry,
-            garisMaterial
-        );
-
-    selimut.add(garis);
+let materialSelimut =
+    new THREE.MeshBasicMaterial({
+        color:0x4caf50,
+        side:THREE.DoubleSide
+    });
 
 
 // ==================================
-// PIVOT SELIMUT TABUNG
+// PIVOT UTAMA SELIMUT
 // ==================================
 
 let pivotSelimutTabung =
@@ -1585,25 +1555,72 @@ root.add(
 
 
 // ==================================
-// POSISI SELIMUT RELATIF TERHADAP PIVOT
+// PANEL-PANEL SELIMUT
 // ==================================
 
-selimut.position.set(
-    Math.PI * radius,
-    0,
-    0
-);
+for(let i = 0; i < jumlahSegmen; i++){
 
-pivotSelimutTabung.add(
-    selimut
-);
+    let panelGeometry =
+        new THREE.PlaneGeometry(
+            lebarSegmen,
+            tinggi
+        );
 
-panelJaringTabung3D.push(
-    selimut
-);
+    let panel =
+        new THREE.Mesh(
+            panelGeometry,
+            materialSelimut
+        );
+
+    panel.position.set(
+        lebarSegmen / 2,
+        0,
+        0
+    );
+
+    let garisGeometry =
+        new THREE.EdgesGeometry(
+            panelGeometry
+        );
+
+    let garisMaterial =
+        new THREE.LineBasicMaterial({
+            color:0x000000
+        });
+
+    let garis =
+        new THREE.LineSegments(
+            garisGeometry,
+            garisMaterial
+        );
+
+    panel.add(garis);
+
+
+    // ==================================
+    // PIVOT SETIAP PANEL
+    // ==================================
+
+    let pivotPanel =
+        new THREE.Group();
+
+    pivotPanel.position.set(
+        i * lebarSegmen,
+        0,
+        0
+    );
+
+    pivotPanel.add(panel);
+
+    pivotSelimutTabung.add(
+        pivotPanel
+    );
+
+}
+
 
 // ==================================
-// DATA ENGSEL SELIMUT TABUNG
+// DATA ENGSEL SELIMUT
 // ==================================
 
 dataJaringTabung3D.push({
@@ -1614,8 +1631,7 @@ dataJaringTabung3D.push({
 
     sudutBuka:0,
 
-    sudutTutup:
-        Math.PI * 2
+    sudutTutup:0
 
 });
  
