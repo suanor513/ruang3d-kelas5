@@ -1566,21 +1566,41 @@ function tampilJaringTabung3D(){
     selimut.add(garis);
 
 
-    // ==================================
-    // POSISI SELIMUT
-    // ==================================
+// ==================================
+// PIVOT SELIMUT TABUNG
+// ==================================
 
-    selimut.position.set(
-        0,
-        0,
-        0
-    );
+let pivotSelimutTabung =
+    new THREE.Group();
 
-    root.add(selimut);
+pivotSelimutTabung.position.set(
+    -Math.PI * radius,
+    0,
+    0
+);
 
-    panelJaringTabung3D.push(
-        selimut
-    );
+root.add(
+    pivotSelimutTabung
+);
+
+
+// ==================================
+// POSISI SELIMUT RELATIF TERHADAP PIVOT
+// ==================================
+
+selimut.position.set(
+    Math.PI * radius,
+    0,
+    0
+);
+
+pivotSelimutTabung.add(
+    selimut
+);
+
+panelJaringTabung3D.push(
+    selimut
+);
 
 // ==================================
 // LINGKARAN ATAS
