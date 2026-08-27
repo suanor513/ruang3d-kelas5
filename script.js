@@ -1555,8 +1555,11 @@ root.add(
 
 
 // ==================================
-// PANEL-PANEL SELIMUT
+// PANEL-PANEL SELIMUT BERANTAI
 // ==================================
+
+let pivotSebelumnya =
+    pivotSelimutTabung;
 
 for(let i = 0; i < jumlahSegmen; i++){
 
@@ -1572,11 +1575,17 @@ for(let i = 0; i < jumlahSegmen; i++){
             materialSelimut
         );
 
+    // Posisi panel dari engselnya
     panel.position.set(
         lebarSegmen / 2,
         0,
         0
     );
+
+
+    // ==================================
+    // GARIS PANEL
+    // ==================================
 
     let garisGeometry =
         new THREE.EdgesGeometry(
@@ -1598,43 +1607,73 @@ for(let i = 0; i < jumlahSegmen; i++){
 
 
     // ==================================
-    // PIVOT SETIAP PANEL
+    // PIVOT PANEL
     // ==================================
 
     let pivotPanel =
         new THREE.Group();
 
     pivotPanel.position.set(
-        i * lebarSegmen,
+        0,
         0,
         0
     );
 
-    pivotPanel.add(panel);
 
-    pivotSelimutTabung.add(
+    // Panel menempel pada pivot
+    pivotPanel.add(
+        panel
+    );
+
+
+    // ==================================
+    // HUBUNGKAN PANEL SECARA BERANTAI
+    // ==================================
+
+    pivotSebelumnya.add(
         pivotPanel
     );
 
-// ==================================
-// DATA GERAK PANEL SELIMUT
-// ==================================
 
-dataJaringTabung3D.push({
+    // ==================================
+    // DATA GERAK PANEL
+    // ==================================
 
-    pivot:pivotPanel,
+    dataJaringTabung3D.push({
 
-    sumbu:"y",
+        pivot:pivotPanel,
 
-    sudutBuka:0,
+        sumbu:"y",
 
-    sudutTutup:
-        -(i + 1) *
-        (Math.PI * 2 / jumlahSegmen)
+        sudutBuka:0,
 
-}); 
+        sudutTutup:
+            -(Math.PI * 2 / jumlahSegmen)
+
+    });
+
+
+    // ==================================
+    // PIVOT BERIKUTNYA
+    // ==================================
+
+    let pivotBerikutnya =
+        new THREE.Group();
+
+    pivotBerikutnya.position.set(
+        lebarSegmen,
+        0,
+        0
+    );
+
+    pivotPanel.add(
+        pivotBerikutnya
+    );
+
+    pivotSebelumnya =
+        pivotBerikutnya;
+
 }
-
  
 // ==================================
 // LINGKARAN ATAS
