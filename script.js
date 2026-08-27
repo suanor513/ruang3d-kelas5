@@ -1428,6 +1428,142 @@ let dataJaringTabung3D = [];
 let jaringTabung3DTerbuka = true;
 
 // ======================================
+// TAMPILKAN JARING-JARING TABUNG 3D
+// TAHAP 2
+// ======================================
+
+function tampilJaringTabung3D(){
+
+    scene.clear();
+
+    // ==================================
+    // AKTIFKAN SLIDER
+    // ==================================
+
+    let kontrolJaring3D =
+        document.getElementById("kontrolJaring3D");
+
+    if(kontrolJaring3D){
+
+        kontrolJaring3D.style.display = "block";
+
+    }
+
+    jenisJaring3DAktif = "tabung";
+
+    // ==================================
+    // RESET DATA
+    // ==================================
+
+    panelJaringTabung3D = [];
+    dataJaringTabung3D = [];
+
+    jaringTabung3DTerbuka = true;
+
+    // ==================================
+    // GROUP UTAMA
+    // ==================================
+
+    let root =
+        new THREE.Group();
+
+    scene.add(root);
+
+
+    // ==================================
+    // UKURAN TABUNG
+    // ==================================
+
+    let radius = 1;
+    let tinggi = 2;
+
+
+    // ==================================
+    // SELIMUT TABUNG
+    // ==================================
+
+    let geometry =
+        new THREE.PlaneGeometry(
+            Math.PI * 2 * radius,
+            tinggi
+        );
+
+    let material =
+        new THREE.MeshBasicMaterial({
+            color:0x4caf50,
+            side:THREE.DoubleSide
+        });
+
+    let selimut =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+
+    // ==================================
+    // GARIS TEPI
+    // ==================================
+
+    let garisGeometry =
+        new THREE.EdgesGeometry(
+            geometry
+        );
+
+    let garisMaterial =
+        new THREE.LineBasicMaterial({
+            color:0x000000
+        });
+
+    let garis =
+        new THREE.LineSegments(
+            garisGeometry,
+            garisMaterial
+        );
+
+    selimut.add(garis);
+
+
+    // ==================================
+    // POSISI SELIMUT
+    // ==================================
+
+    selimut.position.set(
+        0,
+        0,
+        0
+    );
+
+    root.add(selimut);
+
+    panelJaringTabung3D.push(
+        selimut
+    );
+
+
+    // ==================================
+    // MATERI
+    // ==================================
+
+    ubahMateri(
+
+        "Jaring-Jaring Tabung",
+
+        `
+        <ul>
+        <li>🟢 Selimut berbentuk persegi panjang</li>
+        <li>🔵 Memiliki 2 lingkaran</li>
+        <li>📐 Panjang selimut = 2 × π × r</li>
+        </ul>
+        `
+
+    );
+
+    scrollKeTampilan();
+
+}
+
+// ======================================
 // TAMPILKAN JARING-JARING PRISMA SEGITIGA 3D
 // ======================================
 
