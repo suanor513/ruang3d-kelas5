@@ -1721,7 +1721,7 @@ buatEngselPrisma3D(
 
     "y",
 
-    Math.PI / 2,
+    -Math.PI / 2,
 
     root
 
