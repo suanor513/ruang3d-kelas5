@@ -1616,24 +1616,25 @@ for(let i = 0; i < jumlahSegmen; i++){
         pivotPanel
     );
 
-}
-
-
 // ==================================
-// DATA ENGSEL SELIMUT
+// DATA GERAK PANEL SELIMUT
 // ==================================
 
 dataJaringTabung3D.push({
 
-    pivot:pivotSelimutTabung,
+    pivot:pivotPanel,
 
     sumbu:"y",
 
     sudutBuka:0,
 
-    sudutTutup:0
+    sudutTutup:
+        -(i + 1) *
+        (Math.PI * 2 / jumlahSegmen)
 
-});
+}); 
+}
+
  
 // ==================================
 // LINGKARAN ATAS
