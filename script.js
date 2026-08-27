@@ -1371,6 +1371,14 @@ let jaringBalok3DTerbuka = true;
 let jenisJaring3DAktif = "";
 
 // ======================================
+// JARING-JARING PRISMA SEGITIGA 3D
+// ======================================
+
+let panelJaringPrisma3D = [];
+let dataJaringPrisma3D = [];
+let jaringPrisma3DTerbuka = true;
+
+// ======================================
 // TAMPILKAN JARING-JARING BALOK 3D
 // TAHAP 2
 // ======================================
