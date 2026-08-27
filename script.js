@@ -1419,6 +1419,15 @@ let dataJaringPrisma3D = [];
 let jaringPrisma3DTerbuka = true;
 
 // ======================================
+// JARING-JARING TABUNG 3D
+// TAHAP 1
+// ======================================
+
+let panelJaringTabung3D = [];
+let dataJaringTabung3D = [];
+let jaringTabung3DTerbuka = true;
+
+// ======================================
 // TAMPILKAN JARING-JARING PRISMA SEGITIGA 3D
 // ======================================
 
