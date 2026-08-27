@@ -1194,7 +1194,6 @@ function aturJaring3D(nilai){
 
 } 
  
-}
 // ======================================
 // SCROLL OTOMATIS KE BANGUN RUANG
 // ======================================
