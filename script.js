@@ -1774,8 +1774,7 @@ dataJaringPrisma3D.push({
     sudutBuka:0,
 
     sudutTutup:
-        Math.PI * 108.435 / 180
-
+    Math.PI / 2
 });
 
 // ==================================
