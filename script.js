@@ -1479,6 +1479,78 @@ function tampilJaringPrisma3D(){
     }
 
 // ==================================
+// FUNGSI PANEL SEGITIGA
+// ==================================
+
+function buatSegitigaPrisma(
+    warna
+){
+
+    let geometry =
+        new THREE.BufferGeometry();
+
+    let vertices = new Float32Array([
+
+         0,  1.2, 0,
+        -0.8, -1.2, 0,
+         0.8, -1.2, 0
+
+    ]);
+
+    geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(
+            vertices,
+            3
+        )
+    );
+
+    geometry.computeVertexNormals();
+
+    let material =
+        new THREE.MeshBasicMaterial({
+            color:warna,
+            side:THREE.DoubleSide
+        });
+
+    let segitiga =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+    let garisGeometry =
+        new THREE.BufferGeometry();
+
+    garisGeometry.setFromPoints([
+
+        new THREE.Vector3(0, 1.2, 0),
+        new THREE.Vector3(-0.8, -1.2, 0),
+        new THREE.Vector3(0.8, -1.2, 0),
+        new THREE.Vector3(0, 1.2, 0)
+
+    ]);
+
+    let garisMaterial =
+        new THREE.LineBasicMaterial({
+            color:0x000000
+        });
+
+    let garis =
+        new THREE.Line(
+            garisGeometry,
+            garisMaterial
+        );
+
+    segitiga.add(garis);
+
+    panelJaringPrisma3D.push(segitiga);
+
+    return segitiga;
+
+}
+    
+// ==================================
 // 3 SISI PERSEGI PANJANG
 // ==================================
 
