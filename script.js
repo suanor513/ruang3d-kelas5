@@ -1150,7 +1150,50 @@ function aturJaring3D(nilai){
         }
 
     }
-    
+
+// ==================================
+    // JARING-JARING TABUNG
+    // ==================================
+
+    if(jenisJaring3DAktif === "tabung"){
+
+        if(dataJaringTabung3D.length === 0){
+
+            return;
+
+        }
+
+        dataJaringTabung3D.forEach(
+            function(data){
+
+                let sudut =
+                    data.sudutBuka +
+                    (
+                        data.sudutTutup -
+                        data.sudutBuka
+                    ) * nilai;
+
+                data.pivot.rotation[
+                    data.sumbu
+                ] = sudut;
+
+            }
+        );
+
+        if(nilai <= 0){
+
+            jaringTabung3DTerbuka = true;
+
+        }else if(nilai >= 1){
+
+            jaringTabung3DTerbuka = false;
+
+        }
+
+    }
+
+} 
+ 
 }
 // ======================================
 // SCROLL OTOMATIS KE BANGUN RUANG
