@@ -1728,21 +1728,55 @@ root
 );
     
 // ==================================
-    // SEGITIGA 1
-    // ==================================
+// SEGITIGA 1 - ATAS
+// ==================================
 
-    let segitiga1 =
-        buatSegitigaPrisma(
-            0xf44336
-        );
+let pivotSegitigaAtas =
+    new THREE.Group();
 
-    segitiga1.position.set(
+pivotSegitigaAtas.position.set(
     0,
-    2.2,
+    1,
     0
 );
 
-    root.add(segitiga1);
+root.add(
+    pivotSegitigaAtas
+);
+
+
+let segitiga1 =
+    buatSegitigaPrisma(
+        0xf44336
+    );
+
+segitiga1.position.set(
+    0,
+    1.2,
+    0
+);
+
+pivotSegitigaAtas.add(
+    segitiga1
+);
+
+
+// ==================================
+// DATA ENGSEL SEGITIGA ATAS
+// ==================================
+
+dataJaringPrisma3D.push({
+
+    pivot:pivotSegitigaAtas,
+
+    sumbu:"x",
+
+    sudutBuka:0,
+
+    sudutTutup:
+        Math.PI * 108.435 / 180
+
+});
 
 // ==================================
     // SEGITIGA 2
