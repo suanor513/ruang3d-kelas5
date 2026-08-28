@@ -1715,7 +1715,7 @@ let lingkaranAtas =
 // Posisi lingkaran relatif terhadap engsel
 lingkaranAtas.position.set(
     0,
-    1,
+    0,
     0
 );
 
