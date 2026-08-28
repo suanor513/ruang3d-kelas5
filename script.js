@@ -1741,8 +1741,7 @@ dataJaringTabung3D.push({
     sudutBuka:0,
 
     sudutTutup:
-        Math.PI / 2
-
+    -Math.PI / 2
 });
 
 // ==================================
