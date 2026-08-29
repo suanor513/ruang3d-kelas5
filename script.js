@@ -1708,8 +1708,8 @@ let pivotLingkaranAtas =
     new THREE.Group();
 
 pivotLingkaranAtas.position.set(
-    -Math.PI * radius / 2,
-    0.8,
+    -Math.PI * radius + radius,
+    1,
     0
 );
  
@@ -1778,11 +1778,11 @@ let pivotLingkaranBawah =
     new THREE.Group();
 
 pivotLingkaranBawah.position.set(
-    -Math.PI * radius / 2,
+    -Math.PI * radius + radius,
     -1,
     0
 );
-
+ 
 root.add(
     pivotLingkaranBawah
 );
