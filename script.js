@@ -1180,7 +1180,24 @@ function aturJaring3D(nilai){
             }
         );
 
+// ==================================
+// TUTUP MENGIKUTI PERGESERAN SELIMUT
+// ==================================
 
+dataJaringTabung3D.forEach(
+    function(data){
+
+        if(data.jenis === "tutup"){
+
+            data.pivot.position.x =
+                Math.PI *
+                radiusTabungAktif *
+                nilai;
+
+        }
+
+    }
+);
      
 // ==================================
 // GESER SELIMUT MENUJU PUSAT TABUNG
@@ -1708,9 +1725,9 @@ let pivotLingkaranAtas =
     new THREE.Group();
 
 pivotLingkaranAtas.position.set(
-    -Math.PI * radius,
+    0,
     1,
-    radius
+    0
 );
  
 root.add(
@@ -1761,6 +1778,8 @@ dataJaringTabung3D.push({
 
     pivot:pivotLingkaranAtas,
 
+    jenis:"tutup",
+
     sumbu:"x",
 
     sudutBuka:0,
@@ -1778,9 +1797,9 @@ let pivotLingkaranBawah =
     new THREE.Group();
 
 pivotLingkaranBawah.position.set(
-    -Math.PI * radius,
+    0,
     -1,
-    radius
+    0
 );
  
 root.add(
@@ -1829,6 +1848,8 @@ dataJaringTabung3D.push({
 
     pivot:pivotLingkaranBawah,
 
+    jenis:"tutup",
+
     sumbu:"x",
 
     sudutBuka:0,
@@ -1837,7 +1858,7 @@ dataJaringTabung3D.push({
         -Math.PI / 2
 
 });
-
+ 
     // ==================================
     // MATERI
     // ==================================
