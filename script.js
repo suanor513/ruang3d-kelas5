@@ -1740,8 +1740,8 @@ dataJaringTabung3D.push({
 
     sudutBuka:0,
 
-    sudutTutup:
-    -Math.PI / 2
+sudutTutup:
+    Math.PI / 2
 });
 
 // ==================================
@@ -1782,7 +1782,7 @@ let lingkaranBawah =
 
 lingkaranBawah.position.set(
     0,
-    -1,
+    0,
     0
 );
 
