@@ -1180,6 +1180,20 @@ function aturJaring3D(nilai){
             }
         );
 
+// ==================================
+// GESER SELIMUT MENUJU PUSAT TABUNG
+// ==================================
+
+if(typeof pivotSelimutTabungAktif !== "undefined"){
+
+    pivotSelimutTabungAktif.position.x =
+        -Math.PI * radiusTabungAktif +
+        (
+            Math.PI * radiusTabungAktif
+        ) * nilai;
+
+}
+     
         if(nilai <= 0){
 
             jaringTabung3DTerbuka = true;
@@ -1469,6 +1483,9 @@ let panelJaringTabung3D = [];
 let dataJaringTabung3D = [];
 let jaringTabung3DTerbuka = true;
 
+let pivotSelimutTabungAktif = null;
+let radiusTabungAktif = 1;
+
 // ======================================
 // TAMPILKAN JARING-JARING TABUNG 3D
 // TAHAP 2
@@ -1543,6 +1560,12 @@ let materialSelimut =
 let pivotSelimutTabung =
     new THREE.Group();
 
+pivotSelimutTabungAktif =
+    pivotSelimutTabung;
+
+radiusTabungAktif =
+    radius;
+ 
 pivotSelimutTabung.position.set(
     -Math.PI * radius,
     0,
