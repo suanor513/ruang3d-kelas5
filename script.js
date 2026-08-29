@@ -1710,7 +1710,7 @@ let pivotLingkaranAtas =
 pivotLingkaranAtas.position.set(
     0,
     0.8,
-    -1
+    0
 );
  
 root.add(
@@ -1780,7 +1780,7 @@ let pivotLingkaranBawah =
 pivotLingkaranBawah.position.set(
     0,
     -1,
-    -1
+    0
 );
 
 root.add(
