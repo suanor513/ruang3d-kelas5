@@ -1180,6 +1180,8 @@ function aturJaring3D(nilai){
             }
         );
 
+
+     
 // ==================================
 // GESER SELIMUT MENUJU PUSAT TABUNG
 // ==================================
@@ -1755,17 +1757,7 @@ panelJaringTabung3D.push(
 // DATA ENGSEL LINGKARAN ATAS
 // ==================================
 
-dataJaringTabung3D.push({
 
-    pivot:pivotLingkaranAtas,
-
-    sumbu:"x",
-
-    sudutBuka:0,
-
-sudutTutup:
-    Math.PI / 2
-});
 
 // ==================================
 // LINGKARAN BAWAH
@@ -1822,18 +1814,7 @@ panelJaringTabung3D.push(
 // DATA ENGSEL LINGKARAN BAWAH
 // ==================================
 
-dataJaringTabung3D.push({
 
-    pivot:pivotLingkaranBawah,
-
-    sumbu:"x",
-
-    sudutBuka:0,
-
-    sudutTutup:
-        -Math.PI / 2
-
-});
 
     // ==================================
     // MATERI
